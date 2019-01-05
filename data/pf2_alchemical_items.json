@@ -1,0 +1,1725 @@
+{
+   "Elixir of Rejuvenation" : {
+      "Description" : [
+         "When you drink this elixir, you're restored to your maximum Hit Points and all toxins of 20th level or lower afflicting you are removed, but you lose all remaining RP.",
+         "You can instead administer this elixir to a creature that has been dead for a week or less; in this case, the Operate Activation does not require the expenditure of a Resonance Point. When you do, that creature is instantly brought back to life with 1 HP and 0 RP.",
+         "Either way, the target is treated as if it had failed a check to overspend RP."
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Level" : "20",
+      "Price" : "—",
+      "Activation" : "Operate Activation (Action)",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Craft Requirements" : "Philosopher's stone; true elixir of life; you must be legendary in Crafting and have the Alchemical Crafting feat",
+      "Rarity" : "Uncommon"
+   },
+   "Silvertongue Mutagen, Lesser" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Drawback" : "You take a –1 item penalty to Arcana, Crafting, Lore, Occultism, and Society checks, as well as all skill checks in which you are trained or expert other than your signature skills. You treat all failures on checks made to Recall Knowledge as critical failures.",
+            "Effect" : "For 1 minute after the onset of this mutagen, your features become fair and your voice musical and commanding, though facts and figures become hazy and your reason takes a backseat to your emotions.",
+            "Benefit" : "You gain a +2 item bonus to Deception, Diplomacy, Intimidation, and Performance checks, and you treat all critical failures with those skills as failures.",
+            "Onset" : "End of your next turn"
+         }
+      ],
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph",
+      "Rarity" : "Uncommon",
+      "Price" : "20 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "5"
+   },
+   "Insanity Mist" : {
+      "Description" : [
+         {
+            "Maximum Duration" : "6 rounds",
+            "Onset" : "1 round",
+            "Stage 3" : "Confused and stupefied 4 (1 round)",
+            "Stage 2" : "Confused and stupefied 3 (1 round)",
+            "Stage 1" : "Stupefied 2 (1 round)",
+            "Saving Throw" : "Fortitude DC 31"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Level" : "15",
+      "Price" : "800 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Inhaled",
+         "Poison"
+      ],
+      "Rarity" : "Common"
+   },
+   "Liquid Ice" : {
+      "Description" : "The liquid reagents in this vial create a freezing effect when exposed to air. Liquid ice deals 1d4 cold damage, deals 1 cold splash damage, and causes the target to be hampered 10 until the end of its next turn.",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Price" : "3 gp",
+      "Level" : "1",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Bomb",
+         "Cold",
+         "Consumable",
+         "Splash"
+      ]
+   },
+   "Infiltrator's Elixir" : {
+      "Price" : "4 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "2",
+      "Rarity" : "Common",
+      "Traits" : "Alchemical, Consumable, Elixir, Polymorph",
+      "Description" : [
+         {
+            "Onset" : "1 minute"
+         },
+         "After the onset of this elixir, you take the shape of a humanoid creature of your size (or another creature of your type, if you aren't a humanoid, at the GM's discretion), but different enough so you might be unrecognizable. The creator of the elixir decides the sex, eye color, skin tone, and hair color that you transform into when crafting the elixir, but it cannot change your form into a specific person. After the form takes hold, you retain it for the next 10 minutes.",
+         "Drinking this elixir counts as setting up a disguise for the Impersonate action of Deception. You gain a +4 item bonus to your Deception DC to avoid others seeing through your disguise."
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Hemlock" : {
+      "Rarity" : "Common",
+      "Traits" : "Alchemical, Consumable, Ingested, Poison",
+      "Price" : "1,800 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "17",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Onset" : "30 minutes",
+            "Saving Throw" : "Fortitude DC 35",
+            "Stage 2" : "16d6 poison damage and enfeebled 3 (10 minutes)",
+            "Stage 3" : "20d6 poison damage and enfeebled 4 (10 minutes)",
+            "Maximum Duration" : "60 minutes",
+            "Stage 1" : "13d6 poison damage and enfeebled 2 (10 minutes)"
+         }
+      ]
+   },
+   "Tindertwig" : {
+      "Bulk" : "—",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "An alchemical substance on one end of this tiny wooden stick ignites when struck against a rough surface. Creating a flame with a tindertwig is much faster than creating a flame with a flint and steel; as part of the activate action, you can touch the tindertwig to a flammable object to set it on fire.",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Fire"
+      ],
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "2 sp",
+      "Level" : "1"
+   },
+   "Arsenic" : {
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "2 gp",
+      "Level" : "1",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison"
+      ],
+      "Description" : [
+         "You can't reduce your sick condition while affected by arsenic.",
+         {
+            "Onset" : "10 minutes",
+            "Stage 2" : "1d4 poison damage and sick 2 (1 minute)",
+            "Stage 3" : "2d4 poison damage and sick 3 (1 minute)",
+            "Saving Throw" : "Fortitude DC 15",
+            "Maximum Duration" : "5 minutes",
+            "Stage 1" : "1 poison damage and sick 1 (1 minute)"
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Mistform Elixir" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "Upon drinking this elixir, your form appears blurry, making you concealed for 1 minute.",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Illusion",
+         "Visual"
+      ],
+      "Rarity" : "Common",
+      "Level" : "3",
+      "Price" : "8 gp",
+      "Activation" : "Operate Activation (Action)"
+   },
+   "Bravo's Brew" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "This flask of foaming beer grants courage. For the next hour after drinking this elixir, you gain a +1 item bonus to Will saves and a +3 item bonus to Will saves against fear.",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mental"
+      ],
+      "Price" : "7 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "3"
+   },
+   "Hunting Spider Venom" : {
+      "Level" : "5",
+      "Price" : "20 gp",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ],
+      "Rarity" : "Common",
+      "Description" : [
+         {
+            "Stage 2" : "1d8 poison damage, flat-footed, and sluggish 1 (1 round)",
+            "Stage 3" : "1d10 poison damage, flat-footed, and sluggish 2 (1 round)",
+            "Stage 1" : "1d8 poison damage and flat-footed (1 round)",
+            "Saving Throw" : "Fortitude DC 18",
+            "Maximum Duration" : "6 rounds"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands"
+   },
+   "Philosopher's Stone" : {
+      "Description" : [
+         "An alchemist with the Craft Philosopher's Stone feat can create a philosopher's stone once per month using the advanced alchemy class feature. This is the only way to create a philosopher's stone.",
+         "At a glance, a philosopher's stone appears to be an ordinary, sooty piece of natural rock. Breaking the rock open with a Break Open action (DC 25) reveals a cavity at the stone's heart. The cavity is lined with a rare type of quicksilver that can transmute base metals into precious metals or create an elixir of rejuvenation (see page 705).",
+         "To use the stone's quicksilver, you must be Legendary in Crafting and you must have the Alchemical Crafting feat. You can then apply the stone's quicksilver for one of two effects:",
+         "You can apply the stone's quicksilver to an infused true elixir of life using an Operate Activation action to create an infused elixir of rejuvenation. This is instantaneous and does not require any crafting time or additional materials.",
+         "You can spend up to a month of downtime applying the quicksilver either to iron to create silver or to lead to create gold. Treat this as a 20th-level task for Crafting as a trade, except you don't need any setup, you create 5,000 sp or 500 gp per day on a success, and you create 7,500 sp or 750 gp per day on a critical success."
+      ],
+      "Bulk" : "2",
+      "Method of Use" : "Held, 2 hands",
+      "Level" : "20",
+      "Price" : "—",
+      "Activation" : "Operate Activation (Action) or 1 or more days; see below",
+      "Traits" : [
+         "Alchemical",
+         "Consumable"
+      ],
+      "Rarity" : "Uncommon"
+   },
+   "Tears of Death" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison",
+         "Virulent"
+      ],
+      "Price" : "9,000 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "20",
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Saving Throw" : "Fortitude DC 40",
+            "Stage 1" : "15d6 poison damage and paralyzed (1 round)",
+            "Stage 2" : "20d6 poison damage and paralyzed (1 minute)",
+            "Stage 3" : "25d6 poison damage and paralyzed (1 minute)",
+            "Onset" : "1 minute",
+            "Maximum Duration" : "10 minutes"
+         }
+      ]
+   },
+   "Belladonna" : {
+      "Description" : [
+         {
+            "Maximum Duration" : "30 minutes",
+            "Onset" : "10 minutes",
+            "Stage 2" : "1d4 poison damage and sick 1 (10 minutes)",
+            "Stage 3" : "1d4 poison damage, sick 1, and confused for 1 minute (1 minute)",
+            "Saving Throw" : "Fortitude DC 16",
+            "Stage 1" : "Dazzled (10 minutes)"
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Price" : "4 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "2",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison"
+      ]
+   },
+   "Nightmare Vapor" : {
+      "Price" : "1,200 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "16",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Inhaled",
+         "Poison"
+      ],
+      "Description" : [
+         {
+            "Stage 1" : "Confused (1 round)",
+            "Maximum Duration" : "6 rounds",
+            "Stage 3" : "Confused, flat-footed, and stupefied 2 (1 round)",
+            "Stage 2" : "Confused and flat-footed (1 round)",
+            "Saving Throw" : "Fortitude DC 33",
+            "Onset" : "1 round"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand"
+   },
+   "Eagle-Eye Elixir" : {
+      "Level" : "1",
+      "Price" : "2 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Description" : "For the next hour after drinking this elixir, you gain a +1 item bonus to Perception checks. This item bonus increases to +2 for Perception checks to find secret doors and traps.",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Cognitive Mutagen" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +3 item bonus to Arcana, Crafting, Lore, Occultism, and Society checks and all checks to Recall Knowledge, regardless of the subject matter. You treat a critical failure on a Recall Knowledge check as a failure instead.",
+            "Effect" : "For 10 minutes after the onset of this mutagen, your mind becomes clear and cognition flows freely, but physical matters seem ephemeral.",
+            "Drawback" : "You take a –2 item penalty to melee attack rolls and Athletics checks, you can carry 2 less Bulk than normal before becoming encumbered, and the maximum Bulk you can carry is 4 less."
+         }
+      ],
+      "Traits" : "Alchemical, Consumable, Elixir, Mutagen, Polymorph",
+      "Rarity" : "Uncommon",
+      "Level" : "9",
+      "Price" : "90 gp",
+      "Activation" : "Operate Activation (Action)"
+   },
+   "Thunderstone" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Bomb",
+         "Consumable",
+         "Sonic",
+         "Splash"
+      ],
+      "Price" : "3 gp",
+      "Level" : "1",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : "When this stone hits a hard surface or creature, it explodes with a deafening bang. A thunderstone deals 1d4 sonic damage and 1 sonic splash damage, and each creature within 10 feet of the space in which the stone exploded must succeed at a DC 15 Fortitude saving throw or be deafened until the end of its next turn."
+   },
+   "Cheetah's Elixir" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "For the next minute, you are accelerated 5.",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Level" : "1",
+      "Price" : "2 gp",
+      "Activation" : "Operate Activation (Action)"
+   },
+   "Quicksilver Mutagen" : {
+      "Level" : "9",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "90 gp",
+      "Traits" : "Alchemical, Consumable, Elixir, Mutagen, Polymorph",
+      "Rarity" : "Uncommon",
+      "Description" : [
+         {
+            "Drawback" : "You take a –2 item penalty to Fortitude saves and take 20 damage. You can't recover Hit Points lost in this way by any means while the mutagen lasts.",
+            "Effect" : "For 10 minutes after the onset of this mutagen, your features become thin and angular and you become swifter and nimbler, but your body also becomes fragile.",
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +3 item bonus to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and ranged attack rolls, and you become accelerated 15."
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Leaper's Elixir" : {
+      "Description" : "For 1 minute after drinking this elixir, you can attempt High Jumps and Long Jumps with a single Leap action, rather than as a two-action activity requiring a Stride and a Leap.",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Level" : "1",
+      "Price" : "2 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common"
+   },
+   "Brimstone Fumes" : {
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "1,200 gp",
+      "Level" : "16",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Inhaled",
+         "Poison"
+      ],
+      "Description" : [
+         {
+            "Onset" : "1 round",
+            "Maximum Duration" : "6 rounds",
+            "Saving Throw" : "Fortitude DC 33",
+            "Stage 1" : "6d6 poison damage (1 round)",
+            "Stage 3" : "8d6 poison damage and enfeebled 3 (1 round)",
+            "Stage 2" : "7d6 poison damage and enfeebled 1 (1 round)"
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Cytillesh Oil" : {
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ],
+      "Rarity" : "Common",
+      "Level" : "3",
+      "Price" : "8 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Saving Throw" : "Fortitude DC 16",
+            "Stage 1" : "1d8 poison damage (1 round)",
+            "Stage 3" : "2d8 poison damage (1 round)",
+            "Stage 2" : "1d10 poison damage (1 round)",
+            "Maximum Duration" : "4 rounds"
+         }
+      ]
+   },
+   "Elixir of Life, Minor" : {
+      "Level" : "1",
+      "Price" : "3 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Description" : "Upon drinking this elixir, you regain 1d6 Hit Points. If you are at maximum Hit Points when you drink this elixir, you instead gain a +1 item bonus to Fortitude saving throws for 1 hour against toxins, including diseases, poisons, and venoms.",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand"
+   },
+   "Setq" : [
+      "Pf2-item-table-nodesc",
+      [
+         "Pf2-recur",
+         "Pf2-alchemical-item-table"
+      ]
+   ],
+   "Tanglefoot Bag" : {
+      "Description" : "A tanglefoot bag is filled with sticky substances. When you hit a creature with a tanglefoot bag, that creature becomes entangled for 1 minute. Tanglefoot bags are not effective when used on a creature that is in water. The target or a creature adjacent to the target can end the entangled condition by spending 3 Interact actions. These actions need not be consecutive.",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Level" : "1",
+      "Price" : "3 gp",
+      "Traits" : [
+         "Alchemical",
+         "Bomb",
+         "Consumable"
+      ],
+      "Rarity" : "Common"
+   },
+   "Winter Wolf Elixir" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Onset" : "1 minute"
+         },
+         "For 24 hours after the onset of this elixir, you become protected from the effects of severe cold (see Temperature on page 648)."
+      ],
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Level" : "2",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "4 gp"
+   },
+   "Quicksilver Mutagen, True" : {
+      "Rarity" : "Uncommon",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "2,000 gp",
+      "Level" : "17",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph",
+      "Description" : [
+         {
+            "Effect" : "For 1 hour after the onset of this mutagen, your features become thin and angular and you become swifter and nimbler, but your body also becomes fragile.",
+            "Drawback" : "You take a –3 item penalty to Fortitude saves and take 50 damage. You can't recover Hit Points lost in this way by any means while the mutagen lasts.",
+            "Onset" : "End of your next turn",
+            "Benefit" : "You gain a +5 item bonus to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and ranged attack rolls, and you become accelerated 25."
+         }
+      ]
+   },
+   "Malyass Root Paste" : {
+      "Level" : "7",
+      "Price" : "40 gp",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison"
+      ],
+      "Rarity" : "Common",
+      "Description" : [
+         {
+            "Stage 3" : "Flat-footed, hampered 30, and sluggish 3 (1 minute)",
+            "Stage 2" : "Hampered 20 and sluggish 2 (1 minute)",
+            "Stage 1" : "Hampered 10 and sluggish 1 (1 minute)",
+            "Saving Throw" : "Fortitude DC 21",
+            "Maximum Duration" : "6 minutes",
+            "Onset" : "1 minute"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands"
+   },
+   "Slumber Wine" : {
+      "Price" : "250 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "12",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison"
+      ],
+      "Description" : [
+         "Characters asleep from slumber wine can't wake up by any means while the poison lasts, don't need to eat or drink while asleep in this way, and appear to be recently dead unless an examiner succeeds at a DC 33 Medicine check.",
+         {
+            "Maximum Duration" : "7 days",
+            "Stage 1" : "Asleep (1 day)",
+            "Onset" : "1 hour",
+            "Stage 2" : "Asleep (2 days)",
+            "Stage 3" : "Asleep (3 days)",
+            "Saving Throw" : "Fortitude DC 26"
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Bullheaded Mutagen, Greater" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +4 item bonus to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks. This bonus increases to +5 against mental effects.",
+            "Onset" : "1 minute",
+            "Drawback" : "You take a –2 item penalty to Deception, Diplomacy, Intimidation, and Performance checks, and you lose 2 RP.",
+            "Effect" : "For 1 hour after the onset of this mutagen, you gain more control of your mind and can steel your will against mental assaults, but your arrogance makes you seem standoffish and off-putting."
+         }
+      ],
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Level" : "13",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "400 gp"
+   },
+   "Graveroot" : {
+      "Description" : [
+         {
+            "Maximum Duration" : "4 rounds",
+            "Stage 1" : "1d8 poison damage (1 round)",
+            "Saving Throw" : "Fortitude DC 16",
+            "Stage 3" : "1d12 poison damage and stupefied 2 (1 round)",
+            "Stage 2" : "1d10 poison damage and stupefied 1 (1 round)"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands",
+      "Level" : "3",
+      "Price" : "8 gp",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Traits" : "Alchemical, Consumable, Injury, Poison",
+      "Rarity" : "Common"
+   },
+   "Bestial Mutagen" : {
+      "Price" : "90 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "9",
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Description" : [
+         {
+            "Effect" : "For 10 minutes after the onset of this mutagen, your features transform into something bestial and you take on muscle mass, but your lumbering form is clumsy.",
+            "Drawback" : "You take a –1 item penalty to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and AC.",
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +3 item bonus to Athletics checks and unarmed attack rolls. Your damage dealt by unarmed attacks increases to four damage dice, unless it would otherwise have more damage dice."
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand"
+   },
+   "Sleep Poison" : {
+      "Level" : "2",
+      "Price" : "5 gp",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ],
+      "Rarity" : "Uncommon",
+      "Description" : [
+         {
+            "Maximum Duration" : "4 hours",
+            "Stage 2" : "Asleep with no Perception check to wake up (1 round) Stage 3 asleep with no Perception check to wake up (1d4 hours)",
+            "Saving Throw" : "Fortitude DC 13",
+            "Stage 1" : "Slowed 1 (1 round)"
+         }
+      ],
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L"
+   },
+   "Black Adder Venom" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands",
+      "Description" : [
+         {
+            "Stage 1" : "1d6 poison damage (1 round)",
+            "Saving Throw" : "Fortitude DC 15",
+            "Stage 3" : "1d12 poison damage (1 round)",
+            "Stage 2" : "1d8 poison damage (1 round)",
+            "Maximum Duration" : "3 rounds"
+         }
+      ],
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ],
+      "Price" : "5 gp",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Level" : "2"
+   },
+   "Juggernaut Mutagen, Lesser" : {
+      "Rarity" : "Uncommon",
+      "Level" : "6",
+      "Price" : "20 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Effect" : "For 1 minute after the onset of this mutagen, your body becomes thick and sturdy and you exhibit a healthy glow, though you tend to be ponderous and unobservant.",
+            "Drawback" : "You take a –1 item penalty to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks.",
+            "Benefit" : "You gain a +2 item bonus to Fortitude saves and 10 temporary Hit Points.",
+            "Onset" : "End of your next turn"
+         }
+      ],
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph"
+   },
+   "Juggernaut Mutagen, True" : {
+      "Rarity" : "Uncommon",
+      "Price" : "2,000 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "17",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +5 item bonus to Fortitude saves and 50 temporary Hit Points. Whenever you are at maximum Hit Points for at least 1 full minute, you regain the full 50 temporary Hit Points.",
+            "Onset" : "End of your next turn",
+            "Effect" : "For 1 hour after the onset of this mutagen, your body becomes thick and sturdy and you exhibit a healthy glow, though you tend to be ponderous and unobservant.",
+            "Drawback" : "You take a –3 item penalty to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks."
+         }
+      ],
+      "Traits," : "Alchemical, Consumable, Elixir, Mutagen, Polymorph"
+   },
+   "Juggernaut Mutagen" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +3 item bonus to Fortitude saves and 20 temporary Hit Points. Whenever you are at maximum Hit Points for at least 1 full minute, you regain the full 20 temporary Hit Points.",
+            "Effect" : "For 10 minutes after the onset of this mutagen, your body becomes thick and sturdy and you exhibit a healthy glow, though you tend to be ponderous and unobservant.",
+            "Drawback" : "You take a –2 item penalty to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks."
+         }
+      ],
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "90 gp",
+      "Level" : "9"
+   },
+   "Juggernaut Mutagen, Greater" : {
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Price" : "400 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "13",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +4 item bonus to Fortitude saves and 40 temporary Hit Points. Whenever you are at maximum Hit Points for at least 1 full minute, you regain the full 40 temporary Hit Points.",
+            "Drawback" : "You take a –2 item penalty to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks.",
+            "Effect" : "For 1 hour after the onset of this mutagen, your body becomes thick and sturdy and you exhibit a healthy glow, though you tend to be ponderous and unobservant."
+         }
+      ]
+   },
+   "Cognitive Mutagen, Lesser" : {
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Price" : "20 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "5",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +2 item bonus to Arcana, Crafting, Lore, Occultism, and Society checks and all checks to Recall Knowledge. You treat a critical failure on a Recall Knowledge check as a failure instead.",
+            "Onset" : "End of your next turn",
+            "Drawback" : "You take a –1 item penalty to melee attack rolls and Athletics checks, you can carry 1 less Bulk than normal before becoming encumbered,and the maximum Bulk you can carry is 2 less.",
+            "Effect" : "For 1 minute after the onset of this mutagen, your mind becomes clear and cognition flows freely, but physical matters seem ephemeral."
+         }
+      ]
+   },
+   "Silvertongue Mutagen" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +3 item bonus to Deception, Diplomacy, Intimidation, and Performance checks, and you treat all critical failures with those skills as failures.",
+            "Onset" : "1 minute",
+            "Drawback" : "You take a –2 item penalty to Arcana, Crafting, Lore, Occultism, and Society checks, as well as all skill checks in which you are trained or expert other than your signature skills. You treat all failures on checks made to Recall Knowledge as critical failures.",
+            "Effect" : "For 10 minutes after the onset of this mutagen, your features become fair and your voice becomes musical and commanding, though facts and figures become hazy for you and your reason takes a back seat to your emotions."
+         }
+      ],
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Level" : "9",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "90 gp"
+   },
+   "Bestial Mutagen, Greater" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +4 item bonus to Athletics checks and unarmed attack rolls. Your damage dealt by unarmed attacks increases to five damage dice, unless it would otherwise have more damage dice.",
+            "Drawback" : "You take a –1 item penalty to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and AC.",
+            "Effect" : "For 1 hour after the onset of this mutagen, your features transform into something bestial and you take on muscle mass, but your lumbering form is clumsy."
+         }
+      ],
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Level" : "13",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "400 gp"
+   },
+   "Spider Root" : {
+      "Price" : "80 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "9",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison"
+      ],
+      "Description" : [
+         {
+            "Saving Throw" : "Fortitude DC 23",
+            "Stage 2" : "6d6 poison damage and sluggish 2 (1 minute)",
+            "Stage 3" : "7d6 poison damage and sluggish 3 (1 minute)",
+            "Onset" : "1 minute",
+            "Stage 1" : "5d6 poison damage and sluggish 1 (1 minute)",
+            "Maximum Duration" : "6 minutes"
+         }
+      ],
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L"
+   },
+   "Elixir of Life, Lesser" : {
+      "Description" : "Upon drinking this elixir, you regain 3d6 Hit Points. If you are at maximum Hit Points when you drink this elixir, you instead gain a +2 item bonus to Fortitude saving throws against toxins for 1 hour.",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Level" : "4",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "12 gp",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common"
+   },
+   "Cat's Eye Elixir" : {
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Level" : "3",
+      "Price" : "7 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : "For the next minute, you treat sensed creatures within 30 feet as if they were concealed, and concealed creatures within 30 feet as if they were seen."
+   },
+   "Bottled Lightning" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : "Bottled lightning is packed with volatile reagents that create a blast of electricity when they are exposed to air. Bottled lightning deals 1d6 electricity damage and 1 electricity splash damage and causes the target to be flat-footed to all creatures until the start of your next turn.",
+      "Traits" : [
+         "Alchemical",
+         "Bomb",
+         "Consumable",
+         "Electricity",
+         "Splash"
+      ],
+      "Rarity" : "Common",
+      "Level" : "1",
+      "Price" : "3 gp"
+   },
+   "Smokestick" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable"
+      ],
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "2 gp",
+      "Level" : "1",
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L",
+      "Description" : "With a sharp twist of this item, you instantly create a screen of thick, opaque smoke in a 5-foot-radius burst centered on one corner of your space. All creatures within that area are concealed (see page 597). The smoke lasts for 1 minute or until dispersed by a strong wind."
+   },
+   "Purple Worm Venom" : {
+      "Description" : [
+         {
+            "Stage 1" : "3d6 poison damage and enfeebled 2 (1 round)",
+            "Saving Throw" : "Fortitude DC 29",
+            "Stage 2" : "4d6 poison damage and enfeebled 2 (1 round)",
+            "Stage 3" : "6d6 poison and enfeebled 2 (1 round)",
+            "Maximum Duration" : "6 rounds"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Price" : "400 gp",
+      "Level" : "13",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ]
+   },
+   "Stone Fist Elixir" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Polymorph"
+      ],
+      "Price" : "5 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "2",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Onset" : "1 minute"
+         },
+         "After the onset of this elixir, your fists become as hard as stone. For 1 hour, your fists deal 1d6 bludgeoning damage."
+      ]
+   },
+   "Blightburn Resin" : {
+      "Level" : "11",
+      "Price" : "160 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison"
+      ],
+      "Rarity" : "Common",
+      "Description" : [
+         {
+            "Saving Throw" : "Fortitude DC 26",
+            "Stage 1" : "7d6 poison damage (1 round)",
+            "Stage 2" : "8d6 poison damage (1 round)",
+            "Stage 3" : "12d6 poison damage (1 round)",
+            "Onset" : "1 minute",
+            "Maximum Duration" : "6 rounds"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands"
+   },
+   "Darkvision Elixir" : {
+      "Activation" : "Operate Activation (Action)",
+      "Description" : "Upon your drinking of this elixir, your sight becomes sharper in darkness. This elixir has three types: standard, greater, and true. Upon drinking the standard elixir, you gain darkvision for 10 minutes. The greater version grants you darkvision for 1 hour, and the true elixir grants darkvision for 8 hours.",
+      "Level" : "1+",
+      "Types" : {
+         "Standard" : [
+            {
+               "Price" : "2 gp",
+               "Level" : "1"
+            }
+         ],
+         "Greater" : [
+            {
+               "Price" : "6 gp",
+               "Level" : "3"
+            }
+         ],
+         "True" : [
+            {
+               "Price" : "24 gp",
+               "Level" : "6"
+            }
+         ]
+      },
+      "Method of Use" : "Held, 1 hand",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Bulk" : "L"
+   },
+   "Dragon Bile" : {
+      "Level" : "15",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "720 gp",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison"
+      ],
+      "Rarity" : "Common",
+      "Description" : [
+         {
+            "Stage 2" : "5d6 poison damage and sick 3 (1 round)",
+            "Stage 3" : "6d6 poison damage and sick 4 (1 round)",
+            "Stage 1" : "4d6 poison damage and sick 2 (1 round)",
+            "Saving Throw" : "Fortitude DC 32",
+            "Maximum Duration" : "6 rounds",
+            "Onset" : "1 minute"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands"
+   },
+   "Bestial Mutagen, True" : {
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "2,000 gp",
+      "Level" : "17",
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Description" : [
+         {
+            "Effect" : "For 1 hour after the onset of this mutagen, your features transform into something bestial and you take on muscle mass, but your lumbering form is clumsy.",
+            "Drawback" : "You take a –1 item penalty to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and AC.",
+            "Onset" : "End of your next turn",
+            "Benefit" : "You gain a +5 item bonus to Athletics checks and unarmed attack rolls. Your damage dealt by unarmed attacks increases to six damage dice, unless it would otherwise have more damage dice."
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand"
+   },
+   "Cognitive Mutagen, Greater" : {
+      "Level" : "13",
+      "Price" : "400 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +4 item bonus to Arcana, Crafting, Lore, Occultism, and Society checks and all checks to Recall Knowledge. You treat a critical failure on a Recall Knowledge check as a failure instead.",
+            "Onset" : "1 minute",
+            "Drawback" : "You take a –3 item penalty to melee attack rolls and Athletics checks, you can carry 3 less Bulk than normal before becoming encumbered, and the maximum Bulk you can carry is 6 less.",
+            "Effect" : "For 1 minute after the onset of this mutagen, your mind becomes clear and cognition flows freely, but physical matters seem ephemeral."
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Quicksilver Mutagen, Lesser" : {
+      "Rarity" : "Uncommon",
+      "Price" : "20 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "5",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +2 item bonus to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and ranged attack rolls, and you become accelerated 10.",
+            "Onset" : "End of your next turn",
+            "Effect" : "For 1 minute after the onset of this mutagen, your features become thin and angular and you become swifter and nimbler, but your body also becomes fragile.",
+            "Drawback" : "You take a –1 item penalty to Fortitude saves and take 10 damage. You can't recover Hit Points lost in this way by any means while the mutagen lasts."
+         }
+      ],
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph"
+   },
+   "Giant Scorpion Venom" : {
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Price" : "30 gp",
+      "Level" : "6",
+      "Rarity" : "Common",
+      "Traits" : "Alchemical, Consumable, Injury, Poison",
+      "Description" : [
+         {
+            "Saving Throw" : "Fortitude DC 19",
+            "Stage 1" : "1d8 poison damage and enfeebled 1 (1 round)",
+            "Stage 2" : "2d8 poison damage and enfeebled 1 (1 round)",
+            "Stage 3" : "2d8 poison damage and enfeebled 2 (1 round)",
+            "Maximum Duration" : "6 rounds"
+         }
+      ],
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L"
+   },
+   "Shadow Essence" : {
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L",
+      "Description" : [
+         "The enfeebled condition from shadow essence lasts for 24 hours.",
+         {
+            "Saving Throw" : "Fortitude DC 24",
+            "Stage 1" : "2d6 negative damage and 2d6 poison damage (1 round)",
+            "Stage 3" : "2d6 negative damage, 2d6 poison damage, and enfeebled 2 (1 round)",
+            "Stage 2" : "2d6 negative damage, 2d6 poison damage, and enfeebled 1 (1 round)",
+            "Maximum Duration" : "6 rounds"
+         }
+      ],
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Negative",
+         "Poison"
+      ],
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Price" : "125 gp",
+      "Level" : "10"
+   },
+   "Elixir of Life, Greater" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : "Upon drinking this elixir, you regain 10d6 Hit Points and can end a toxin afflicting you as long as it is not higher than 12th level.",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "250 gp",
+      "Level" : "12"
+   },
+   "King's Sleep" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         "King's sleep is an insidious long-term poison that might seem like a disease or even a death from natural causes if used on a venerable target. The drained condition from king's sleep stacks with each failed save and can't be removed until the target is cured of the poison.",
+         {
+            "Onset" : "1 day",
+            "Saving Throw" : "Fortitude DC 36",
+            "Stage 1" : "Drained 1 (1 day)",
+            "Stage 3" : "Drained 2 (1 day)",
+            "Stage 2" : "Drained 1 (1 day)"
+         }
+      ],
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison",
+         "Virulent"
+      ],
+      "Price" : "3,000 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "18"
+   },
+   "Antiplague" : {
+      "Level" : "1+",
+      "Activation" : "Action Operate activation, no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Description" : "Antiplague comes in three different types: standard, greater, and true. Upon drinking a standard antiplague, you gain a +2 item bonus to Fortitude saving throws against diseases for 24 hours; this applies to your daily save against a disease's progression. A greater antiplague grants a +4 item bonus to Fortitude saves against diseases for 24 hours. A true antiplague grants a +4 item bonus to Fortitude saving throws against diseases for 24 hours, and when you consume a true antiplague, you can immediately attempt a saving throw against one disease of 10th level or lower afflicting you; if you succeed, you are cured of the disease.",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Types" : {
+         "Greater" : [
+            {
+               "Price" : "15 gp",
+               "Level" : "5"
+            }
+         ],
+         "True" : [
+            {
+               "Price" : "110 gp",
+               "Level" : "10"
+            }
+         ],
+         "Standard" : [
+            {
+               "Price" : "2 gp",
+               "Level" : "1"
+            }
+         ]
+      }
+   },
+   "Black Lotus Extract" : {
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Maximum Duration" : "6 rounds",
+            "Stage 1" : "12d6 poison damage and drained 1 (1 round)",
+            "Saving Throw" : "Fortitude DC 38",
+            "Stage 3" : "16d6 poison damage and drained 2 (1 round)",
+            "Stage 2" : "14d6 poison damage and drained 1 (1 round)"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Price" : "5,000 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "19",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison",
+         "Virulent"
+      ]
+   },
+   "Wyvern Poison" : {
+      "Description" : [
+         {
+            "Maximum Duration" : "6 rounds",
+            "Saving Throw" : "Fortitude DC 21",
+            "Stage 1" : "4d6 poison damage (1 round)",
+            "Stage 3" : "6d6 poison damage (1 round)",
+            "Stage 2" : "5d6 poison damage (1 round)"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands",
+      "Level" : "8",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Price" : "60 gp",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ],
+      "Rarity" : "Common"
+   },
+   "Bomber's Eye Elixir" : {
+      "Price" : "8 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "3",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Description" : "For the next minute, when you throw alchemical bombs, you ignore the effects of screening (see page 612).",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand"
+   },
+   "Sunrod" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Light"
+      ],
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "2 gp",
+      "Level" : "1",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : "This 1-foot-long, gold-tipped rod glows after it's struck on a hard surface. It sheds normal light in a 20-foot radius for 6 hours."
+   },
+   "Wolfsbane" : {
+      "Description" : [
+         {
+            "Onset" : "10 minutes",
+            "Stage 2" : "12d6 poison damage (1 minute)",
+            "Stage 3" : "15d6 poison damage (1 minute)",
+            "Saving Throw" : "Fortitude DC 25",
+            "Maximum Duration" : "6 minutes",
+            "Additional Effect" : "If you survive the damage from stage 3 of wolfsbane and you are afflicted with lycanthropy, you're immediately cured.",
+            "Stage 1" : "9d6 poison damage (1 minute)"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "110 gp",
+      "Level" : "10",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison"
+      ]
+   },
+   "Comprehension Elixir" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mental"
+      ],
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "4 gp",
+      "Level" : "2",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "For the next minute after drinking this elixir, you can understand the words that you are reading so long as they are written in a common language. This elixir doesn't automatically allow you to understand codes or extremely esoteric passages."
+   },
+   "Cognitive Mutagen, True" : {
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "2,000 gp",
+      "Level" : "17",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +5 item bonus to Arcana, Crafting, Lore, Occultism, and Society checks and all checks to Recall Knowledge. You treat a critical failure on a Recall Knowledge check as a failure instead.",
+            "Onset" : "End of your next turn",
+            "Effect" : "For 1 hour after the onset of this mutagen, your mind becomes clear and cognition flows freely, but physical matters seem ephemeral.",
+            "Drawback" : "You take a –4 item penalty to melee attack rolls and Athletics checks, you can carry 4 less Bulk than normal before becoming encumbered, and the maximum Bulk you can carry is 8 less."
+         }
+      ]
+   },
+   "Bullheaded Mutagen, Lesser" : {
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "20 gp",
+      "Level" : "5",
+      "Rarity" : "Uncommon",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Description" : [
+         {
+            "Effect" : "For 1 minute after the onset of this mutagen, you gain more control of your mind and can steel your will against mental assaults, but your arrogance makes you seem standoffish and off-putting.",
+            "Drawback" : "You take a –1 item penalty to Deception, Diplomacy, Intimidation, and Performance checks, and you lose 1 RP.",
+            "Benefit" : "You gain a +2 item bonus to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks. This bonus increases to +3 against mental effects.",
+            "Onset" : "End of your next turn"
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L"
+   },
+   "Bestial Mutagen, Lesser" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +2 item bonus to Athletics checks and unarmed attack rolls. Your damage dealt by unarmed attacks increases to three damage dice, unless it would otherwise have more damage dice.",
+            "Onset" : "End of your next turn",
+            "Effect" : "For 1 minute after the onset of this mutagen, your features transform into something bestial and you take on muscle mass, but your lumbering form is clumsy.",
+            "Drawback" : "You take a –1 item penalty to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and AC."
+         }
+      ],
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Level" : "5",
+      "Price" : "20 gp",
+      "Activation" : "Operate Activation (Action)"
+   },
+   "Acid Flask" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Acid",
+         "Alchemical",
+         "Bomb",
+         "Consumable",
+         "Splash"
+      ],
+      "Price" : "3 gp",
+      "Level" : "1",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "Flasks filled with corrosive acid deal 1d4 persistent acid damage and 1 acid splash damage."
+   },
+   "Silversheen" : {
+      "Description" : "You can slather this silvery paste onto a melee or thrown weapon or a bundle of ammunition. For the next hour, any physical damage the weapon or ammunition deals is silver. Applying silversheen to a weapon or ammunition temporarily replaces any damage type from its special materials (such as cold iron). One vial coats one melee weapon, one thrown weapon, or 10 pieces of ammunition.",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands",
+      "Price" : "2 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "1",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable"
+      ]
+   },
+   "Antidote" : {
+      "Types" : {
+         "Greater" : {
+            "Price" : "15 gp",
+            "Level" : "5"
+         },
+         "True" : {
+            "Level" : "10",
+            "Price" : "110 gp"
+         },
+         "Standard" : {
+            "Level" : "1",
+            "Price" : "2 gp"
+         }
+      },
+      "Method of Use" : "Held, 1 hand",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Bulk" : "L",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Description" : "Antidotes come in three different types: standard, greater, and true. Upon drinking a standard antidote, you gain a +2 item bonus to Fortitude saving throws against poisons and venoms for 6 hours. A greater antidote grants a +4 item bonus to Fortitude saves against poisons and venoms for 6 hours. A true antidote grants a +4 item bonus to Fortitude saving throws against poisons and venoms for 6 hours, and when you consume a true antidote, you can immediately attempt a saving throw against one poison or venom of 10th level or lower afflicting you; if you succeed, the poison or venom is neutralized.",
+      "Level" : "1+"
+   },
+   "Bullheaded Mutagen" : {
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Level" : "9",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "90 gp",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +3 item bonus to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks. This bonus increases to +4 against mental effects.",
+            "Drawback" : "You take a –2 item penalty to Deception, Diplomacy, Intimidation, and Performance checks, and you lose 2 RP.",
+            "Effect" : "For 10 minutes after the onset of this mutagen, you gain more control of your mind and can steel your will against mental assaults, but you seem standoffish and off-putting."
+         }
+      ]
+   },
+   "Lich Dust" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Stage 3" : "4d6 poison damage, fatigued, and paralyzed (1 minute)",
+            "Stage 2" : "4d6 poison damage and fatigued (1 minute)",
+            "Stage 1" : "Fatigued (1 minute)",
+            "Saving Throw" : "Fortitude DC 23",
+            "Maximum Duration" : "6 minutes",
+            "Onset" : "10 minutes"
+         }
+      ],
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison"
+      ],
+      "Price" : "80 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "9"
+   },
+   "Sea Touch Elixir" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Polymorph"
+      ],
+      "Price" : "10 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "4",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Onset" : "1 minute"
+         },
+         "After the onset of this elixir, the spaces between your fingers and toes become webbed, granting you a swim Speed of 20 feet for the next 10 minutes."
+      ]
+   },
+   "Bullheaded Mutagen, True" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Effect" : "For 1 hour after the onset of this mutagen, you gain more control of your mind and can steel your will against mental assaults, but your arrogance makes you seem standoffish and off-putting.",
+            "Drawback" : "You take a –4 item penalty to Deception, Diplomacy, Intimidation, and Performance checks, and you lose 4 RP.",
+            "Benefit" : "You gain a +5 item bonus to Will saves, Perception checks, Medicine checks, Nature checks, Religion checks, and Survival checks and resistance 15 against mental damage.",
+            "Onset" : "End of your next turn"
+         }
+      ],
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir",
+         "Mutagen",
+         "Polymorph"
+      ],
+      "Rarity" : "Uncommon",
+      "Level" : "17",
+      "Price" : "2,000 gp",
+      "Activation" : "Operate Activation (Action)"
+   },
+   "Silvertongue Mutagen, Greater" : {
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : [
+         {
+            "Benefit" : "You gain a +4 item bonus to Deception, Diplomacy, Intimidation, and Performance checks, and you treat all critical failures with those skills as failures.",
+            "Onset" : "1 minute",
+            "Effect" : "For 1 hour after the onset of this mutagen, your features become fair and your voice musical and commanding, though facts and figures become hazy and your reason takes a backseat to your emotions.",
+            "Drawback" : "You take a –3 item penalty to Arcana, Crafting, Lore, Occultism, and Society checks, as well as all skill checks in which you are trained or expert other than your signature skills. You treat all failures on checks made to Recall Knowledge as critical failures."
+         }
+      ],
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph",
+      "Rarity" : "Uncommon",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "400 gp",
+      "Level" : "13"
+   },
+   "Deathcap Powder" : {
+      "Description" : [
+         {
+            "Stage 1" : "10d6 poison damage (1 minute)",
+            "Maximum Duration" : "6 minutes",
+            "Saving Throw" : "Fortitude DC 30",
+            "Stage 2" : "13d6 poison damage and sick 2 (1 minute)",
+            "Stage 3" : "16d6 poison damage and sick 3 (1 minute)",
+            "Onset" : "10 minutes"
+         }
+      ],
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L",
+      "Price" : "360 gp",
+      "Activation" : "Operate Activation (Action), no cost",
+      "Level" : "13",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Ingested",
+         "Poison"
+      ]
+   },
+   "Silvertongue Mutagen, True" : {
+      "Rarity" : "Uncommon",
+      "Level" : "17",
+      "Price" : "2,000 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph",
+      "Description" : [
+         {
+            "Effect" : "For 1 hour after the onset of this mutagen, your features become fair and your voice musical and commanding, though facts and figures become hazy and your reason takes a backseat to your emotions.",
+            "Drawback" : "You take a –4 item penalty to Arcana, Crafting, Lore, Occultism, and Society checks, all checks made to Recall Knowledge, as well as all skill checks in which you are trained or expert other than your signature skills. You treat all failures on checks made to Recall Knowledge as critical failures.",
+            "Onset" : "End of your next turn",
+            "Benefit" : "You gain a +5 item bonus to Deception, Diplomacy, Intimidation, and Performance checks, and you treat all critical failures with those skills as failures."
+         }
+      ]
+   },
+   "Giant Centipede Venom" : {
+      "Description" : [
+         {
+            "Maximum Duration" : "6 rounds",
+            "Stage 2" : "1d6 poison damage and flat-footed (1 round)",
+            "Stage 3" : "1d8 poison damage, flat-footed, and sluggish 1 (1 round)",
+            "Saving Throw" : "Fortitude DC 14",
+            "Stage 1" : "1d4 poison damage (1 round)"
+         }
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 2 hands",
+      "Level" : "1",
+      "Price" : "3 gp",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Injury",
+         "Poison"
+      ],
+      "Rarity" : "Common"
+   },
+   "Alchemist's Fire" : {
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Bomb",
+         "Consumable",
+         "Fire",
+         "Splash"
+      ],
+      "Price" : "3 gp",
+      "Level" : "1",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "Alchemist's fire is combination of several volatile liquids that ignite when exposed to air, typically stored in a sealed flask. Alchemist's fire deals 1d8 fire damage, 1 persistent fire damage, and 1 fire splash damage. The target can end this persistent damage by spending an Interact action or by becoming submerged in water or otherwise entering an area deprived of air. A creature adjacent to the target can also end the persistent damage by spending an Interact action."
+   },
+   "Elixir of Life, True" : {
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Rarity" : "Common",
+      "Level" : "16",
+      "Price" : "1,200 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Description" : "Upon drinking this elixir, you regain 14d6 Hit Points, and you end all toxins currently afflicting you as long as those toxins are not higher than 16th level."
+   },
+   "Giant Wasp Venom" : {
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L",
+      "Description" : [
+         {
+            "Maximum Duration" : "6 rounds",
+            "Stage 1" : "1d8 poison damage and sluggish 1 (1 round)",
+            "Saving Throw" : "Fortitude DC 20",
+            "Stage 2" : "1d12 poison damage and sluggish 2 (1 round)",
+            "Stage 3" : "2d8 poison and sluggish 2 (1 round)"
+         }
+      ],
+      "Rarity" : "Common",
+      "Traits" : "Alchemical, Consumable, Injury, Poison",
+      "Activation" : "Operate Activation (Three Actions), no cost",
+      "Price" : "45 gp",
+      "Level" : "7"
+   },
+   "Elixir of Life" : {
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Description" : "Upon drinking this elixir, you regain 7d6 Hit Points and can attempt a new save against any one toxin of 8th level or lower currently afflicting you. If you succeed, the toxin is neutralized.",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ],
+      "Price" : "60 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "8"
+   },
+   "Salamander Elixir" : {
+      "Description" : [
+         {
+            "Onset" : "1 minute"
+         },
+         "For 24 hours after the onset of this elixir, you are protected from the effects of severe heat (see Temperature on page 648)."
+      ],
+      "Bulk" : "L",
+      "Method of Use" : "Held, 1 hand",
+      "Price" : "4 gp",
+      "Activation" : "Operate Activation (Action)",
+      "Level" : "2",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Elixir"
+      ]
+   },
+   "Quicksilver Mutagen, Greater" : {
+      "Traits," : "Alchemical, Consumable Elixir, Mutagen, Polymorph",
+      "Description" : [
+         {
+            "Onset" : "1 minute",
+            "Benefit" : "You gain a +4 item bonus to Acrobatics checks, Stealth checks, Thievery checks, Reflex saves, and ranged attack rolls, and you become accelerated 20.",
+            "Drawback" : "You take a –2 item penalty to Fortitude saves and take 40 damage. You can't recover Hit Points lost in this way by any means while the mutagen lasts.",
+            "Effect" : "For 1 hour after the onset of this mutagen, your features become thin and angular and you become swifter and nimbler, but your body also becomes fragile."
+         }
+      ],
+      "Method of Use" : "Held, 1 hand",
+      "Bulk" : "L",
+      "Activation" : "Operate Activation (Action)",
+      "Price" : "400 gp",
+      "Level" : "13",
+      "Rarity" : "Uncommon"
+   },
+   "Nettleweed Residue" : {
+      "Activation" : "Operate Activation (Action), no cost",
+      "Price" : "55 gp",
+      "Level" : "8",
+      "Rarity" : "Common",
+      "Traits" : [
+         "Alchemical",
+         "Consumable",
+         "Contact",
+         "Poison"
+      ],
+      "Description" : [
+         {
+            "Maximum Duration" : "6 minutes",
+            "Onset" : "1 minute",
+            "Stage 2" : "8d6 poison damage (1 minute)",
+            "Stage 3" : "10d6 poison damage (1 minute)",
+            "Saving Throw" : "Fortitude DC 22",
+            "Stage 1" : "6d6 poison damage (1 minute)"
+         }
+      ],
+      "Method of Use" : "Held, 2 hands",
+      "Bulk" : "L"
+   }
+}

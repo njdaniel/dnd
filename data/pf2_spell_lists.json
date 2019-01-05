@@ -1,0 +1,1778 @@
+{
+  "Arcane" : {
+    "Cantrips" : {
+      "Ray of frost" : [
+        "H"
+      ],
+      "Chill touch" : [
+        "H"
+      ],
+      "Produce flame" : [
+        "H"
+      ],
+      "Mage hand" : [
+        "H"
+      ],
+      "Tanglefoot" : [
+        "H"
+      ],
+      "Message" : [
+        "H"
+      ],
+      "Light" : [
+        "H"
+      ],
+      "Acid splash" : [
+        "H"
+      ],
+      "Ghost sound" : [
+        "H"
+      ],
+      "Detect magic" : [
+        "H"
+      ],
+      "Prestidigitation" : null,
+      "Disrupt undead" : [
+        "H"
+      ],
+      "Sigil" : [
+        "H"
+      ],
+      "Daze" : null,
+      "Read aura" : [
+        "H"
+      ],
+      "Telekinetic projectile" : [
+        "H"
+      ],
+      "Shield" : [
+        "H"
+      ],
+      "Electric arc" : [
+        "H"
+      ],
+      "Dancing lights" : null
+    },
+    "2nd" : {
+      "Magic mouth" : null,
+      "Comprehend language" : [
+        "H"
+      ],
+      "False life" : [
+        "H"
+      ],
+      "Obscuring mist" : null,
+      "Shrink" : [
+        "H"
+      ],
+      "Deafness" : null,
+      "Darkvision" : [
+        "H"
+      ],
+      "Pest form" : [
+        "H"
+      ],
+      "Humanoid form" : [
+        "H"
+      ],
+      "Touch of idiocy" : null,
+      "Web" : [
+        "H"
+      ],
+      "Glitterdust" : null,
+      "Continual flame" : [
+        "H"
+      ],
+      "See invisibility" : [
+        "H"
+      ],
+      "Misdirection" : null,
+      "Water walk" : [
+        "H"
+      ],
+      "Darkness" : [
+        "H"
+      ],
+      "Telekinetic maneuver" : null,
+      "Spider climb" : null,
+      "Enlarge" : [
+        "H"
+      ],
+      "Flaming sphere" : [
+        "H"
+      ],
+      "Phantom steed" : [
+        "H"
+      ],
+      "Gentle repose" : [
+        "H"
+      ],
+      "Invisibility" : [
+        "H"
+      ],
+      "Spectral hand" : null,
+      "Knock" : null,
+      "Illusory creature" : [
+        "H"
+      ],
+      "Blur" : null,
+      "Endure elements" : [
+        "H"
+      ],
+      "Water breathing" : [
+        "H"
+      ],
+      "Create food" : [
+        "H"
+      ],
+      "Hideous laughter" : null,
+      "Mirror image" : null,
+      "Acid arrow" : [
+        "H"
+      ],
+      "Resist energy" : [
+        "H"
+      ]
+    },
+    "10th" : {
+      "Wish" : [
+        "U"
+      ],
+      "Gate" : [
+        "U"
+      ],
+      "Time stop" : [
+        "U"
+      ]
+    },
+    "9th" : {
+      "Disjunction" : [
+        "U"
+      ],
+      "Meteor swarm" : [
+        "H"
+      ],
+      "Implosion" : [
+        "H"
+      ],
+      "Power word kill" : [
+        "H",
+        "U"
+      ],
+      "Weird" : null,
+      "Foresight" : null,
+      "Resplendent mansion" : null,
+      "Shapechange" : null,
+      "Prismatic sphere" : null
+    },
+    "3rd" : {
+      "Clairaudience" : null,
+      "Bind undead" : null,
+      "Slow" : [
+        "H"
+      ],
+      "Paralyze" : [
+        "H"
+      ],
+      "Feet to fins" : null,
+      "Dispel magic" : null,
+      "Stinking cloud" : null,
+      "Secret page" : null,
+      "Levitate" : null,
+      "Blindness" : null,
+      "Hypnotic pattern" : null,
+      "Invisibility sphere" : [
+        "H"
+      ],
+      "Fireball" : [
+        "H"
+      ],
+      "Vampiric touch" : [
+        "H"
+      ],
+      "Haste" : [
+        "H"
+      ],
+      "Earthbind" : null,
+      "Meld into stone" : null,
+      "Lightning bolt" : [
+        "H"
+      ],
+      "Ghostly weapon" : null,
+      "Locate" : [
+        "H",
+        "U"
+      ],
+      "Wall of wind" : null,
+      "Enthrall" : null,
+      "Glyph of Warding" : null,
+      "Mind reading" : [
+        "U"
+      ],
+      "Nondetection" : [
+        "U"
+      ],
+      "Shrink item" : null,
+      "Dream message" : [
+        "H"
+      ]
+    },
+    "1st" : {
+      "Illusory object" : [
+        "H"
+      ],
+      "Mage armor" : [
+        "H"
+      ],
+      "Ray of enfeeblement" : null,
+      "Gust of wind" : null,
+      "Magic missile" : [
+        "H"
+      ],
+      "Magic weapon" : null,
+      "Mending" : [
+        "H"
+      ],
+      "Grim tendrils" : [
+        "H"
+      ],
+      "Color spray" : null,
+      "Grease" : null,
+      "Air bubble" : null,
+      "Sleep" : [
+        "H"
+      ],
+      "Item facade" : [
+        "H"
+      ],
+      "Ventriloquism" : [
+        "H"
+      ],
+      "Create water" : null,
+      "Unseen servant" : null,
+      "Burning hands" : [
+        "H"
+      ],
+      "Fleet step" : null,
+      "Floating disk" : null,
+      "Jump" : [
+        "H"
+      ],
+      "Spider sting" : null,
+      "Lock" : [
+        "H"
+      ],
+      "Longstrider" : [
+        "H"
+      ],
+      "Alarm" : [
+        "H"
+      ],
+      "Ant haul" : null,
+      "Charm" : [
+        "H"
+      ],
+      "True strike" : null,
+      "Illusory disguise" : [
+        "H"
+      ],
+      "Negate aroma" : [
+        "H"
+      ],
+      "Shocking grasp" : [
+        "H"
+      ],
+      "Feather fall" : null,
+      "Goblin pox" : null,
+      "Summon monster" : [
+        "H"
+      ],
+      "Magic aura" : [
+        "H",
+        "U"
+      ],
+      "Fear" : [
+        "H"
+      ],
+      "Command" : [
+        "H"
+      ]
+    },
+    "6th" : {
+      "Feeblemind" : [
+        "H"
+      ],
+      "Phantasmal calamity" : [
+        "H"
+      ],
+      "Repulsion" : null,
+      "Collective transposition" : [
+        "H"
+      ],
+      "Mislead" : null,
+      "Vibrant pattern" : null,
+      "Baleful polymorph" : [
+        "H"
+      ],
+      "Chain lightning" : [
+        "H"
+      ],
+      "Dominate" : [
+        "H",
+        "U"
+      ],
+      "Purple worm sting" : null,
+      "Disintegrate" : [
+        "H"
+      ],
+      "Scrying" : [
+        "U"
+      ],
+      "Teleport" : [
+        "H",
+        "U"
+      ],
+      "Spellwrack" : null,
+      "Vampiric exsanguination" : [
+        "H"
+      ],
+      "Flesh to stone" : null,
+      "Dragon form" : [
+        "H"
+      ],
+      "True seeing" : null,
+      "Wall of force" : [
+        "H"
+      ]
+    },
+    "7th" : {
+      "Dimensional lock" : [
+        "U"
+      ],
+      "Mask of terror" : [
+        "H"
+      ],
+      "Fiery body" : [
+        "H"
+      ],
+      "Magnificent mansion" : [
+        "U"
+      ],
+      "Prismatic spray" : null,
+      "Duplicate foe" : [
+        "H"
+      ],
+      "Energy aegis" : [
+        "H"
+      ],
+      "Leng's sting" : null,
+      "Spell turning" : [
+        "U"
+      ],
+      "Power word blind" : [
+        "H",
+        "U"
+      ],
+      "Contingency" : [
+        "H",
+        "U"
+      ],
+      "Project image" : [
+        "H"
+      ],
+      "Warp mind" : null,
+      "Plane shift" : [
+        "U"
+      ],
+      "Reverse gravity" : [
+        "U"
+      ]
+    },
+    "5th" : {
+      "Telekinetic haul" : null,
+      "Sending" : null,
+      "Drop dead" : [
+        "H",
+        "U"
+      ],
+      "Wall of stone" : [
+        "H"
+      ],
+      "False vision" : [
+        "U"
+      ],
+      "Passwall" : [
+        "H",
+        "U"
+      ],
+      "Elemental form" : [
+        "H"
+      ],
+      "Chromatic wall" : [
+        "H"
+      ],
+      "Hallucination" : [
+        "H"
+      ],
+      "Mind probe" : [
+        "U"
+      ],
+      "Telepathic bond" : [
+        "U"
+      ],
+      "Wall of ice" : [
+        "H"
+      ],
+      "Shadow siphon" : null,
+      "Black tentacles" : null,
+      "Cone of cold" : [
+        "H"
+      ],
+      "Illusory scene" : [
+        "H"
+      ],
+      "Crushing despair" : [
+        "H"
+      ],
+      "Banishment" : [
+        "H"
+      ],
+      "Tongues" : [
+        "U"
+      ],
+      "Shadow walk" : [
+        "U"
+      ],
+      "Control water" : null,
+      "Mariner's curse" : null,
+      "Cloudkill" : [
+        "H"
+      ],
+      "Cloak of colors" : null,
+      "Prying eye" : null
+    },
+    "8th" : {
+      "Maze" : null,
+      "Uncontrollable dance" : null,
+      "Unrelenting observation" : null,
+      "Polar ray" : [
+        "H"
+      ],
+      "Discern location" : [
+        "U"
+      ],
+      "Power word stun" : [
+        "H",
+        "U"
+      ],
+      "Scintillating pattern" : null,
+      "Mind blank" : [
+        "U"
+      ],
+      "Horrid wilting" : [
+        "H"
+      ],
+      "Antimagic field" : [
+        "R"
+      ],
+      "Dream council" : null,
+      "Prismatic wall" : null,
+      "Disappearance" : null,
+      "Earthquake" : [
+        "H"
+      ],
+      "Monstrosity form" : null
+    },
+    "4th" : {
+      "Detect scrying" : [
+        "H",
+        "U"
+      ],
+      "Discern lies" : [
+        "U"
+      ],
+      "Solid fog" : null,
+      "Spell immunity" : null,
+      "Phantasmal killer" : [
+        "H"
+      ],
+      "Wall of fire" : [
+        "H"
+      ],
+      "Veil" : [
+        "H"
+      ],
+      "Rope trick" : [
+        "U"
+      ],
+      "Suggestion" : [
+        "H"
+      ],
+      "Confusion" : [
+        "H"
+      ],
+      "Shape stone" : null,
+      "Freedom of movement" : null,
+      "Telepathy" : [
+        "H"
+      ],
+      "Dimensional anchor" : null,
+      "Creation" : [
+        "H"
+      ],
+      "Fly" : [
+        "H"
+      ],
+      "Aerial form" : [
+        "H"
+      ],
+      "Resilient sphere" : null,
+      "Private sanctum" : [
+        "U"
+      ],
+      "Nightmare" : [
+        "U"
+      ],
+      "Weapon storm" : [
+        "H"
+      ],
+      "Globe of invulnerability" : [
+        "U"
+      ],
+      "Enervation" : null,
+      "Hallucinatory terrain" : [
+        "H",
+        "U"
+      ],
+      "Stoneskin" : [
+        "H"
+      ],
+      "Gaseous form" : null,
+      "Outcast's curse" : null,
+      "Dimension door" : [
+        "H"
+      ],
+      "Blink" : null,
+      "Clairvoyance" : null,
+      "Fire shield" : [
+        "H"
+      ]
+    }
+  },
+  "Occult" : {
+    "4th" : {
+      "Talking corpse" : [
+        "U"
+      ],
+      "Outcast's curse" : null,
+      "Gaseous form" : null,
+      "Clairvoyance" : null,
+      "Dimension door" : [
+        "H"
+      ],
+      "Blink" : null,
+      "Nightmare" : [
+        "U"
+      ],
+      "Private sanctum" : [
+        "U"
+      ],
+      "Resilient sphere" : null,
+      "Globe of invulnerability" : [
+        "U"
+      ],
+      "Modify memory" : [
+        "H",
+        "U"
+      ],
+      "Hallucinatory terrain" : [
+        "H",
+        "U"
+      ],
+      "Enervation" : null,
+      "Confusion" : [
+        "H"
+      ],
+      "Read omens" : [
+        "U"
+      ],
+      "Dimensional anchor" : null,
+      "Telepathy" : [
+        "H"
+      ],
+      "Fly" : [
+        "H"
+      ],
+      "Detect scrying" : [
+        "H",
+        "U"
+      ],
+      "Spell immunity" : null,
+      "Discern lies" : [
+        "U"
+      ],
+      "Remove curse" : null,
+      "Phantasmal killer" : [
+        "H"
+      ],
+      "Veil" : [
+        "H"
+      ],
+      "Suggestion" : [
+        "H"
+      ],
+      "Rope trick" : [
+        "U"
+      ]
+    },
+    "8th" : {
+      "Disappearance" : null,
+      "Discern location" : [
+        "U"
+      ],
+      "Prismatic wall" : null,
+      "Scintillating pattern" : null,
+      "Mind blank" : [
+        "U"
+      ],
+      "Spiritual epidemic" : null,
+      "Uncontrollable dance" : null,
+      "Dream council" : null,
+      "Antimagic field" : [
+        "R"
+      ],
+      "Maze" : null,
+      "Unrelenting observation" : null
+    },
+    "7th" : {
+      "Magnificent mansion" : [
+        "U"
+      ],
+      "Prismatic spray" : null,
+      "Retrocognition" : [
+        "H"
+      ],
+      "Mask of terror" : [
+        "H"
+      ],
+      "Dimensional lock" : [
+        "U"
+      ],
+      "Visions of danger" : [
+        "H"
+      ],
+      "Plane shift" : [
+        "U"
+      ],
+      "Possession" : [
+        "H",
+        "U"
+      ],
+      "Ethereal jaunt" : [
+        "H",
+        "U"
+      ],
+      "Reverse gravity" : [
+        "U"
+      ],
+      "Leng's sting" : null,
+      "Energy aegis" : [
+        "H"
+      ],
+      "Duplicate foe" : [
+        "H"
+      ],
+      "Warp mind" : null,
+      "Project image" : [
+        "H"
+      ]
+    },
+    "5th" : {
+      "Sending" : null,
+      "Death ward" : null,
+      "Telekinetic haul" : null,
+      "False vision" : [
+        "U"
+      ],
+      "Drop dead" : [
+        "H",
+        "U"
+      ],
+      "Shadow blast" : [
+        "H",
+        "U"
+      ],
+      "Abyssal plague" : null,
+      "Chromatic wall" : [
+        "H"
+      ],
+      "Hallucination" : [
+        "H"
+      ],
+      "Mind probe" : [
+        "U"
+      ],
+      "Telepathic bond" : [
+        "U"
+      ],
+      "Black tentacles" : null,
+      "Synaptic pulse" : null,
+      "Shadow siphon" : null,
+      "Crushing despair" : [
+        "H"
+      ],
+      "Illusory scene" : [
+        "H"
+      ],
+      "Shadow walk" : [
+        "U"
+      ],
+      "Tongues" : [
+        "U"
+      ],
+      "Banishment" : [
+        "H"
+      ],
+      "Mariner's curse" : null,
+      "Cloak of colors" : null,
+      "Prying eye" : null,
+      "Synesthesia" : [
+        "H"
+      ]
+    },
+    "6th" : {
+      "Vibrant pattern" : null,
+      "Mislead" : null,
+      "Spirit blast" : [
+        "H"
+      ],
+      "Phantasmal calamity" : [
+        "H"
+      ],
+      "Feeblemind" : [
+        "H"
+      ],
+      "Repulsion" : null,
+      "Collective transposition" : [
+        "H"
+      ],
+      "Vampiric exsanguination" : [
+        "H"
+      ],
+      "True seeing" : null,
+      "Wall of force" : [
+        "H"
+      ],
+      "Dominate" : [
+        "H",
+        "U"
+      ],
+      "Scrying" : [
+        "U"
+      ],
+      "Teleport" : [
+        "H",
+        "U"
+      ],
+      "Spellwrack" : null
+    },
+    "3rd" : {
+      "Zone of truth" : [
+        "U"
+      ],
+      "Enthrall" : null,
+      "Locate" : [
+        "H",
+        "U"
+      ],
+      "Dream message" : [
+        "H"
+      ],
+      "Nondetection" : [
+        "U"
+      ],
+      "Glyph of Warding" : null,
+      "Mind reading" : [
+        "U"
+      ],
+      "Circle of protection" : [
+        "H",
+        "U"
+      ],
+      "Haste" : [
+        "H"
+      ],
+      "Vampiric touch" : [
+        "H"
+      ],
+      "Heroism" : [
+        "H"
+      ],
+      "Ghostly weapon" : null,
+      "Dispel magic" : null,
+      "Hypnotic pattern" : null,
+      "Invisibility sphere" : [
+        "H"
+      ],
+      "Blindness" : null,
+      "Hypercognition" : null,
+      "Secret page" : null,
+      "Levitate" : null,
+      "Bind undead" : null,
+      "Slow" : [
+        "H"
+      ],
+      "Clairaudience" : null,
+      "Paralyze" : [
+        "H"
+      ]
+    },
+    "1st" : {
+      "Bane" : null,
+      "Illusory disguise" : [
+        "H"
+      ],
+      "True strike" : null,
+      "Command" : [
+        "H"
+      ],
+      "Magic aura" : [
+        "H",
+        "U"
+      ],
+      "Fear" : [
+        "H"
+      ],
+      "Bless" : null,
+      "Sanctuary" : null,
+      "Summon monster" : [
+        "H"
+      ],
+      "Charm" : [
+        "H"
+      ],
+      "Alarm" : [
+        "H"
+      ],
+      "Lock" : [
+        "H"
+      ],
+      "Detect alignment" : [
+        "H",
+        "U"
+      ],
+      "Floating disk" : null,
+      "Sleep" : [
+        "H"
+      ],
+      "Color spray" : null,
+      "Grim tendrils" : [
+        "H"
+      ],
+      "Protection" : [
+        "U"
+      ],
+      "Mending" : [
+        "H"
+      ],
+      "Soothe" : [
+        "H"
+      ],
+      "Unseen servant" : null,
+      "Mindlink" : null,
+      "Ventriloquism" : [
+        "H"
+      ],
+      "Item facade" : [
+        "H"
+      ],
+      "Ray of enfeeblement" : null,
+      "Mage armor" : [
+        "H"
+      ],
+      "Illusory object" : [
+        "H"
+      ],
+      "Phantom pain" : [
+        "H"
+      ],
+      "Magic weapon" : null,
+      "Magic missile" : [
+        "H"
+      ]
+    },
+    "9th" : {
+      "Bind soul" : [
+        "U"
+      ],
+      "Weird" : null,
+      "Resplendent mansion" : null,
+      "Unfathomable song" : null,
+      "Overwhelming presence" : null,
+      "Foresight" : null,
+      "Prismatic sphere" : null,
+      "Wail of the banshee" : null
+    },
+    "10th" : {
+      "Gate" : [
+        "U"
+      ],
+      "Time stop" : [
+        "U"
+      ],
+      "Fabricated truth" : [
+        "U"
+      ],
+      "Alter reality" : [
+        "U"
+      ]
+    },
+    "2nd" : {
+      "See invisibility" : [
+        "H"
+      ],
+      "Misdirection" : null,
+      "Touch of idiocy" : null,
+      "Continual flame" : [
+        "H"
+      ],
+      "Undetectable alignment" : [
+        "U"
+      ],
+      "Death knell" : null,
+      "Remove paralysis" : [
+        "H"
+      ],
+      "Calm emotions" : null,
+      "Deafness" : null,
+      "Darkvision" : [
+        "H"
+      ],
+      "Humanoid form" : [
+        "H"
+      ],
+      "Status" : [
+        "H"
+      ],
+      "Restoration" : [
+        "H"
+      ],
+      "Remove fear" : [
+        "H"
+      ],
+      "Augury" : null,
+      "Restore senses" : [
+        "H"
+      ],
+      "Comprehend language" : [
+        "H"
+      ],
+      "Magic mouth" : null,
+      "False life" : [
+        "H"
+      ],
+      "Faerie fire" : null,
+      "Mirror image" : null,
+      "Resist energy" : [
+        "H"
+      ],
+      "Hideous laughter" : null,
+      "Ghoulish cravings" : null,
+      "Blur" : null,
+      "Silence" : [
+        "H"
+      ],
+      "Knock" : null,
+      "Illusory creature" : [
+        "H"
+      ],
+      "Gentle repose" : [
+        "H"
+      ],
+      "Sound burst" : [
+        "H"
+      ],
+      "Invisibility" : [
+        "H"
+      ],
+      "Spectral hand" : null,
+      "Spiritual weapon" : [
+        "H"
+      ],
+      "Phantom steed" : [
+        "H"
+      ],
+      "Paranoia" : [
+        "H"
+      ],
+      "Darkness" : [
+        "H"
+      ],
+      "Telekinetic maneuver" : null
+    },
+    "Cantrips" : {
+      "Prestidigitation" : null,
+      "Disrupt undead" : [
+        "H"
+      ],
+      "Read aura" : [
+        "H"
+      ],
+      "Sigil" : [
+        "H"
+      ],
+      "Daze" : null,
+      "Know direction" : [
+        "H"
+      ],
+      "Telekinetic projectile" : [
+        "H"
+      ],
+      "Forbidding ward" : [
+        "H"
+      ],
+      "Dancing lights" : null,
+      "Shield" : [
+        "H"
+      ],
+      "Chill touch" : [
+        "H"
+      ],
+      "Guidance" : null,
+      "Mage hand" : [
+        "H"
+      ],
+      "Light" : [
+        "H"
+      ],
+      "Message" : [
+        "H"
+      ],
+      "Detect magic" : [
+        "H"
+      ],
+      "Ghost sound" : [
+        "H"
+      ]
+    }
+  },
+  "Divine" : {
+    "5th" : {
+      "Death ward" : null,
+      "Sending" : null,
+      "Spiritual guardian" : [
+        "H"
+      ],
+      "Abyssal plague" : null,
+      "Banishment" : [
+        "H"
+      ],
+      "Prying eye" : null,
+      "Shadow blast" : [
+        "H",
+        "U"
+      ],
+      "Breath of life" : null,
+      "Flame strike" : [
+        "H"
+      ]
+    },
+    "7th" : {
+      "Plane shift" : [
+        "U"
+      ],
+      "Regenerate" : [
+        "H"
+      ],
+      "Divine decree" : [
+        "H"
+      ],
+      "Ethereal jaunt" : [
+        "H",
+        "U"
+      ],
+      "Finger of death" : [
+        "H"
+      ],
+      "Energy aegis" : [
+        "H"
+      ],
+      "Weakening ground" : [
+        "H"
+      ],
+      "Leng's sting" : null,
+      "Dimensional lock" : [
+        "U"
+      ]
+    },
+    "8th" : {
+      "Moment of renewal" : null,
+      "Antimagic field" : [
+        "R"
+      ],
+      "Divine inspiration" : null,
+      "Wind walk" : null,
+      "Divine aura" : null,
+      "Discern location" : [
+        "U"
+      ],
+      "Spiritual epidemic" : null
+    },
+    "4th" : {
+      "Globe of invulnerability" : [
+        "U"
+      ],
+      "Enervation" : null,
+      "Discern lies" : [
+        "U"
+      ],
+      "Spell immunity" : null,
+      "Remove curse" : null,
+      "Air walk" : null,
+      "Read omens" : [
+        "U"
+      ],
+      "Outcast's curse" : null,
+      "Divine wrath" : [
+        "H"
+      ],
+      "Freedom of movement" : null,
+      "Dimensional anchor" : null,
+      "Talking corpse" : [
+        "U"
+      ]
+    },
+    "Cantrips" : {
+      "Stabilize" : [
+        "H"
+      ],
+      "Chill touch" : [
+        "H"
+      ],
+      "Guidance" : null,
+      "Light" : [
+        "H"
+      ],
+      "Message" : [
+        "H"
+      ],
+      "Detect magic" : [
+        "H"
+      ],
+      "Disrupt undead" : [
+        "H"
+      ],
+      "Prestidigitation" : null,
+      "Know direction" : [
+        "H"
+      ],
+      "Daze" : null,
+      "Sigil" : [
+        "H"
+      ],
+      "Read aura" : [
+        "H"
+      ],
+      "Shield" : [
+        "H"
+      ],
+      "Forbidding ward" : [
+        "H"
+      ]
+    },
+    "2nd" : {
+      "Death knell" : null,
+      "Undetectable alignment" : [
+        "U"
+      ],
+      "Continual flame" : [
+        "H"
+      ],
+      "See invisibility" : [
+        "H"
+      ],
+      "Deafness" : null,
+      "Darkvision" : [
+        "H"
+      ],
+      "Status" : [
+        "H"
+      ],
+      "Restoration" : [
+        "H"
+      ],
+      "Remove fear" : [
+        "H"
+      ],
+      "Calm emotions" : null,
+      "Shield other" : null,
+      "Augury" : null,
+      "Restore senses" : [
+        "H"
+      ],
+      "Faerie fire" : null,
+      "Resist energy" : [
+        "H"
+      ],
+      "Endure elements" : [
+        "H"
+      ],
+      "Silence" : [
+        "H"
+      ],
+      "Water breathing" : [
+        "H"
+      ],
+      "Create food" : [
+        "H"
+      ],
+      "Ghoulish cravings" : null,
+      "Gentle repose" : [
+        "H"
+      ],
+      "Sound burst" : [
+        "H"
+      ],
+      "Water walk" : [
+        "H"
+      ],
+      "Darkness" : [
+        "H"
+      ],
+      "Spiritual weapon" : [
+        "H"
+      ]
+    },
+    "3rd" : {
+      "Neutralize poison" : null,
+      "Vampiric touch" : [
+        "H"
+      ],
+      "Heroism" : [
+        "H"
+      ],
+      "Bind undead" : null,
+      "Circle of protection" : [
+        "H",
+        "U"
+      ],
+      "Glyph of Warding" : null,
+      "Searing light" : [
+        "H"
+      ],
+      "Blindness" : null,
+      "Sanctified ground" : null,
+      "Dream message" : [
+        "H"
+      ],
+      "Dispel magic" : null,
+      "Locate" : [
+        "H",
+        "U"
+      ],
+      "Remove disease" : null,
+      "Crisis of faith" : [
+        "H"
+      ],
+      "Zone of truth" : [
+        "U"
+      ]
+    },
+    "1st" : {
+      "Magic weapon" : null,
+      "Detect alignment" : [
+        "H",
+        "U"
+      ],
+      "Detect poison" : [
+        "H",
+        "U"
+      ],
+      "Lock" : [
+        "H"
+      ],
+      "Disrupting weapons" : [
+        "H"
+      ],
+      "Alarm" : [
+        "H"
+      ],
+      "Ray of enfeeblement" : null,
+      "Heal" : [
+        "H"
+      ],
+      "Harm" : [
+        "H"
+      ],
+      "Ventriloquism" : [
+        "H"
+      ],
+      "Sanctuary" : null,
+      "Summon monster" : [
+        "H"
+      ],
+      "Bless" : null,
+      "Fear" : [
+        "H"
+      ],
+      "Create water" : null,
+      "Command" : [
+        "H"
+      ],
+      "Mending" : [
+        "H"
+      ],
+      "Protection" : [
+        "U"
+      ],
+      "Bane" : null,
+      "Air bubble" : null,
+      "Purify food and drink" : null
+    },
+    "10th" : {
+      "Avatar" : [
+        "U"
+      ],
+      "Gate" : [
+        "U"
+      ],
+      "Miracle" : [
+        "U"
+      ]
+    },
+    "9th" : {
+      "Bind soul" : [
+        "U"
+      ],
+      "Weapon of judgment" : [
+        "H"
+      ],
+      "Revival" : [
+        "U"
+      ],
+      "Wail of the banshee" : null,
+      "Crusade" : [
+        "H",
+        "U"
+      ],
+      "Overwhelming presence" : null,
+      "Foresight" : null
+    },
+    "6th" : {
+      "Stone tell" : [
+        "U"
+      ],
+      "True seeing" : null,
+      "Vampiric exsanguination" : [
+        "H"
+      ],
+      "Spellwrack" : null,
+      "Raise dead" : [
+        "H",
+        "U"
+      ],
+      "Repulsion" : null,
+      "Righteous might" : [
+        "H"
+      ],
+      "Stone to flesh" : null,
+      "Spirit blast" : [
+        "H"
+      ],
+      "Blade barrier" : [
+        "H"
+      ],
+      "Field of life" : [
+        "H"
+      ]
+    }
+  },
+  "Primal" : {
+    "3rd" : {
+      "Dispel magic" : null,
+      "Animal form" : [
+        "H"
+      ],
+      "Insect form" : [
+        "H"
+      ],
+      "Wall of wind" : null,
+      "Remove disease" : null,
+      "Stinking cloud" : null,
+      "Glyph of Warding" : null,
+      "Searing light" : [
+        "H"
+      ],
+      "Blindness" : null,
+      "Nondetection" : [
+        "U"
+      ],
+      "Fireball" : [
+        "H"
+      ],
+      "Haste" : [
+        "H"
+      ],
+      "Wall of thorns" : [
+        "H"
+      ],
+      "Earthbind" : null,
+      "Slow" : [
+        "H"
+      ],
+      "Neutralize poison" : null,
+      "Meld into stone" : null,
+      "Lightning bolt" : [
+        "H"
+      ],
+      "Feet to fins" : null
+    },
+    "1st" : {
+      "Goblin pox" : null,
+      "Fear" : [
+        "H"
+      ],
+      "Feather fall" : null,
+      "Shocking grasp" : [
+        "H"
+      ],
+      "Shillelagh" : null,
+      "Negate aroma" : [
+        "H"
+      ],
+      "Purify food and drink" : null,
+      "Detect poison" : [
+        "H",
+        "U"
+      ],
+      "Fleet step" : null,
+      "Alarm" : [
+        "H"
+      ],
+      "Ant haul" : null,
+      "Charm" : [
+        "H"
+      ],
+      "Spider sting" : null,
+      "Jump" : [
+        "H"
+      ],
+      "Longstrider" : [
+        "H"
+      ],
+      "Burning hands" : [
+        "H"
+      ],
+      "Summon nature's ally" : null,
+      "Magic fang" : null,
+      "Pass without trace" : [
+        "H"
+      ],
+      "Ventriloquism" : [
+        "H"
+      ],
+      "Create water" : null,
+      "Mending" : [
+        "H"
+      ],
+      "Grease" : null,
+      "Air bubble" : null,
+      "Gust of wind" : null,
+      "Heal" : [
+        "H"
+      ]
+    },
+    "10th" : {
+      "Nature incarnate" : [
+        "U"
+      ],
+      "Primal herd" : [
+        "U"
+      ],
+      "Primal phenomenon" : [
+        "U"
+      ]
+    },
+    "9th" : {
+      "Disjunction" : [
+        "U"
+      ],
+      "Implosion" : [
+        "H"
+      ],
+      "Meteor swarm" : [
+        "H"
+      ],
+      "Storm of vengeance" : [
+        "H"
+      ],
+      "Nature's enmity" : null,
+      "Shapechange" : null
+    },
+    "6th" : {
+      "Purple worm sting" : null,
+      "Flesh to stone" : null,
+      "Dragon form" : [
+        "H"
+      ],
+      "True seeing" : null,
+      "Tangling creepers" : null,
+      "Stone to flesh" : null,
+      "Field of life" : [
+        "H"
+      ],
+      "Baleful polymorph" : [
+        "H"
+      ],
+      "Chain lightning" : [
+        "H"
+      ],
+      "Stone tell" : [
+        "U"
+      ],
+      "Fire seeds" : [
+        "H"
+      ]
+    },
+    "Cantrips" : {
+      "Produce flame" : [
+        "H"
+      ],
+      "Guidance" : null,
+      "Ray of frost" : [
+        "H"
+      ],
+      "Stabilize" : [
+        "H"
+      ],
+      "Detect magic" : [
+        "H"
+      ],
+      "Tanglefoot" : [
+        "H"
+      ],
+      "Light" : [
+        "H"
+      ],
+      "Acid splash" : [
+        "H"
+      ],
+      "Know direction" : [
+        "H"
+      ],
+      "Read aura" : [
+        "H"
+      ],
+      "Sigil" : [
+        "H"
+      ],
+      "Prestidigitation" : null,
+      "Disrupt undead" : [
+        "H"
+      ],
+      "Electric arc" : [
+        "H"
+      ],
+      "Dancing lights" : null
+    },
+    "2nd" : {
+      "Acid arrow" : [
+        "H"
+      ],
+      "Resist energy" : [
+        "H"
+      ],
+      "Faerie fire" : null,
+      "Barkskin" : [
+        "H"
+      ],
+      "Water breathing" : [
+        "H"
+      ],
+      "Create food" : [
+        "H"
+      ],
+      "Endure elements" : [
+        "H"
+      ],
+      "Gentle repose" : [
+        "H"
+      ],
+      "Entangle" : null,
+      "Phantom steed" : [
+        "H"
+      ],
+      "Enlarge" : [
+        "H"
+      ],
+      "Spider climb" : null,
+      "Flaming sphere" : [
+        "H"
+      ],
+      "Darkness" : [
+        "H"
+      ],
+      "Shape wood" : null,
+      "Water walk" : [
+        "H"
+      ],
+      "Animal messenger" : null,
+      "Tree shape" : null,
+      "Glitterdust" : null,
+      "Web" : [
+        "H"
+      ],
+      "Continual flame" : [
+        "H"
+      ],
+      "Remove paralysis" : [
+        "H"
+      ],
+      "Status" : [
+        "H"
+      ],
+      "Pest form" : [
+        "H"
+      ],
+      "Restoration" : [
+        "H"
+      ],
+      "Humanoid form" : [
+        "H"
+      ],
+      "Remove fear" : [
+        "H"
+      ],
+      "Deafness" : null,
+      "Darkvision" : [
+        "H"
+      ],
+      "Restore senses" : [
+        "H"
+      ],
+      "Speak with animals" : null,
+      "Obscuring mist" : null,
+      "Shrink" : [
+        "H"
+      ]
+    },
+    "4th" : {
+      "Wall of fire" : [
+        "H"
+      ],
+      "Weapon storm" : [
+        "H"
+      ],
+      "Hallucinatory terrain" : [
+        "H",
+        "U"
+      ],
+      "Aerial form" : [
+        "H"
+      ],
+      "Solid fog" : null,
+      "Creation" : [
+        "H"
+      ],
+      "Fly" : [
+        "H"
+      ],
+      "Air walk" : null,
+      "Fire shield" : [
+        "H"
+      ],
+      "Dinosaur form" : [
+        "H"
+      ],
+      "Shape stone" : null,
+      "Stoneskin" : [
+        "H"
+      ],
+      "Gaseous form" : null,
+      "Freedom of movement" : null,
+      "Speak with plants" : null
+    },
+    "7th" : {
+      "Regenerate" : [
+        "H"
+      ],
+      "Plane shift" : [
+        "U"
+      ],
+      "Fiery body" : [
+        "H"
+      ],
+      "Finger of death" : [
+        "H"
+      ],
+      "Leng's sting" : null,
+      "Energy aegis" : [
+        "H"
+      ],
+      "Mask of terror" : [
+        "H"
+      ],
+      "Sunburst" : [
+        "H"
+      ],
+      "Unfettered pack" : [
+        "H"
+      ],
+      "Volcanic eruption" : [
+        "H"
+      ]
+    },
+    "5th" : {
+      "Wall of ice" : [
+        "H"
+      ],
+      "Cloudkill" : [
+        "H"
+      ],
+      "Mariner's curse" : null,
+      "Death ward" : null,
+      "Plant form" : [
+        "H"
+      ],
+      "Elemental form" : [
+        "H"
+      ],
+      "Moon frenzy" : [
+        "H"
+      ],
+      "Banishment" : [
+        "H"
+      ],
+      "Control water" : null,
+      "Tree stride" : [
+        "H",
+        "U"
+      ],
+      "Passwall" : [
+        "H",
+        "U"
+      ],
+      "Wall of stone" : [
+        "H"
+      ],
+      "Cone of cold" : [
+        "H"
+      ]
+    },
+    "8th" : {
+      "Monstrosity form" : null,
+      "Earthquake" : [
+        "H"
+      ],
+      "Punishing winds" : null,
+      "Polar ray" : [
+        "H"
+      ],
+      "Wind walk" : null,
+      "Horrid wilting" : [
+        "H"
+      ],
+      "Moment of renewal" : null
+    }
+  }
+}
