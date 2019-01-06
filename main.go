@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/njdaniel/pf-2e/cmd"
+import "github.com/njdaniel/dnd/cmd"
 
 func main() {
 	cmd.Execute()

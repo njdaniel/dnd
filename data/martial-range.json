@@ -1,0 +1,24 @@
+[{
+  "name": "Longbow xxx",
+  "range": "100ft",
+  "cost": "60-160 sp",
+  "type": "P",
+  "dmg": "1d8",
+  "fullText": "Draw lb range from 100(+0)-200(+5) based on STR mod. Volley 50. Deadly d10. "
+},
+  {
+    "name": "Shortbow",
+    "range": "60",
+    "cost": "30 sp",
+    "type": "P",
+    "dmg": "1d6",
+    "fullText": "Deadly d10"
+  },
+  {
+    "name": "Composite",
+    "range": "100 ft",
+    "cost": "200",
+    "type": "P",
+    "dmg": "1d8",
+    "fullText": "Deadly d10"
+  }]
