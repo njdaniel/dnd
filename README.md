@@ -22,3 +22,5 @@ https://spellfinder.github.io/spells/
   - search equipment
   - search traits
   
+  - Scrape data
+  

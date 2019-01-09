@@ -38,7 +38,7 @@ Data includes:
   traits
   equipment
   magic_items
-
+  alchemical_items
 
 `,
 	Run: func(cmd *cobra.Command, args []string) {
