@@ -1,21 +1,40 @@
 package main
 
 import (
+	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func main() {
-
+	PullTable()
 }
 
 //PullTable grab data from table in html and create json file
 func PullTable() {
 	//open output.html
+	dataInBytes, err := ioutil.ReadFile("output.html")
+	if err != nil {
+
+	}
+	pageContent := string(dataInBytes)
 
 	// get <table with children
+	tableStartIndex := strings.Index(pageContent, "<table")
+	if tableStartIndex == -1 {
+		fmt.Println("No table")
+		os.Exit(0)
+	}
+	tableEndIndex := strings.Index(pageContent, "</table>")
+	if tableEndIndex == -1 {
+		fmt.Println("No closing tag for table")
+	}
+	pageTable := []byte(pageContent[tableStartIndex:tableEndIndex])
+	fmt.Println(pageTable)
 
 }
 
