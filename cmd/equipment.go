@@ -24,15 +24,15 @@ import (
 var equipmentCmd = &cobra.Command{
 	Use:   "equipment",
 	Short: "Commands for equipment",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Long: `Equipment are items that can be purchased, wielded, or worn. 
 
 	Commands:
 		ls, list 	Lists equipment
+		describe	Shows more details of item
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Examples:
+		dnd equipment ls --name musket
+		dnd equipment describe musket`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("equipment called")
 	},
