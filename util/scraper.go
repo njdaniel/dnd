@@ -13,15 +13,15 @@ import (
 )
 
 type Item struct {
-	Name         string
-	Price        string
-	Damage       string
-	Range        string
-	Reload       string
-	Bulk         string
-	Hands        string
-	Group        string
-	WeaponTraits string
+	Name         string `json:"name"`
+	Price        string `json:"price"`
+	Damage       string `json:"damage"`
+	Range        string `json:"range"`
+	Reload       string `json:"reload"`
+	Bulk         string `json:"bulk"`
+	Hands        string `json:"hands"`
+	Group        string `json:"group"`
+	WeaponTraits string `json:"weapon_traits"`
 }
 
 func main() {
@@ -80,6 +80,13 @@ func main() {
 
 	// Dump json to the standard output
 	enc.Encode(items)
+
+	//TODO: Dump into json file
+	itemsJson, _ := json.Marshal(items)
+	err := ioutil.WriteFile("weapons.json", itemsJson, 0644)
+	if err != nil {
+		fmt.Errorf("error creating json file")
+	}
 }
 
 //PullTable grab data from table in html and create json file

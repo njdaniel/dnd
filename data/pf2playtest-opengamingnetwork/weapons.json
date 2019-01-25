@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Staff",
+    "price": "0 sp",
+    "damage": "1d4 B",
+    "range": "melee",
+    "reload": "-",
+    "bulk": "1",
+    "hands": "1",
+    "group": "Club",
+    "weapon_traits": "Two-hand d8"
+  },
+  {
+    "name": "Whip",
+    "price": "1 sp",
+    "damage": "1d4 S",
+    "range": "melee",
+    "reload": "-",
+    "bulk": "1",
+    "hands": "1",
+    "group": "Flail",
+    "weapon_traits": "Disarm, finesse, nonlethal, reach, trip"
+  },
+  {
+    "name": "Sling10 sling bullets",
+    "price": "0 sp1 cp",
+    "damage": "1d6 B",
+    "range": "50 ft.",
+    "reload": "1",
+    "bulk": "LL",
+    "hands": "1+",
+    "group": "Sling",
+    "weapon_traits": "Propulsive"
+  },
+  {
+    "name": "Shortbow10 arrows",
+    "price": "30 sp1 sp",
+    "damage": "1d6 P",
+    "range": "60 ft.",
+    "reload": "0",
+    "bulk": "1L",
+    "hands": "1+",
+    "group": "Bow",
+    "weapon_traits": "Deadly d10"
+  },
+  {
+    "name": "Katar",
+    "price": "3 sp",
+    "damage": "1d4 P",
+    "range": "melee",
+    "reload": "-",
+    "bulk": "L",
+    "hands": "1",
+    "group": "Knife",
+    "weapon_traits": "Agile, deadly d6, monk"
+  },
+  {
+    "name": "Temple sword",
+    "price": "14 sp",
+    "damage": "1d8",
+    "range": "melee",
+    "reload": "-",
+    "bulk": "1",
+    "hands": "1",
+    "group": "Sword",
+    "weapon_traits": "Monk, trip"
+  },
+  {
+    "name": "Sawtooth sabre",
+    "price": "50 sp",
+    "damage": "1d6 S",
+    "range": "melee",
+    "reload": "-",
+    "bulk": "L",
+    "hands": "1",
+    "group": "Sword",
+    "weapon_traits": "Agile, finesse, twin"
+  },
+  {
+    "name": "Shuriken",
+    "price": "1 cp",
+    "damage": "1d4 P",
+    "range": "20 ft.",
+    "reload": "0",
+    "bulk": "–",
+    "hands": "1",
+    "group": "Dart",
+    "weapon_traits": "Agile, monk, thrown"
+  }
+]
