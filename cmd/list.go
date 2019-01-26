@@ -16,6 +16,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -64,7 +65,43 @@ func init() {
 	//TODO: list by json vs text name
 }
 
-// print out all resources
-func list() {
+// Weapon struct from scraped weapon page
+// example:
+//	"name": "Staff",
+//	"price": "0 sp",
+//	"damage": "1d4 B",
+//	"range": "melee",
+//	"reload": "-",
+//	"bulk": "1",
+//	"hands": "1",
+//	"group": "Club",
+//	"weapon_traits": "Two-hand d8"
+type Weapon struct {
+	Name         string `json:"name"`
+	Price        string `json:"price"`
+	Damage       string `json:"damage"`
+	WeaponRange  string `json:"range"`
+	Reload       string `json:"reload"`
+	Bulk         string `json:"bulk"`
+	Hands        string `json:"hands"`
+	Group        string `json:"group"`
+	WeaponTraits string `json:"weapon_traits"`
+}
+
+// List prints out all resources
+func List() {
 	//loop through jsons in /items directory
+
+	//open json file
+	jsonFile, err := os.Open("../data/pf2playtest/weapons.json")
+	if err != nil {
+		//TODO: return err? use RunE instead of Run?
+		fmt.Println(err)
+	}
+	defer jsonFile.Close()
+
+	//parse into struct
+
+	//print out each name
+
 }

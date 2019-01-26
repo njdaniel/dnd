@@ -31,7 +31,9 @@ https://spellfinder.github.io/spells/
   - Create and share campaigns
 
 ## Design
-
+ - reading json files vs database
+ - local vs remote
+ - LAN vs internet
 
 
 ## TODO

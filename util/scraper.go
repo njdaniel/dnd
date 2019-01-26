@@ -24,6 +24,7 @@ type Item struct {
 	WeaponTraits string `json:"weapon_traits"`
 }
 
+//TODO: Create new repo for scraping..?
 func main() {
 	// Instantiate default collector
 	c := colly.NewCollector()
