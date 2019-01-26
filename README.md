@@ -18,16 +18,28 @@ https://spellfinder.github.io/spells/
 
 ## Attributes 
 
-## Changes
+## My house rules
 
   - Reload 0 still needs an action to grab arrow
   - All projectiles need to be grabbed (action) in addition to reloading action(s)
   -  Add musket 
   
+## Goals 
+
+  - Search rules, items, traits, spells (with custom house rules)
+  - Share and use other house rules
+  - Create and share campaigns
+
+## Design
+
+
+
 ## TODO
 
+  - Scrape data (2 stages)
+    - scrape
+    - format data from scraped
   
-  - Scrape data
   - list spells
   - list equipment
   - list traits

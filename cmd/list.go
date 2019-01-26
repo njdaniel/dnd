@@ -33,6 +33,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("list called")
+
 	},
 }
 
@@ -48,4 +49,22 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// listCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	//TODO: list by weapons, armor, gear
+	//TODO: filter by fields
+	//ex:
+	//	"name": "Staff",
+	//	"price": "0 sp",
+	//	"damage": "1d4 B",
+	//	"range": "melee",
+	//	"reload": "-",
+	//	"bulk": "1",
+	//	"hands": "1",
+	//	"group": "Club",
+	//	"weapon_traits": "Two-hand d8"
+	//TODO: list by json vs text name
+}
+
+// print out all resources
+func list() {
+	//loop through jsons in /items directory
 }
