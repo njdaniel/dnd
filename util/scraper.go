@@ -81,7 +81,7 @@ func main() {
 	// Dump json to the standard output
 	enc.Encode(items)
 
-	//TODO: Dump into json file
+	//Dump into json file
 	itemsJson, _ := json.Marshal(items)
 	err := ioutil.WriteFile("weapons.json", itemsJson, 0644)
 	if err != nil {
