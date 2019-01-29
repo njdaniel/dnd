@@ -1,0 +1,12 @@
+[
+  {
+    "type": "Bugbear",
+    "description": "These stealthy and cruel goblinoid creatures delight in spreading fear and tormenting their victims. Hulking and rangy, bugbears are typically loners, but they sometimes gather in groups or serve alongside hobgoblins as brutes and guards.",
+    "name": "Bugbear Thug",
+    "senses": "Perception +6; darkvision, scent 30 feet",
+    "speed": "25ft",
+    "defenses": "AC 15, TAC 14; Fort +7, Ref +6, Will +4\nHP 35",
+    "actions": "1A Melee bastard sword +8 (two-hand d12), Damage 1d8+3 piercing\n\n1A Melee fist +8 (agile, nonlethal), Damage 1d4+3 b\n\n1A Ranged javelin +6, Damage 1d6+3 piercing Bushwhack The bugbear Strides up to 10 feet and attempts to Grapple a creature it’s unseen by. If it succeeds, it also deals fist damage to that creature.\n\nMauler The bugbear gets a +3 circumstance bonus to damage rolls against creatures it has grabbed.",
+    "statistics": "Languages Common, Goblin; Skills +2; Acrobatics +4, Athletics +5, Intimidation +6, Stealth +7\nStr +3, Dex +1, Con +2, Int +0, Wis +0, Cha –1\nItems bastard sword, 3 javelins, leather armor"
+  }
+]

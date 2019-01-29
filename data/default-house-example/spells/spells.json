@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Acid Splash",
+    "level": "Cantrip",
+    "actions": "somatic, verbal",
+    "range": "30 ft; Targets one creature or object",
+    "description": "You splash a glob of acid. Make a ranged touch attack. If you hit, you deal 1d4 acid damage plus 1 splash damage.\n\nOn a Critical Success, the target also takes 1 persistent acid damage.\n\nThe damage increases depending on your level.\n\nHeightened (3rd) Damage increases to 1d4 + your spellcasting ability modifier, persistent damage increases to 2.\n\nHeightened (5th) Damage increases to 2d4 + your spellcasting ability modifier, persistent damage increases to 3.\n\nHeightened (7th) Damage increases to 3d4 + your spellcasting ability modifier, persistent damage increases to 4.\n\nHeightened (9th) Damage increases to 4d4 + your spellcasting ability modifier, persistent damage increases to 5."
+  }
+]

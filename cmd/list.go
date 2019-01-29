@@ -22,16 +22,13 @@ import (
 )
 
 // listCmd represents the list command
+//TODO: Use this command with many resources, ex: dnd spells ls, dnd items ls, dnd creatures ls
+//TODO: Add labels
 var listCmd = &cobra.Command{
 	Use:     "list",
 	Aliases: []string{"ls"},
-	Short:   "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short:   "List the resources",
+	Long:    `Command to list a certain resource and pass filters`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("list called")
 
