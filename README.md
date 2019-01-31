@@ -66,4 +66,20 @@ https://spellfinder.github.io/spells/
   - create new items, spells, traits, rules
   - generate npc
 
+  ## Alternatives
   
+  Using linux tools like cd, ls, jq, grep
+  
+  	$ cat martial-range.json | jq '.[] | .name | grep Short'
+  	"Shortbow"
+  	$ cat martial-range.json | jq '.[] | select(.name=="Shortbow")' 
+  	{
+      "name": "Shortbow",
+      "range": "60",
+      "cost": "30 sp",
+      "type": "P",
+      "dmg": "1d6",
+      "fullText": "Deadly d10"
+    }
+
+Next I would want to search what does "Deadly d10" mean?
