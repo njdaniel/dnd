@@ -68,9 +68,9 @@ https://spellfinder.github.io/spells/
 
   ## Alternatives
   
-  Using linux tools like cd, ls, jq, grep
+  Using linux tools like cd, ls, jq, grep, tree
   
-  	$ cat martial-range.json | jq '.[] | .name | grep Short'
+  	$ cat martial-range.json | jq '.[] | .name | grep -i short'
   	"Shortbow"
   	$ cat martial-range.json | jq '.[] | select(.name=="Shortbow")' 
   	{
@@ -81,5 +81,10 @@ https://spellfinder.github.io/spells/
       "dmg": "1d6",
       "fullText": "Deadly d10"
     }
+    $ tree
+    #shows directory tree
+    $ grep -rni "sword" *
 
 Next I would want to search what does "Deadly d10" mean?
+
+search traits for "Deadly"
