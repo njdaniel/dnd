@@ -35,7 +35,7 @@ var listCmd = &cobra.Command{
 }
 
 func init() {
-	itemsCmd.AddCommand(listCmd)
+	dataCmd.AddCommand(listCmd)
 
 	// Here you will define your flags and configuration settings.
 
@@ -90,7 +90,7 @@ func List() []string {
 	//fmt.Println("Func list called")
 	listed := make([]string, 0)
 	//TODO: insert parameter into data path
-	files, err := ioutil.ReadDir("./data")
+	files, err := ioutil.ReadDir("./data/default-house-example")
 	if err != nil {
 		fmt.Errorf("%v", err)
 	}

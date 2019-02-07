@@ -20,31 +20,31 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// itemsCmd represents the items command
-var itemsCmd = &cobra.Command{
-	Use:   "items",
-	Short: "Command for items",
-	Long: `This command is for interacting with items. This includes weapons, armor, traveling gear, etc.
+// dataCmd represents the data command
+var dataCmd = &cobra.Command{
+	Use:   "data",
+	Short: "Command for data",
+	Long: `This command is for interacting with data. This includes weapons, armor, traveling gear, etc.
 
 	Examples:
-		dnd items ls	Lists all items
-		dnd items ls --name boomstick
-		dnd items describe boomstick`,
+		dnd data ls	Lists all data
+		dnd data ls --name boomstick
+		dnd data describe boomstick`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("items called")
+		fmt.Println("data called")
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(itemsCmd)
+	rootCmd.AddCommand(dataCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// itemsCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// dataCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// itemsCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// dataCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
