@@ -16,9 +16,8 @@ package cmd
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/spf13/cobra"
+	"io/ioutil"
 )
 
 // listCmd represents the list command
@@ -30,8 +29,8 @@ var listCmd = &cobra.Command{
 	Short:   "List the resources",
 	Long:    `Command to list a certain resource and pass filters`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("list called")
-
+		//fmt.Println("list called")
+		List()
 	},
 }
 
@@ -86,16 +85,32 @@ type Weapon struct {
 }
 
 // List prints out all resources
-func List() {
+func List() []string {
+	// return list of directories/files directly under
+	//fmt.Println("Func list called")
+	listed := make([]string, 0)
+	//TODO: insert parameter into data path
+	files, err := ioutil.ReadDir("./data")
+	if err != nil {
+		fmt.Errorf("%v", err)
+	}
+
+	for _, f := range files {
+		fmt.Println(f.Name())
+		listed = append(listed, f.Name())
+	}
+	return listed
+
+	//items in json
 	//loop through jsons in /items directory
 
 	//open json file
-	jsonFile, err := os.Open("../data/pf2playtest/weapons.json")
-	if err != nil {
-		//TODO: return err? use RunE instead of Run?
-		fmt.Println(err)
-	}
-	defer jsonFile.Close()
+	//jsonFile, err := os.Open("../data/pf2playtest/weapons.json")
+	//if err != nil {
+	//	//TODO: return err? use RunE instead of Run?
+	//	fmt.Println(err)
+	//}
+	//defer jsonFile.Close()
 
 	//parse into struct
 
