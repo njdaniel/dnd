@@ -30,7 +30,7 @@ var listCmd = &cobra.Command{
 	Long:    `Command to list a certain resource and pass filters`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//fmt.Println("list called")
-		List()
+		List(args)
 	},
 }
 
@@ -85,12 +85,17 @@ type Weapon struct {
 }
 
 // List prints out all resources
-func List() []string {
+func List(args []string) []string {
 	// return list of directories/files directly under
 	//fmt.Println("Func list called")
 	listed := make([]string, 0)
-	//TODO: insert parameter into data path
-	files, err := ioutil.ReadDir("./data/default-house-example")
+	path := ""
+	if len(args) != 0 {
+		//fmt.Println("This is the args" + args[0])
+		path = "/" + args[0]
+	}
+	dirName := fmt.Sprintf("./data/default-house-example%v", path)
+	files, err := ioutil.ReadDir(dirName)
 	if err != nil {
 		fmt.Errorf("%v", err)
 	}
