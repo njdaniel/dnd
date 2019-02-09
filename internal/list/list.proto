@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package list;
+
+message File {
+    string text = 1;
+}
+
+message Path {
+    string text = 1;
+}
+
+message FileList {
+    repeated File files = 1;
+}
+
+service Data {
+    rpc List(Path) returns(FileList) {}
+}
