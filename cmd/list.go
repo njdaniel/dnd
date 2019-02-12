@@ -21,13 +21,21 @@ import (
 )
 
 // listCmd represents the list command
-//TODO: Use this command with many resources, ex: dnd spells ls, dnd items ls, dnd creatures ls
+//TODO: Use this command with many resources, ex: dnd data ls [args]
+//args = relative directory paths
 //TODO: Add labels
+//TODO: recursive, all data_objects(references), --all
+//TODO: tree, to show all directories and files, --tree
+//TODO: filter data
 var listCmd = &cobra.Command{
 	Use:     "list",
 	Aliases: []string{"ls"},
 	Short:   "List the resources",
-	Long:    `Command to list a certain resource and pass filters`,
+	Long: `Command to list a certain resource and pass filters
+example:
+	dnd data ls					# lists all files(directories) under root data
+	dnd data ls items/weapons	#lists all files under weapons
+`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//fmt.Println("list called")
 		List(args)
@@ -59,29 +67,6 @@ func init() {
 	//	"group": "Club",
 	//	"weapon_traits": "Two-hand d8"
 	//TODO: list by json vs text name
-}
-
-// Weapon struct from scraped weapon page
-// example:
-//	"name": "Staff",
-//	"price": "0 sp",
-//	"damage": "1d4 B",
-//	"range": "melee",
-//	"reload": "-",
-//	"bulk": "1",
-//	"hands": "1",
-//	"group": "Club",
-//	"weapon_traits": "Two-hand d8"
-type Weapon struct {
-	Name         string `json:"name"`
-	Price        string `json:"price"`
-	Damage       string `json:"damage"`
-	WeaponRange  string `json:"range"`
-	Reload       string `json:"reload"`
-	Bulk         string `json:"bulk"`
-	Hands        string `json:"hands"`
-	Group        string `json:"group"`
-	WeaponTraits string `json:"weapon_traits"`
 }
 
 // List prints out all resources

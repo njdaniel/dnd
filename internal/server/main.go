@@ -1,6 +1,8 @@
 package main
 
 import (
+	"context"
+	"fmt"
 	"log"
 	"net"
 
@@ -10,9 +12,12 @@ import (
 
 // run grpc server that interacts with fileserver
 
+type fileServer struct{}
+
 func main() {
 	//fmt.Println("in main")
 	srv := grpc.NewServer()
+	var files fileServer
 	list.RegisterFilesServer(srv, files)
 	l, err := net.Listen("tcp", ":8888")
 	if err != nil {
@@ -21,4 +26,7 @@ func main() {
 	log.Fatal(srv.Serve(l))
 }
 
-type fileServer struct{}
+func (fileServer) List(ctx context.Context, void *list.Path) (fileList *list.FileList, err error) {
+
+	return nil, fmt.Errorf("List not setup yet %v", err)
+}
