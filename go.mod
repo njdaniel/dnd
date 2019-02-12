@@ -15,7 +15,7 @@ require (
 	github.com/spf13/cobra v0.0.3
 	github.com/spf13/viper v1.3.1
 	github.com/temoto/robotstxt v0.0.0-20180810133444-97ee4a9ee6ea // indirect
-	golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3 // indirect
+	golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3
 	google.golang.org/appengine v1.4.0 // indirect
 	google.golang.org/grpc v1.18.0
 )

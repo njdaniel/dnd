@@ -27,6 +27,6 @@ func main() {
 }
 
 func (fileServer) List(ctx context.Context, void *list.Path) (fileList *list.FileList, err error) {
-
+	//TODO: move list function to here and have it run when a client calls this grpc func
 	return nil, fmt.Errorf("List not setup yet %v", err)
 }
