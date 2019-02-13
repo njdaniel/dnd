@@ -30,19 +30,19 @@ func main() {
 func (fileServer) List(ctx context.Context, path *list.Path) (fileList *list.FileList, err error) {
 	// return list of directories/files directly under
 	//fmt.Println("Func list called")
-	listed := make([]string, 0)
+	var files list.FileList
 
 	dirName := fmt.Sprintf("./data/default-house-example%v", path)
-	files, err := ioutil.ReadDir(dirName)
+	fs, err := ioutil.ReadDir(dirName)
 	if err != nil {
 		fmt.Errorf("%v", err)
 	}
 
-	for _, f := range files {
-		fmt.Println(f.Name())
-		listed = append(listed, f.Name())
+	for _, f := range fs {
+		//fmt.Println(f.Name())
+		files.Files = append(files.Files, f.Name())
 	}
-	return listed, nil
+	return &files, nil
 
 	//items in json
 	//loop through jsons in /items directory

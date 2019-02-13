@@ -39,7 +39,7 @@ example:
 `,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		//fmt.Println("list called")
-		List(args, context.Background())
+		List(context.Background(), args)
 	},
 }
 
@@ -61,7 +61,7 @@ func init() {
 }
 
 // List prints out all resources
-func List(args []string, ctx context.Context) error {
+func List(ctx context.Context, args []string) error {
 	path := ""
 	if len(args) != 0 {
 		//fmt.Println("This is the args" + args[0])
