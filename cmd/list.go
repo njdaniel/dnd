@@ -15,9 +15,10 @@
 package cmd
 
 import (
+	"context"
 	"fmt"
+	"github.com/njdaniel/dnd/util/list"
 	"github.com/spf13/cobra"
-	"io/ioutil"
 )
 
 // listCmd represents the list command
@@ -36,11 +37,13 @@ example:
 	dnd data ls					# lists all files(directories) under root data
 	dnd data ls items/weapons	#lists all files under weapons
 `,
-	Run: func(cmd *cobra.Command, args []string) {
+	RunE: func(cmd *cobra.Command, args []string) error {
 		//fmt.Println("list called")
-		List(args)
+		List(args, context.Background())
 	},
 }
+
+var client list.FilesClient
 
 func init() {
 	dataCmd.AddCommand(listCmd)
@@ -54,56 +57,20 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// listCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	//TODO: list by weapons, armor, gear
-	//TODO: filter by fields
-	//ex:
-	//	"name": "Staff",
-	//	"price": "0 sp",
-	//	"damage": "1d4 B",
-	//	"range": "melee",
-	//	"reload": "-",
-	//	"bulk": "1",
-	//	"hands": "1",
-	//	"group": "Club",
-	//	"weapon_traits": "Two-hand d8"
-	//TODO: list by json vs text name
+
 }
 
 // List prints out all resources
-func List(args []string) []string {
-	// return list of directories/files directly under
-	//fmt.Println("Func list called")
-	listed := make([]string, 0)
+func List(args []string, ctx context.Context) error {
 	path := ""
 	if len(args) != 0 {
 		//fmt.Println("This is the args" + args[0])
 		path = "/" + args[0]
 	}
-	dirName := fmt.Sprintf("./data/default-house-example%v", path)
-	files, err := ioutil.ReadDir(dirName)
+	l, err := client.List(ctx, &list.Path{})
 	if err != nil {
-		fmt.Errorf("%v", err)
+		return fmt.Errorf("could not fetch data %v", err)
 	}
-
-	for _, f := range files {
-		fmt.Println(f.Name())
-		listed = append(listed, f.Name())
-	}
-	return listed
-
-	//items in json
-	//loop through jsons in /items directory
-
-	//open json file
-	//jsonFile, err := os.Open("../data/pf2playtest/weapons.json")
-	//if err != nil {
-	//	//TODO: return err? use RunE instead of Run?
-	//	fmt.Println(err)
-	//}
-	//defer jsonFile.Close()
-
-	//parse into struct
-
-	//print out each name
+	return nil
 
 }
