@@ -37,7 +37,7 @@ example:
 	dnd data ls					# lists all files(directories) under root data
 	dnd data ls items/weapons	#lists all files under weapons
 `,
-	RunE: func(cmd *cobra.Command, args []string) error {
+	Run: func(cmd *cobra.Command, args []string) {
 		//fmt.Println("list called")
 		List(context.Background(), args)
 	},
@@ -62,10 +62,10 @@ func init() {
 
 // List prints out all resources
 func List(ctx context.Context, args []string) error {
-	path := ""
+	var path list.Path
 	if len(args) != 0 {
 		//fmt.Println("This is the args" + args[0])
-		path = "/" + args[0]
+		path.Text = "/" + args[0]
 	}
 	l, err := client.List(ctx, &list.Path{})
 	if err != nil {
