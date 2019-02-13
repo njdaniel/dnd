@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"github.com/njdaniel/dnd/util/list"
 	"github.com/spf13/cobra"
+	"google.golang.org/grpc"
 )
 
 // listCmd represents the list command
@@ -48,6 +49,11 @@ var client list.FilesClient
 func init() {
 	dataCmd.AddCommand(listCmd)
 
+	conn, err := grpc.Dial(":8888")
+	if err != nil {
+		fmt.Errorf("could not connect to grpc server %v\n", err)
+	}
+	client = list.NewFilesClient(conn)
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
@@ -70,6 +76,9 @@ func List(ctx context.Context, args []string) error {
 	l, err := client.List(ctx, &list.Path{})
 	if err != nil {
 		return fmt.Errorf("could not fetch data %v", err)
+	}
+	for _, f := range l.Files {
+		fmt.Println(f)
 	}
 	return nil
 
