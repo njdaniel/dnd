@@ -40,7 +40,9 @@ func (fileServer) List(ctx context.Context, path *list.Path) (fileList *list.Fil
 
 	for _, f := range fs {
 		//fmt.Println(f.Name())
-		files.Files = append(files.Files, f.Name())
+		var file list.File
+		file.Text = f.Name()
+		files.Files = append(files.Files, &file)
 	}
 	return &files, nil
 
