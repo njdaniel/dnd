@@ -74,6 +74,8 @@ func List(ctx context.Context, args []string) error {
 	if len(args) != 0 {
 		fmt.Println("This is the args " + args[0])
 		path.Text = "/" + args[0]
+	} else {
+		path.Text = ""
 	}
 	//path.Text = args[0]
 	l, err := client.List(ctx, &path)
