@@ -31,18 +31,20 @@ func (fileServer) List(ctx context.Context, path *list.Path) (fileList *list.Fil
 	// return list of directories/files directly under
 	fmt.Println("Func list called")
 	var files list.FileList
-
-	dirName := fmt.Sprintf("./data/default-house-example%v", path)
+	fmt.Println(path.Text)
+	dirName := fmt.Sprintf("../../data/default-house-example")
 	fs, err := ioutil.ReadDir(dirName)
 	if err != nil {
 		fmt.Errorf("%v", err)
 	}
-
+	fmt.Println("Directory name: " + dirName)
+	fmt.Println(fs)
 	for _, f := range fs {
 		//fmt.Println(f.Name())
 		var file list.File
 		file.Text = f.Name()
 		files.Files = append(files.Files, &file)
+		fmt.Println(file.Text)
 	}
 	return &files, nil
 
