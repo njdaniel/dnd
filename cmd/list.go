@@ -72,11 +72,11 @@ func List(ctx context.Context, args []string) error {
 	var path list.Path
 	//fmt.Println("args " + args[0])
 	if len(args) != 0 {
-		fmt.Println("This is the args" + args[0])
+		fmt.Println("This is the args " + args[0])
 		path.Text = "/" + args[0]
 	}
 	//path.Text = args[0]
-	l, err := client.List(ctx, &list.Path{})
+	l, err := client.List(ctx, &path)
 	if err != nil {
 		return fmt.Errorf("could not fetch data %v", err)
 	}

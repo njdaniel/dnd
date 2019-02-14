@@ -32,7 +32,7 @@ func (fileServer) List(ctx context.Context, path *list.Path) (fileList *list.Fil
 	fmt.Println("Func list called")
 	var files list.FileList
 	fmt.Println(path.Text)
-	dirName := fmt.Sprintf("../../data/default-house-example")
+	dirName := fmt.Sprintf("../../data/default-house-example%v", path.Text)
 	fs, err := ioutil.ReadDir(dirName)
 	if err != nil {
 		fmt.Errorf("%v", err)
