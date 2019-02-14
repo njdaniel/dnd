@@ -39,7 +39,7 @@ example:
 	dnd data ls items/weapons	#lists all files under weapons
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		//fmt.Println("list called")
+		fmt.Println("list called")
 		List(context.Background(), args)
 	},
 }
@@ -49,10 +49,11 @@ var client list.FilesClient
 func init() {
 	dataCmd.AddCommand(listCmd)
 
-	conn, err := grpc.Dial(":8888")
+	conn, err := grpc.Dial(":8888", grpc.WithInsecure())
 	if err != nil {
 		fmt.Errorf("could not connect to grpc server %v\n", err)
 	}
+	fmt.Println("Connected to grpc!")
 	client = list.NewFilesClient(conn)
 	// Here you will define your flags and configuration settings.
 

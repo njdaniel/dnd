@@ -16,7 +16,7 @@ import (
 type fileServer struct{}
 
 func main() {
-	//fmt.Println("in main")
+	fmt.Println("in main")
 	srv := grpc.NewServer()
 	var files fileServer
 	list.RegisterFilesServer(srv, files)
@@ -29,7 +29,7 @@ func main() {
 
 func (fileServer) List(ctx context.Context, path *list.Path) (fileList *list.FileList, err error) {
 	// return list of directories/files directly under
-	//fmt.Println("Func list called")
+	fmt.Println("Func list called")
 	var files list.FileList
 
 	dirName := fmt.Sprintf("./data/default-house-example%v", path)
