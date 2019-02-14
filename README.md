@@ -1,90 +1,43 @@
-# Dnd/pathfinder Helper
+# dnd 
 
-Dragons n Dungeons
+Initial goal is to provide a tool for helping dm a pathfinder/dnd 
+role-playing session.
 
-## References
+With new release of Pathfinder2.0 and my own plethora of house rules I 
+wanted to be able to reference/search/list the rules, items, traits, spells, feats, creatures.
+But from my own forked version. 
+Build trader inventories at an instance, create new npc's, and encounters.
+Keep track of attacking monsters, and npc's created.
+Secret communication of players, access to players info and help with new players
+immerse into the role without worrying about the math and game mechanics.
 
-pathfinder_2e: http://pf2playtest.opengamingnetwork.com
-
-http://legacy.aonprd.com
-
-https://github.com/devonjones/PSRD-Parser
-
-## Search Spells: 
-
-https://spellfinder.github.io/spells/
-
-## Equipment
-
-## Attributes 
-
-## My house rules
-
-  - Reload 0 still needs an action to grab arrow
-  - All projectiles need to be grabbed (action) in addition to reloading action(s)
-  - Add boomstick
-  - Fixed HP = race + 3(class + conMod)
-  - Armor has DR (AC is now DR), TAC is now AC(kinda). AC is now ToHit
-  - Different types of attacks
-    - Normal, fast(quick precise, +2 to hit, 1/2 dmg), power(extra action, -2 to hit, 2xdmg)
-    - aimed torso, arms(cant use), legs(cant use), head(auto-crit)
-    - special attacks (whirlwind, impale, flurry)
-  - trigger action to block with weapon
-  
-## Goals 
-
-  - Search rules, items, traits, spells (with custom house rules)
-  - Share and use other house rules
-  - Create and share campaigns
-  - DM has updated character sheets
+But small steps first :camel:
 
 ## Design
- - reading json files vs database
- - local vs remote
- - LAN vs internet: for campaign communication
+
+There were a few ways I thought about approaching this design: 
+traditional SPA-REST-DB stack, scrape the pathfinder2.0 data push into a database
+and run db queries and have a REST API wrapping it to interface with.
+Once I scraped some data to test with and added some house rule changes, 
+I was left with a directory of files that were actually quite usable for myself. 
+Using grep and jq I could pretty much find the data I was looking for. Might be 
+a little long to type but I could create an alias for the cmds maybe..
+Or I could use parse with go and run simplified commands for what I need. 
+I could have a CLI tool to simplify the cmds and leave the design more decoupled for 
+the other desired features. The rules and information can be stored and versioned 
+as directories and files. 
+
+With the data being decoupled from the commands. I wanted the same ease of access of 
+data with parsing through directories with linux. So without ETLing the data into a 
+database I wanted to call the cmds to search the data remotely. The interaction between 
+the two could be .... grpc? Also a good excuse to learn some grpc deploy to k8s cluster 
+and accomplish the goals. 
 
 
-## TODO
 
-  - Scrape data (2 stages)
-    - scrape
-    - format data from scraped
-  
-  - list spells
-  - list equipment
-  - list traits
-  - list creatures
-  - filter
-  - flag short/long output
-  - describe
-  - full-text search
-  - generate store
-  - generate engagement
-  - character inventory
-  - character spells(known, prepared)
-  - character stats
-  - create new items, spells, traits, rules
-  - generate npc
+## How to Contribute
 
-  ## Alternatives
-  
-  Using linux tools like cd, ls, jq, grep, tree
-  
-  	$ cat martial-range.json | jq '.[] | .name | grep -i short'
-  	"Shortbow"
-  	$ cat martial-range.json | jq '.[] | select(.name=="Shortbow")' 
-  	{
-      "name": "Shortbow",
-      "range": "60",
-      "cost": "30 sp",
-      "type": "P",
-      "dmg": "1d6",
-      "fullText": "Deadly d10"
-    }
-    $ tree
-    #shows directory tree
-    $ grep -rni "sword" *
+contact me through slack 
+https://join.slack.com/t/rtp-gophers/shared_invite/enQtNTE3NjIyMTgyODgyLWEyZWVkYWE0OGE3ZmRjNTFkNWJkODdiOWJjY2JjMDcyZTJlNmJiNjU0YjFlN2NmMTNjNGVjY2FmMGUzYzk5NTg
 
-Next I would want to search what does "Deadly d10" mean?
-
-search traits for "Deadly"
+Message @Nick
