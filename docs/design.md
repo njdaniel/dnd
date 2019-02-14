@@ -24,8 +24,16 @@
 
 ## Getting Started
 
+CLI client
+
 	$ git clone https://github.com/njdaniel/dnd.git
 	$ go install 
+	$ dnd data ls
+	
+gRPC data server
+
+	$ go run /util/server/main.go
+	
 	
 	
 ## Designs
@@ -49,3 +57,7 @@ Goes with k8s.
 How would cli work? AWS s3 cli still uses the linux directory approach. Personally I would like something like this.
 
 From scratch/framework(buffalo). Code generation is quite nice.
+
+### Design #3
+
+Decentralized but using linux like cmds
