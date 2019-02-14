@@ -39,7 +39,7 @@ example:
 	dnd data ls items/weapons	#lists all files under weapons
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("list called")
+		//fmt.Println("list called")
 		List(context.Background(), args)
 	},
 }
@@ -53,7 +53,7 @@ func init() {
 	if err != nil {
 		fmt.Errorf("could not connect to grpc server %v\n", err)
 	}
-	fmt.Println("Connected to grpc!")
+	//fmt.Println("Connected to grpc!")
 	client = list.NewFilesClient(conn)
 	// Here you will define your flags and configuration settings.
 
@@ -83,7 +83,7 @@ func List(ctx context.Context, args []string) error {
 		return fmt.Errorf("could not fetch data %v", err)
 	}
 	for _, f := range l.Files {
-		fmt.Println(f)
+		fmt.Println(f.Text)
 	}
 	return nil
 
