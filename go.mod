@@ -19,3 +19,5 @@ require (
 	google.golang.org/appengine v1.4.0 // indirect
 	google.golang.org/grpc v1.18.0
 )
+
+go 1.13
