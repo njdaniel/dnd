@@ -16,6 +16,18 @@ func main() {
 	fmt.Println("done.")
 }
 
+type Gender int
+
+const (
+	male = iota
+	female
+	)
+
+func (g Gender) String() string {
+	return[...]string{"male", "female"}[g]
+}
+
+
 type Attributes struct {
 	Strength     int
 	Dexterity    int
@@ -27,15 +39,79 @@ type Attributes struct {
 	Movement     int
 }
 
-func CreateCharacter() {
-	//1) Add attributes
+type Character struct {
+	Name string
+	Gender string
+	Attributes
+}
+
+func NewAttributes() Attributes {
+	return Attributes{
+		Strength:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Dexterity:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Constitution:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Perception:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Intelligence:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Willpower:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Charisma:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Movement:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+	}
+}
+
+func NewCharacter() Character {
+	nc := Character{}
+	// 1) Add attributes
 	//roll 4d6 take sum of highest 3
 	fmt.Println("starting...")
 	fmt.Println(Roll(6))
 	fmt.Println("done.")
 
-	//2)
+	nc.Attributes = NewAttributes() 
 
+	// 2) determine gender
+	nc.Gender = Gender(Roll(2)).String()
+
+	// 3) Determine Race/Ancestry
+
+	// 4) Determine Profession(s)
+	
+	// 4.5) name
+
+	// 5) add to inventory based on profession(s)
+
+	// 6) Determine Damage Threshold
+
+	// 7) Determine Damage Condition Track
+
+	// 8) Determine Perils Threshold
+
+	// 9) Determine Perils Condition Track
+
+	// 10) Calculate Bonuses
+
+	// 11) Determine Encumberance limit = SB + 5
+
+	// 12) Calc Base Combat Bonus = (DB + PB + WP)/3
+
+	// 13) Calc Initiative/Reflex = (DB + PB)
+
+	// 14) Determine Age
+
+	// 15) Distinguishing Marks
+
+	// 16) Build Type
+
+	// 17) Height and Weight
+
+	// 18) Eye and hair color
+
+	// 19) Upbringing
+
+	// 20) Social Class add cash
+
+	// 21) Drawbacks
+
+	return nc
 }
 
 func Roll(d int) int {
