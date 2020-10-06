@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math/rand"
 	"sort"
 	"time"
@@ -21,7 +22,7 @@ const (
 )
 
 func (g Gender) String() string {
-	return [...]string{"male", "female"}[g]
+	return [...]string{"male", "female"}[g-1]
 }
 
 type Race int
@@ -33,7 +34,7 @@ const (
 )
 
 func (r Race) String() string {
-	return [...]string{"Human", "Elf", "Dwarf"}[r]
+	return [...]string{"Human", "Elf", "Dwarf"}[r-1]
 }
 
 type DwarvenHeritage int
@@ -45,7 +46,7 @@ const (
 )
 
 func (d DwarvenHeritage) String() string {
-	return [...]string{"IronHills", "Mountain", "Deep"}[d]
+	return [...]string{"IronHills", "Mountain", "Deep"}[d-1]
 }
 
 type ElvenHeritage int
@@ -57,7 +58,7 @@ const (
 )
 
 func (e ElvenHeritage) String() string {
-	return [...]string{"High", "Drow", "Wood"}[e]
+	return [...]string{"High", "Drow", "Wood"}[e-1]
 }
 
 type HumanHeritage int
@@ -171,6 +172,13 @@ func NewCharacter() Character {
 				nc.Ancestry = v.HumanHeritage.String()
 			}
 		}
+	case "Elf":
+		//TODO: Interface roll weighted table
+		nc.Ancestry = "Drow"
+	case "Dwarf":
+		nc.Ancestry = "Mountain"
+	default:
+		log.Fatal("error: race not picked")
 	}
 
 	// 4) Determine Profession(s)
