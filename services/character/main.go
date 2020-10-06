@@ -140,9 +140,19 @@ func (wt *WeightedTable) Roll() int {
 	return 0
 }
 
-//func (w *WeightedTable) Set()  {
-//
-//}
+type AgeGroup int
+const (
+	Young AgeGroup = iota +1
+	Adult
+	MiddleAge
+	Elderly
+)
+func (a AgeGroup) String() string {
+	return [...]string{"Young", "Adult", "MiddleAge", "Elderly" }[a-1]
+}
+func (a AgeGroup) Len() int {
+	return 4
+}
 
 type Attributes struct {
 	Strength     int
@@ -160,6 +170,7 @@ type Character struct {
 	Gender   string
 	Race     string
 	Ancestry string
+	Age      string
 	Attributes
 }
 
@@ -180,7 +191,7 @@ func NewCharacter() Character {
 	nc := Character{}
 	// 1) Add attributes
 	//roll 4d6 take sum of highest 3
-	fmt.Println("starting...")
+	fmt.Println("creating character")
 	fmt.Println(Roll(6))
 	fmt.Println("done.")
 
@@ -227,7 +238,14 @@ func NewCharacter() Character {
 		log.Fatal("error: race not picked")
 	}
 
-	// 4) Determine Profession(s)
+	// 4) Determine Age
+	nc.Age=func() string {
+		weights := []int{25, 35, 25, 10}
+		wt := NewWeightedTable(Young, weights)
+		return AgeGroup(wt.Roll()).String()
+	}()
+
+	// 4.1) Determine Profession(s)
 
 	// 4.5) name
 
@@ -249,7 +267,6 @@ func NewCharacter() Character {
 
 	// 13) Calc Initiative/Reflex = (DB + PB)
 
-	// 14) Determine Age
 
 	// 15) Distinguishing Marks
 
@@ -262,6 +279,12 @@ func NewCharacter() Character {
 	// 19) Upbringing
 
 	// 20) Social Class add cash
+
+	// Languages
+
+	//Religion
+
+	//Hometown
 
 	// 21) Drawbacks
 
