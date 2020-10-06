@@ -108,12 +108,12 @@ type WeightedRow struct {
 
 type WeightedTable []WeightedRow
 
-type EnumInt interface {
+type Enum interface {
 	String() string
 	Len() int
 }
 
-func NewWeightedTable(enum EnumInt, w []int) WeightedTable {
+func NewWeightedTable(enum Enum, w []int) WeightedTable {
 	wt := make(WeightedTable, 0)
 	totalWeight := 0
 	ptr := 0
@@ -190,7 +190,7 @@ func NewCharacter() Character {
 	nc.Gender = Gender(Roll(2)).String()
 
 	// 3) Determine Race/Ancestry
-	nc.Race = Race(Roll(2)).String()
+	nc.Race = Race(Roll(3)).String()
 
 	switch nc.Race {
 	case "Human":
