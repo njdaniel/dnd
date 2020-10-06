@@ -9,24 +9,94 @@ import (
 
 func main() {
 	fmt.Println("starting...")
-	rs := MultiRolls(6, 6)
-	fmt.Println("rs: ", rs)
-	hrs := KeepHighestRolls(3, rs)
-	fmt.Println("hrs: ", hrs)
+	fmt.Println(NewCharacter())
 	fmt.Println("done.")
 }
 
 type Gender int
 
 const (
-	male = iota
+	male = iota + 1
 	female
-	)
+)
 
 func (g Gender) String() string {
-	return[...]string{"male", "female"}[g]
+	return [...]string{"male", "female"}[g]
 }
 
+type Race int
+
+const (
+	Human = iota + 1
+	Elf
+	Dwarf
+)
+
+func (r Race) String() string {
+	return [...]string{"Human", "Elf", "Dwarf"}[r]
+}
+
+type DwarvenHeritage int
+
+const (
+	IronHills = iota + 1
+	Mountain
+	Deep
+)
+
+func (d DwarvenHeritage) String() string {
+	return [...]string{"IronHills", "Mountain", "Deep"}[d]
+}
+
+type ElvenHeritage int
+
+const (
+	High = iota + 1
+	Drow
+	Wood
+)
+
+func (e ElvenHeritage) String() string {
+	return [...]string{"High", "Drow", "Wood"}[e]
+}
+
+type HumanHeritage int
+
+const (
+	Taldan = iota + 1
+	Ulfen
+	Varisan
+	Vudrani
+	Nidalese
+	Keleshite
+)
+
+func (h HumanHeritage) String() string {
+	return [...]string{"Taldan", "Ulfen", "Varisan", "Vudrani", "Nidalese", "Keleshite"}[h]
+}
+
+type HumanHeritageWeighted struct {
+	HumanHeritage
+	Weight int
+}
+
+type HumanHeritageRange struct {
+	HumanHeritage
+	Min int
+	Max int
+}
+
+type WeightedTable struct {
+	enum int
+	Min  int
+	Max  int
+}
+
+type WeightedTables []WeightedTable
+
+func (w *WeightedTables) Roll() int {
+	return 0
+}
 
 type Attributes struct {
 	Strength     int
@@ -40,21 +110,23 @@ type Attributes struct {
 }
 
 type Character struct {
-	Name string
-	Gender string
+	Name     string
+	Gender   string
+	Race     string
+	Ancestry string
 	Attributes
 }
 
 func NewAttributes() Attributes {
 	return Attributes{
-		Strength:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Dexterity:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Constitution:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Perception:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Intelligence:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Willpower:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Charisma:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
-		Movement:SumRolls(KeepHighestRolls(3,MultiRolls(4,6))),
+		Strength:     SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Dexterity:    SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Constitution: SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Perception:   SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Intelligence: SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Willpower:    SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Charisma:     SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
+		Movement:     SumRolls(KeepHighestRolls(3, MultiRolls(4, 6))),
 	}
 }
 
@@ -66,15 +138,43 @@ func NewCharacter() Character {
 	fmt.Println(Roll(6))
 	fmt.Println("done.")
 
-	nc.Attributes = NewAttributes() 
+	nc.Attributes = NewAttributes()
 
 	// 2) determine gender
 	nc.Gender = Gender(Roll(2)).String()
 
 	// 3) Determine Race/Ancestry
+	nc.Race = Race(Roll(2)).String()
+
+	switch nc.Race {
+	case "Human":
+		whhs := []HumanHeritageWeighted{
+			{0, 50},
+			{1, 10},
+			{2, 10},
+			{3, 10},
+			{4, 10},
+			{5, 10},
+		}
+		rhhs := make([]HumanHeritageRange, 0)
+		totalWeight := 0
+		ptr := 0
+		for i, v := range whhs {
+			totalWeight += v.Weight
+			tmp := HumanHeritageRange{HumanHeritage(i), ptr + 1, totalWeight}
+			rhhs = append(rhhs, tmp)
+			ptr += v.Weight
+		}
+		result := Roll(totalWeight)
+		for _, v := range rhhs {
+			if result >= v.Min && result <= v.Max {
+				nc.Ancestry = v.HumanHeritage.String()
+			}
+		}
+	}
 
 	// 4) Determine Profession(s)
-	
+
 	// 4.5) name
 
 	// 5) add to inventory based on profession(s)
