@@ -40,7 +40,7 @@ func (r Race) String() string {
 type DwarvenHeritage int
 
 const (
-	IronHills = iota + 1
+	IronHills DwarvenHeritage = iota + 1
 	Mountain
 	Deep
 )
@@ -49,16 +49,24 @@ func (d DwarvenHeritage) String() string {
 	return [...]string{"IronHills", "Mountain", "Deep"}[d-1]
 }
 
+func (d DwarvenHeritage) Len() int {
+	return 3
+}
+
 type ElvenHeritage int
 
 const (
-	High = iota + 1
+	High ElvenHeritage = iota + 1
 	Drow
 	Wood
 )
 
 func (e ElvenHeritage) String() string {
 	return [...]string{"High", "Drow", "Wood"}[e-1]
+}
+
+func (e ElvenHeritage) Len() int {
+	return 3
 }
 
 type HumanHeritage int
@@ -76,6 +84,10 @@ func (h HumanHeritage) String() string {
 	return [...]string{"Taldan", "Ulfen", "Varisan", "Vudrani", "Nidalese", "Keleshite"}[h]
 }
 
+func (h HumanHeritage) Len() int {
+	return 6
+}
+
 type HumanHeritageWeighted struct {
 	HumanHeritage
 	Weight int
@@ -87,17 +99,50 @@ type HumanHeritageRange struct {
 	Max int
 }
 
-type WeightedTable struct {
-	enum int
+type WeightedRow struct {
+	Enum int
+	Weight int
 	Min  int
 	Max  int
 }
 
-type WeightedTables []WeightedTable
+type WeightedTable []WeightedRow
 
-func (w *WeightedTables) Roll() int {
+type EnumInt interface {
+	String() string
+	Len() int
+}
+
+func NewWeightedTable(enum EnumInt, w []int) WeightedTable {
+	wt := make(WeightedTable, 0)
+	totalWeight := 0
+	ptr := 0
+	for i := 1; i <= enum.Len(); i++ {
+		totalWeight += w[i-1]
+		tmp := WeightedRow{i, w[i-1], ptr+1, totalWeight}
+		wt = append(wt, tmp)
+		ptr += w[i-1]
+	}
+	return wt
+}
+
+func (wt *WeightedTable) Roll() int {
+	totalWeight := 0
+	for _, v := range *wt {
+		totalWeight += v.Weight
+	}
+	result := Roll(totalWeight)
+	for _, v := range *wt {
+		if result >= v.Min && result <= v.Max {
+			return v.Enum
+		}
+	}
 	return 0
 }
+
+//func (w *WeightedTable) Set()  {
+//
+//}
 
 type Attributes struct {
 	Strength     int
@@ -173,8 +218,9 @@ func NewCharacter() Character {
 			}
 		}
 	case "Elf":
-		//TODO: Interface roll weighted table
-		nc.Ancestry = "Drow"
+		weights := []int{45, 45, 10}
+		wt := NewWeightedTable(High, weights )
+		nc.Ancestry = ElvenHeritage(wt.Roll()).String()
 	case "Dwarf":
 		nc.Ancestry = "Mountain"
 	default:
