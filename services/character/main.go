@@ -167,12 +167,31 @@ type Attributes struct {
 	Movement     int
 }
 
+type Bonuses struct {
+	SB int
+	DB int
+	CB int
+	PB int
+	IB int
+	WB int
+	ChB int
+	CombatBonus int
+	Initiative int
+	Encumburance int
+}
+
 type Character struct {
 	Name     string
 	Gender   string
 	Race     string
 	Ancestry string
 	Age      string
+	DamageThreshold int
+	DamageConditionState string
+	Injuries []string
+	PerilsThreshold int
+	PerilsConditionState string
+	Bonuses
 	Attributes
 }
 
@@ -330,7 +349,10 @@ func NewCharacter() Character {
 
 	// 5) add to inventory based on profession(s)
 
+	// 10) Calculate Bonuses
+
 	// 6) Determine Damage Threshold
+	nc.DamageThreshold = 3
 
 	// 7) Determine Damage Condition Track
 
@@ -338,7 +360,6 @@ func NewCharacter() Character {
 
 	// 9) Determine Perils Condition Track
 
-	// 10) Calculate Bonuses
 
 	// 11) Determine Encumberance limit = SB + 5
 
