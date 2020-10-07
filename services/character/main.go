@@ -12,6 +12,7 @@ import (
 
 func main() {
 	fmt.Println("starting...")
+	fmt.Println()
 	fmt.Println(NewCharacter())
 	fmt.Println("done.")
 }
@@ -350,9 +351,9 @@ func NewCharacter() Character {
 	// 5) add to inventory based on profession(s)
 
 	// 10) Calculate Bonuses
-
+	nc.SB = CalcAttrBonus(nc.Strength)
 	// 6) Determine Damage Threshold
-	nc.DamageThreshold = 3
+	nc.DamageThreshold = nc.CB
 
 	// 7) Determine Damage Condition Track
 
@@ -432,4 +433,15 @@ func KeepLowestRolls(l int, rs []int) []int {
 	sort.Ints(rs)
 	rs = rs[:l]
 	return rs
+}
+
+// Calculates Attribute Bonus
+func CalcAttrBonus(a int) int {
+	tmp := a -10
+	if tmp > 10 {
+		return tmp / 2
+	} else if tmp < 10 {
+		return ((11-tmp)/2)*(-1)
+	}
+	return 0
 }

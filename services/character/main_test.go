@@ -12,12 +12,12 @@ func TestRoll(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		min int
-		max int
+		min  int
+		max  int
 	}{
-		{name:"d6", args:args{6}, min: 1, max: 6},
-		{name:"d10", args:args{10}, min:1, max: 10},
-		{name:"d20", args:args{20}, min: 1, max: 20},
+		{name: "d6", args: args{6}, min: 1, max: 6},
+		{name: "d10", args: args{10}, min: 1, max: 10},
+		{name: "d20", args: args{20}, min: 1, max: 20},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -27,7 +27,6 @@ func TestRoll(t *testing.T) {
 		})
 	}
 }
-
 
 func TestKeepHighestRolls(t *testing.T) {
 	type args struct {
@@ -45,6 +44,45 @@ func TestKeepHighestRolls(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := KeepHighestRolls(tt.args.h, tt.args.rs); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("KeepHighestRolls() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestCalcAttrBonus(t *testing.T) {
+	type args struct {
+		a int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{"20", args{20}, 5},
+		{"19", args{19}, 4},
+		{"18", args{18}, 4},
+		{"17", args{17}, 3},
+		{"16", args{16}, 3},
+		{"15", args{15}, 2},
+		{"14", args{14}, 2},
+		{"13", args{13}, 2},
+		{"12", args{12}, 2},
+		{"11", args{11}, 0},
+		{"10", args{10}, 0},
+		{"9", args{9}, -1},
+		{"8", args{8}, -1},
+		{"7", args{7}, -2},
+		{"6", args{6}, -2},
+		{"5", args{5}, -3},
+		{"4", args{4}, -3},
+		{"3", args{3}, -4},
+		{"2", args{2}, -4},
+		{"1", args{1}, -5},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := CalcAttrBonus(tt.args.a); got != tt.want {
+				t.Errorf("CalcAttrBonus() = %v, want %v", got, tt.want)
 			}
 		})
 	}
