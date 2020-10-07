@@ -12,7 +12,7 @@ import (
 
 func main() {
 	fmt.Println("starting...")
-	fmt.Println()
+	fmt.Println("Calculating..", CalcAttrBonus(20))
 	fmt.Println(NewCharacter())
 	fmt.Println("done.")
 }
@@ -179,6 +179,36 @@ type Bonuses struct {
 	CombatBonus int
 	Initiative int
 	Encumburance int
+}
+
+type DamageConditionState int
+const (
+	Unharmed DamageConditionState = iota
+	LightlyWounded
+	ModeratelyWounded
+	SeriouslyWounded
+	GreivouslyWounded
+	Slain
+)
+func (d DamageConditionState) String() string {
+	return [...]string{"Unharmed", "LightlyWounded", "ModeratelyWounded", "SeriouslyWounded", "GreivouslyWounded", "Slain"}[d]
+}
+func (d DamageConditionState) Len() int {
+	return 6
+}
+
+type PerilsConditonState int
+const (
+	Unhindered PerilsConditonState = iota
+	Imperiled
+	IgnoreOneSkill
+	IgnoreTwoSkills
+	IgnoreThreeSkills
+	Incapacitated
+)
+
+func (p PerilsConditonState) String() string {
+	return [...]string{"Unhindered", "Imperiled", "IgnoreOneSkill", "IgnoreTwoSkills", "IgnoreThreeSkills", "Incapacitated"}[p]
 }
 
 type Character struct {
@@ -352,8 +382,17 @@ func NewCharacter() Character {
 
 	// 10) Calculate Bonuses
 	nc.SB = CalcAttrBonus(nc.Strength)
+	nc.CB = CalcAttrBonus(nc.Constitution)
+	nc.PB = CalcAttrBonus(nc.Perception)
+	nc.IB = CalcAttrBonus(nc.Intelligence)
+	nc.ChB = CalcAttrBonus(nc.Charisma)
+	nc.WB = CalcAttrBonus(nc.Willpower)
+	nc.DB = CalcAttrBonus(nc.Dexterity)
 	// 6) Determine Damage Threshold
 	nc.DamageThreshold = nc.CB
+	nc.DamageConditionState = DamageConditionState(0).String()
+	nc.PerilsThreshold = nc.WB
+	nc.PerilsConditionState = PerilsConditonState(0).String()
 
 	// 7) Determine Damage Condition Track
 
@@ -438,10 +477,10 @@ func KeepLowestRolls(l int, rs []int) []int {
 // Calculates Attribute Bonus
 func CalcAttrBonus(a int) int {
 	tmp := a -10
-	if tmp > 10 {
+	if a > 10 {
 		return tmp / 2
-	} else if tmp < 10 {
-		return ((11-tmp)/2)*(-1)
+	} else if a < 10 {
+		return ((11-a)/2)*(-1)
 	}
 	return 0
 }
