@@ -389,23 +389,26 @@ func NewCharacter() Character {
 	nc.WB = CalcAttrBonus(nc.Willpower)
 	nc.DB = CalcAttrBonus(nc.Dexterity)
 	// 6) Determine Damage Threshold
+	// 7) Determine Damage Condition Track
+	// 8) Determine Perils Threshold
+	// 9) Determine Perils Condition Track
 	nc.DamageThreshold = nc.CB
 	nc.DamageConditionState = DamageConditionState(0).String()
-	nc.PerilsThreshold = nc.WB
+	nc.PerilsThreshold = nc.WB + 3
 	nc.PerilsConditionState = PerilsConditonState(0).String()
 
-	// 7) Determine Damage Condition Track
 
-	// 8) Determine Perils Threshold
 
-	// 9) Determine Perils Condition Track
 
 
 	// 11) Determine Encumberance limit = SB + 5
+	nc.Encumburance = nc.SB +5
 
 	// 12) Calc Base Combat Bonus = (DB + PB + WP)/3
+	nc.CombatBonus = (nc.DB + nc.PB + nc.WB)/3
 
 	// 13) Calc Initiative/Reflex = (DB + PB)
+	nc.Initiative = (nc.DB + nc.PB)
 
 
 	// 15) Distinguishing Marks
