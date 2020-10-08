@@ -1,0 +1,9 @@
+Architect
+Brickmaker
+Brickmason
+Carpenter
+Claymason
+Plasterer
+Roofer
+Stonemason
+Streetlayer

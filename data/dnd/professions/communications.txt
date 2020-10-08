@@ -1,0 +1,7 @@
+Courier
+Herald
+Interpreter
+Linguist
+Messenger
+Town Crier
+Translator
