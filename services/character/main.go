@@ -211,6 +211,10 @@ func (p PerilsConditonState) String() string {
 	return [...]string{"Unhindered", "Imperiled", "IgnoreOneSkill", "IgnoreTwoSkills", "IgnoreThreeSkills", "Incapacitated"}[p]
 }
 
+func (p PerilsConditonState) Len() int {
+	return 6
+}
+
 type Character struct {
 	Name     string
 	Gender   string
