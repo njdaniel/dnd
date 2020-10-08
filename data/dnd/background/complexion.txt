@@ -1,0 +1,10 @@
+Pale Skin
+Fair Skin
+Light Skin
+Light Tan Skin
+Tan Skin
+Dark Tan Skin
+Light Brown Skin
+Brown Skin
+Dark Brown Skin
+Ebony Skin

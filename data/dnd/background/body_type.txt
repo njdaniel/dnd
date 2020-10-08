@@ -1,0 +1,5 @@
+Frail
+Slender
+Normal
+Husky
+Corpulent
