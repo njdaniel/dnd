@@ -1,0 +1,16 @@
+Medium brown,Medium brown,Honey brown
+Dark brown,Golden brown,Dark brown
+Straw yellow,Light brown,Light brown
+Golden yellow,Jet black,Jet black
+Grey,Chestnut,Grey
+Chestnut,Chestnut,Copper
+Ginger,Ginger,Ginger
+Ash blonde,Sienna,Sienna
+Sienna,Corn yellow,Corn yellow
+Silver,Ash blonde,Ash blonde
+Salt & pepper,Smokey grey,Salt & pepper
+Silver,Silver,Ivory white
+Blue-black,White,White
+Red,Red,Jet Black
+Blue-black,Blue-black,Fiery red
+Black,Black,Black

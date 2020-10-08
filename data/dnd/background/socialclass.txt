@@ -1,0 +1,3 @@
+Lowborn
+Burgher
+Aristocrat

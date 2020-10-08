@@ -1,0 +1,14 @@
+Amber,Dark brown,Dark brown
+Silver,Grey,Grey
+Honey,Medium brown,Black
+Hazel,Medium brown,Emerald
+Molasses,Black,Grey blue
+Crystal blue,Light brown,Light brown
+Hazel,Grey blue,Hazel
+Black,Pale green,Pale green
+Blue,Sapphire,Dark green
+Copper,Copper,Blue
+Dark green,Blue purple,Copper
+Gold,Ice blue,Green
+lce blue,Silver green,Green
+Violet,Violet,Violet
