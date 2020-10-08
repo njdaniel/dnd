@@ -1,0 +1,28 @@
+Archduke/ Archduchess
+Aristocrat
+Baron/Baroness
+Chancellor
+Chief
+Constable
+Count/Countess
+Courtier
+Diplomat
+Duke/Duchess
+Emperor/Empress
+Judge
+King/Queen
+Knight
+Lady-in-Waiting
+Lawyer/Advocate
+Marquess
+Master of Coin
+Master of the Revels
+Minister
+Noble
+Orator/Spokesman
+Prince/Princess
+Steward
+Squire
+Tax Collector
+Viscount/ Viscountess
+Ward

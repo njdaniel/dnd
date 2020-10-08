@@ -1,0 +1,25 @@
+Abjurer
+Archmage
+Augurer
+Conjuror
+Elementalist
+Enchanter/ Enchantress
+Evoker
+Hearth-witch
+Illusionist
+Mage
+Necromancer
+Ritualist
+Runecaster
+Sage
+Seer/Oracle
+Shaman
+Shapeshifter
+Sorcerer/Sorceress
+Summoner
+Transmuter
+Warlock
+Witchdoctor
+Witch
+Wizard
+Wordsmith
