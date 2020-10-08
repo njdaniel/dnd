@@ -228,6 +228,13 @@ type Character struct {
 	PerilsConditionState string
 	Bonuses
 	Attributes
+	DistinguishingMarks []string
+	BodyType string
+	HairColor string
+	Complexion string
+	Season string
+	Upbringing string
+	SocialClass string
 }
 
 func NewAttributes() Attributes {
@@ -412,16 +419,118 @@ func NewCharacter() Character {
 	nc.CombatBonus = (nc.DB + nc.PB + nc.WB)/3
 
 	// 13) Calc Initiative/Reflex = (DB + PB)
-	nc.Initiative = (nc.DB + nc.PB)
+	nc.Initiative = nc.DB + nc.PB
 
 
 	// 15) Distinguishing Marks
 
+	//slurp in memory, change to read by byte chunks if it gets to big
+	buf, err := ioutil.ReadFile("data/dnd/background/marks.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	s := string(buf)
+	ss := strings.Split(s, "\n")
+	switch nc.Age {
+	case "Young":
+		log.Println("young and unblemished")
+	case "Adult":
+		n := Roll(2)-1
+		fmt.Println(n)
+		for i := 0; i < n; i ++ {
+			result := Roll(len(ss))
+			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
+		}
+	case "Middleage":
+		n := Roll(3)-1
+		fmt.Println(n)
+		for i := 0; i < n; i ++ {
+			result := Roll(len(ss))
+			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
+		}
+	case "Elderly":
+		n := Roll(4)
+		fmt.Println(n)
+		for i := 0; i < n; i ++ {
+			result := Roll(len(ss))
+			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
+		}
+	default:
+		log.Println("undetermined age and no distinguishing features")
+	}
 	// 16) Build Type
+	//slurp in memory, change to read by byte chunks if it gets to big
+	nc.BodyType = func() string {
+		buf, err := ioutil.ReadFile("data/dnd/background/body_type.txt")
+		if err != nil {
+			log.Fatal(err)
+		}
+		s := string(buf)
+		ss := strings.Split(s, "\n")
+		result := Roll(len(ss))
+		return ss[result-1]
+	}()
 
+	// Complexion
+	nc.Complexion = func() string {
+		buf, err := ioutil.ReadFile("data/dnd/background/complexion.txt")
+		if err != nil {
+			log.Fatal(err)
+		}
+		s := string(buf)
+		ss := strings.Split(s, "\n")
+		result := Roll(len(ss))
+		return ss[result-1]
+	}()
+
+	//Season of Birth
+	nc.Season = func() string {
+		buf, err := ioutil.ReadFile("data/dnd/background/season.txt")
+		if err != nil {
+			log.Fatal(err)
+		}
+		s := string(buf)
+		ss := strings.Split(s, "\n")
+		result := Roll(len(ss))
+		return ss[result-1]
+	}()
+
+	// Upbringing
+	nc.Upbringing = func() string {
+		buf, err := ioutil.ReadFile("data/dnd/background/upbringing.txt")
+		if err != nil {
+			log.Fatal(err)
+		}
+		s := string(buf)
+		ss := strings.Split(s, "\n")
+		result := Roll(len(ss))
+		return ss[result-1]
+	}()
+
+	// Social Class
+	nc.SocialClass = func() string {
+		buf, err := ioutil.ReadFile("data/dnd/background/socialclass.txt")
+		if err != nil {
+			log.Fatal(err)
+		}
+		s := string(buf)
+		ss := strings.Split(s, "\n")
+		result := Roll(len(ss))
+		return ss[result-1]
+	}()
 	// 17) Height and Weight
-
 	// 18) Eye and hair color
+	//nc.HairColor = func() string {
+	//	buf, err := ioutil.ReadFile("data/dnd/background/.txt")
+	//	if err != nil {
+	//		log.Fatal(err)
+	//	}
+	//	s := string(buf)
+	//	ss := strings.Split(s, "\n")
+	//	result := Roll(len(ss))
+	//	return ss[result-1]
+	//}()
+
 
 	// 19) Upbringing
 
