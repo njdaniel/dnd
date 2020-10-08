@@ -1,0 +1,16 @@
+Night in a common room,1s
+Night in a private room 5ss
+Night in the back alley 1bp
+Quality wine by the case,35gc
+Quality wine by the glass,1ss
+Rum by the keg,64ge
+Rum by the roemer,3ss
+Stable dog by the night with feed,3bp
+Stable horse by the night with feed,8bp
+Stable mule by the night,4bp
+Stable raptor by the night with feed,3bp
+Table wine by the case,1gc
+Table wine by the goblet,2bp
+Tobacco pouch,1ss
+Whiskey by the keg,43gc
+Whiskey by the snifter,3ss

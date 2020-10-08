@@ -1,0 +1,16 @@
+Ale by the cup,3bp
+Ale by the rundlet,16ss
+Ale by the half tun,3gc
+Beer by the half tun,10gc
+Beer by the stein,7bp
+Brandy by the keg,53ge
+Brandy by the sniffer,3ss
+Cider by the half tun,12gc
+Cider by the jar,6ss
+Hot meal fit for the Aristocrat,1s
+Hot meal fit for the Burgher,8bp
+Hot meal fit for the Lowborn,4bp
+Mead by the hogshead 15gc
+Mead by the horn,1s
+Mulled wine by the goblet,1s
+Night above the stables,6bp
