@@ -441,7 +441,7 @@ func NewCharacter() Character {
 			result := Roll(len(ss))
 			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
 		}
-	case "Middleage":
+	case "MiddleAge":
 		n := Roll(3)-1
 		fmt.Println(n)
 		for i := 0; i < n; i ++ {
