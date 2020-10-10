@@ -272,6 +272,8 @@ type Character struct {
 	EyeColor string
 	HairColor string
 	Languages []string
+	Height string
+	Weight int
 }
 
 func NewAttributes() Attributes {
@@ -511,7 +513,29 @@ func NewCharacter() Character {
 	//height and weight
 	//based on race bring in height and weight chart
 	//assign num for body type (frail, slender, normal, husky, corpulent)= iota
+	nc.Height = func() string {
+		filename := fmt.Sprintf("./background/%s-%s-height.txt", nc.Race, nc.Gender)
+		bs, err := BoxData.Find(filename)
+		if err != nil {
+			log.Println(err)
+		}
+		s := string(bs)
+		ss := strings.Split(s, "\n")
+		result := Roll(len(ss))
+		height := ss[result-1]
+		return height
+	}()
 
+	nc.Weight = func() int {
+		filename := fmt.Sprintf("./background/%s-%s-weight.csv", nc.Race, nc.Gender)
+		ssw, err := ReadCSV(filename)
+		if err != nil {
+			log.Println(err)
+		}
+		fmt.Println(ssw)
+		weight := 0
+		return weight
+	}()
 
 	// Complexion
 	nc.Complexion = func() string {
