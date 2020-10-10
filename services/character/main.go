@@ -508,6 +508,11 @@ func NewCharacter() Character {
 		return ss[result-1]
 	}()
 
+	//height and weight
+	//based on race bring in height and weight chart
+	//assign num for body type (frail, slender, normal, husky, corpulent)= iota
+
+
 	// Complexion
 	nc.Complexion = func() string {
 		buf, err := ioutil.ReadFile("data/dnd/background/complexion.txt")
