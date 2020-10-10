@@ -32,6 +32,26 @@ func main() {
 	fmt.Println("done.")
 }
 
+
+type Languages int
+
+const (
+	Common Languages = iota +1
+	Undercommon
+	Elvish
+	Dwarvish
+	Orcish
+)
+
+func (l Languages) String() string {
+	return [...]string{"Common", "Undercommon", "Elvish", "Dwarvish", "Orcish"}[l-1]
+}
+
+func (l Languages) Len() int {
+	return 5
+}
+
+
 type Gender int
 
 const (
@@ -245,13 +265,13 @@ type Character struct {
 	Attributes
 	DistinguishingMarks []string
 	BodyType string
-	HairColor string
 	Complexion string
 	Season string
 	Upbringing string
 	SocialClass string
 	EyeColor string
 	HairColor string
+	Languages []string
 }
 
 func NewAttributes() Attributes {
@@ -606,6 +626,47 @@ func NewCharacter() Character {
 	// 20) Social Class add cash
 
 	// Languages
+	nc.Languages = append(nc.Languages, "Common")
+	switch nc.Race {
+	case "Human":
+		mapLanguages := map[string]bool{"Common": true, "Undercommon": false, "Elvish": false, "Dwarvish": false, "Orcish": false}
+		numLangs := Roll(nc.IB)
+		for i := 0; i < numLangs; i ++ {
+			//wanted Languages.Len() but got error...
+			newL := Languages(Roll(5))
+			//check if lang is already know
+			if !mapLanguages[newL.String()] {
+				nc.Languages = append(nc.Languages, newL.String())
+				mapLanguages[newL.String()] = true
+			}
+		}
+	case "Elf":
+		nc.Languages = append(nc.Languages, "Elvish")
+		mapLanguages := map[string]bool{"Common": true, "Undercommon": false, "Elvish": true, "Dwarvish": false, "Orcish": false}
+		numLangs := Roll(nc.IB)
+		for i := 0; i < numLangs; i ++ {
+			//wanted Languages.Len() but got error...
+			newL := Languages(Roll(5))
+			//check if lang is already know
+			if !mapLanguages[newL.String()] {
+				nc.Languages = append(nc.Languages, newL.String())
+				mapLanguages[newL.String()] = true
+			}
+		}
+	case "Dwarf":
+		nc.Languages = append(nc.Languages, "Dwarvish")
+		mapLanguages := map[string]bool{"Common": true, "Undercommon": false, "Elvish": false, "Dwarvish": true, "Orcish": false}
+		numLangs := Roll(nc.IB)
+		for i := 0; i < numLangs; i ++ {
+			//wanted Languages.Len() but got error...
+			newL := Languages(Roll(5))
+			//check if lang is already know
+			if !mapLanguages[newL.String()] {
+				nc.Languages = append(nc.Languages, newL.String())
+				mapLanguages[newL.String()] = true
+			}
+		}
+	}
 
 	//Religion
 
