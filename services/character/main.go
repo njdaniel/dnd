@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"encoding/csv"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -8,11 +10,24 @@ import (
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/gobuffalo/packr/v2"
+
 )
+
+var BoxData *packr.Box
+
+func init() {
+	BoxData = packr.Folder("data/dnd")
+
+}
 
 func main() {
 	fmt.Println("starting...")
-	fmt.Println("Calculating..", CalcAttrBonus(20))
+	//fmt.Println("Opening box")
+	//fmt.Println(BoxData.List())
+	//fmt.Println(ReadCSV("./background/eyecolor.csv"))
+	//fmt.Println("Calculating..", CalcAttrBonus(20))
 	fmt.Println(NewCharacter())
 	fmt.Println("done.")
 }
@@ -235,6 +250,8 @@ type Character struct {
 	Season string
 	Upbringing string
 	SocialClass string
+	EyeColor string
+	HairColor string
 }
 
 func NewAttributes() Attributes {
@@ -495,6 +512,8 @@ func NewCharacter() Character {
 		return ss[result-1]
 	}()
 
+	// 19) Upbringing
+
 	// Upbringing
 	nc.Upbringing = func() string {
 		buf, err := ioutil.ReadFile("data/dnd/background/upbringing.txt")
@@ -520,6 +539,58 @@ func NewCharacter() Character {
 	}()
 	// 17) Height and Weight
 	// 18) Eye and hair color
+	switch nc.Race {
+	case "Human":
+		sshc, err := ReadCSV("./background/eyecolor.csv")
+		if err != nil {
+			log.Println(err)
+		}
+		r := Roll(len(sshc))-1
+		nc.EyeColor = sshc[r][2]
+	case "Elf":
+		sshc, err := ReadCSV("./background/eyecolor.csv")
+		if err != nil {
+			log.Println(err)
+		}
+		r := Roll(len(sshc))-1
+		nc.EyeColor = sshc[r][1]
+	case "Dwarf":
+		sshc, err := ReadCSV("./background/eyecolor.csv")
+		if err != nil {
+			log.Println(err)
+		}
+		r := Roll(len(sshc))-1
+		nc.EyeColor = sshc[r][0]
+	default:
+		log.Println("no race determined")
+	}
+
+	//Hair
+	switch nc.Race {
+	case "Human":
+		sshc, err := ReadCSV("./background/haircolor.csv")
+		if err != nil {
+			log.Println(err)
+		}
+		r := Roll(len(sshc))-1
+		nc.HairColor = sshc[r][2]
+	case "Elf":
+		sshc, err := ReadCSV("./background/haircolor.csv")
+		if err != nil {
+			log.Println(err)
+		}
+		r := Roll(len(sshc))-1
+		nc.HairColor = sshc[r][1]
+	case "Dwarf":
+		sshc, err := ReadCSV("./background/haircolor.csv")
+		if err != nil {
+			log.Println(err)
+		}
+		r := Roll(len(sshc))-1
+		nc.HairColor = sshc[r][0]
+	default:
+		log.Println("no race determined")
+	}
 	//nc.HairColor = func() string {
 	//	buf, err := ioutil.ReadFile("data/dnd/background/.txt")
 	//	if err != nil {
@@ -532,8 +603,6 @@ func NewCharacter() Character {
 	//}()
 
 
-	// 19) Upbringing
-
 	// 20) Social Class add cash
 
 	// Languages
@@ -545,6 +614,22 @@ func NewCharacter() Character {
 	// 21) Drawbacks
 
 	return nc
+}
+
+//ReadCSV reads in csv file to be used
+func ReadCSV(filename string) ([][]string, error) {
+	//verify csv
+	//sss := make([][]string, 0)
+	bs, err := BoxData.Find(filename)
+	if err != nil {
+		log.Println(err)
+	}
+	r := csv.NewReader(bytes.NewReader(bs))
+	result, err := r.ReadAll()
+	if err != nil {
+		log.Println()
+	}
+	return result,nil
 }
 
 func Roll(d int) int {
