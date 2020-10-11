@@ -514,7 +514,8 @@ func NewCharacter() Character {
 	//based on race bring in height and weight chart
 	//assign num for body type (frail, slender, normal, husky, corpulent)= iota
 	nc.Height = func() string {
-		filename := fmt.Sprintf("./background/%s-%s-height.txt", nc.Race, nc.Gender)
+		racelc := strings.ToLower(nc.Race)
+		filename := fmt.Sprintf("./background/%s-%s-height.txt", racelc, nc.Gender)
 		bs, err := BoxData.Find(filename)
 		if err != nil {
 			log.Println(err)
@@ -527,7 +528,8 @@ func NewCharacter() Character {
 	}()
 
 	nc.Weight = func() int {
-		filename := fmt.Sprintf("./background/%s-%s-weight.csv", nc.Race, nc.Gender)
+		racelc := strings.ToLower(nc.Race)
+		filename := fmt.Sprintf("./background/%s-%s-weight.csv", racelc, nc.Gender)
 		ssw, err := ReadCSV(filename)
 		if err != nil {
 			log.Println(err)
@@ -723,6 +725,9 @@ func ReadCSV(filename string) ([][]string, error) {
 }
 
 func Roll(d int) int {
+	if d <= 0 {
+		return -1
+	}
 	rand.Seed(time.Now().UnixNano())
 	min := 1
 	max := d
