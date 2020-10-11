@@ -250,6 +250,36 @@ func (p PerilsConditonState) Len() int {
 	return 6
 }
 
+type ProfessionType int
+
+const (
+	Agriculture ProfessionType = iota +1
+	Arts
+	BusinessTrade
+	Communications
+	Construction
+	Craftman
+	Crime
+	Government
+	Health
+	Labor
+	Magic
+	Military
+	Outcast
+	Religion
+	Scholars
+	Transportation
+)
+
+func (p ProfessionType) String() string {
+	return [...]string{"agriculture", "arts", "business-trade", "communications", "construction", "craftman", "crime", "governament",
+		"health", "labor", "magic", "military", "outcast", "religion", "scholars", "transportation"}[p]
+}
+func (p ProfessionType) Len() int {
+	return 16
+}
+
+
 type Character struct {
 	Name     string
 	Gender   string
@@ -274,6 +304,7 @@ type Character struct {
 	Languages []string
 	Height string
 	Weight int
+	Professions []string
 }
 
 func NewAttributes() Attributes {
@@ -704,6 +735,23 @@ func NewCharacter() Character {
 	//Hometown
 
 	// 21) Drawbacks
+
+	//Professions
+	nc.Professions = func() []string {
+		pt := Roll(Agriculture.Len())
+		ps := make([]string, 0)
+		filename := fmt.Sprintf("./professions/types/%s.txt", ProfessionType(pt).String())
+		bs, err := BoxData.Find(filename)
+		if err != nil {
+			log.Println(err)
+		}
+		s := string(bs)
+		ss := strings.Split(s,"\n")
+		result := Roll(len(ss))
+		ps = append(ps, ss[result-1])
+		return ps
+	}()
+
 
 	return nc
 }
