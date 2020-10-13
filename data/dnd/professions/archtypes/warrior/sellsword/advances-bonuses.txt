@@ -1,0 +1,6 @@
+CombatBonus
+SB
+CB
+WB
+ChB
+IB

@@ -306,6 +306,7 @@ type Character struct {
 	Weight int
 	Professions []string
 	Skills []Skill
+	ProfessionSelection string
 }
 
 type Skill struct {
@@ -774,23 +775,31 @@ func NewCharacter() Character {
 		{"Warfare", "WB", []Focus{}, 0},
 	}
 
-	//ArchType Professions
+	//ProfessionSelection: normal, advance
+	rp := Roll(100)
+	if rp == 1 {
+		//ArchType Professions
+		nc.ProfessionSelection = "advance"
+	} else {
+		nc.ProfessionSelection = "normal"
+		//Professions
+		nc.Professions = func() []string {
+			pt := Roll(Agriculture.Len())
+			ps := make([]string, 0)
+			filename := fmt.Sprintf("./professions/types/%s.txt", ProfessionType(pt).String())
+			bs, err := BoxData.Find(filename)
+			if err != nil {
+				log.Println(err)
+			}
+			s := string(bs)
+			ss := strings.Split(s,"\n")
+			result := Roll(len(ss))
+			ps = append(ps, ss[result-1])
+			return ps
+		}()
+	}
 
-	//Professions
-	nc.Professions = func() []string {
-		pt := Roll(Agriculture.Len())
-		ps := make([]string, 0)
-		filename := fmt.Sprintf("./professions/types/%s.txt", ProfessionType(pt).String())
-		bs, err := BoxData.Find(filename)
-		if err != nil {
-			log.Println(err)
-		}
-		s := string(bs)
-		ss := strings.Split(s,"\n")
-		result := Roll(len(ss))
-		ps = append(ps, ss[result-1])
-		return ps
-	}()
+
 
 
 	return nc

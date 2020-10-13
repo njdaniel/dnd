@@ -1,0 +1,8 @@
+Athletics
+Intimidate
+Resolve
+Warfare
+Rumor
+Melee
+Range
+Throwing
