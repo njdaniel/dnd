@@ -305,6 +305,19 @@ type Character struct {
 	Height string
 	Weight int
 	Professions []string
+	Skills []Skill
+}
+
+type Skill struct {
+	Name string
+	BonusUsed string
+	Focuses []Focus
+	Level int
+}
+
+type Focus struct {
+	Name string
+	Level int
 }
 
 func NewAttributes() Attributes {
@@ -735,6 +748,33 @@ func NewCharacter() Character {
 	//Hometown
 
 	// 21) Drawbacks
+
+	// skills
+	nc.Skills = []Skill{{"Alchemy", "IB", []Focus{}, 0},{"Athletics", "SB", []Focus{}, 0},
+		{"Awareness", "PB", []Focus{}, 0},{"Bargain", "ChB", []Focus{}, 0},
+		{"Charm", "ChB", []Focus{}, 0},{"Coordination", "DB", []Focus{}, 0},
+		{"Counterfeit", "IB", []Focus{}, 0},{"Disguise", "ChB", []Focus{}, 0},
+		{"Drive", "SB", []Focus{}, 0},{"Eavesdrop", "PB", []Focus{}, 0},
+
+		{"Education", "IB", []Focus{}, 0},{"Folklore", "IB", []Focus{}, 0},
+		{"Gamble", "IB", []Focus{}, 0},{"Guile", "DB", []Focus{}, 0},
+		{"HandleAnimal", "PB", []Focus{}, 0},{"Heal", "IB", []Focus{}, 0},
+
+		{"Magic", "WB", []Focus{}, 0},{"Interrogation", "WB", []Focus{}, 0},
+		{"Intimidate", "SB", []Focus{}, 0},{"Leadership", "ChB", []Focus{}, 0},
+		{"Melee", "CombatBonus", []Focus{}, 0},{"Range", "PB", []Focus{}, 0},
+
+		{"Throwing", "DB", []Focus{}, 0},{"Dodge", "DB", []Focus{}, 0},
+		{"Navigation", "IB", []Focus{}, 0},{"Sailing", "DB", []Focus{}, 0},
+		{"Resolve", "WB", []Focus{}, 0},{"Ride", "DB", []Focus{}, 0},
+
+		{"Scruntinize", "PB", []Focus{}, 0},{"Pickpocketing", "DB", []Focus{}, 0},
+		{"Lockpicking", "DB", []Focus{}, 0},{"Stealth", "DB", []Focus{}, 0},
+		{"Survival", "WB", []Focus{}, 0},{"Tradecraft", "WB", []Focus{}, 0},
+		{"Warfare", "WB", []Focus{}, 0},
+	}
+
+	//ArchType Professions
 
 	//Professions
 	nc.Professions = func() []string {
