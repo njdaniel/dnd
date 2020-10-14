@@ -12,7 +12,6 @@ import (
 	"time"
 
 	"github.com/gobuffalo/packr/v2"
-
 )
 
 var BoxData *packr.Box
@@ -776,10 +775,26 @@ func NewCharacter() Character {
 	}
 
 	//ProfessionSelection: normal, advance
+	// Find all profession jsons
+	boxlst := BoxData.List()
+	pj := make([]string,0)
+	for _, v := range boxlst {
+		if strings.Contains(v, "professions/archtype") {
+			ss := strings.Split(s, "/")
+			if strings.Contains(ss[len(ss)-1], ".json") {
+				pj = append(pj, v)
+			}
+		}
+	}
+	fmt.Println(pj)
+
 	rp := Roll(100)
 	if rp == 1 {
 		//ArchType Professions
 		nc.ProfessionSelection = "advance"
+		//import professions from json file
+		//ref to map[string]Profession
+		//roll to add profession
 	} else {
 		nc.ProfessionSelection = "normal"
 		//Professions

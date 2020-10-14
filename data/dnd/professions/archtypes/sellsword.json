@@ -1,0 +1,44 @@
+{
+  "name": "sellsword",
+  "description": "When battle looms near, a normal person will ask\nwhat they're fighting for. Their king? Their god? Their\ncountrymen? Whatever they decide, the Sellsword knows it\nto be lie. Instead, these grizzled mercenaries brandish steel\nfor the coin it will put in their pocket. After all, if you're\ngood at something you should never do it for free. For many\na Sellsword an early death, unsung and unloved, followed\nby an unmarked grave awaits them. Wiser Sellswords have\nfound brotherhood and a nod towards safety in banding\ntogether as mercenary companies. With gruff names like\nthe The Bloody Mummers or The Black Company,\nthey live and die by their reputation and results, serving\nas platoons in undermanned armies or garrisons, moving\nbetween employers or simply waiting for the next war.\nA Sellsword's reputation means more than their skill.\nDo they honor their contracts or solicit bids from the\ncompetition? Are they cold, calculating veterans or do\nthey seek out and revel in violence? They are rarely trusted.\nSoldiers doubt their loyalty. Peasants revile them for their\nbrutality. Lords tighten their purse strings once battle is\ndone. Sellswords take contracts that no one else will -\nput down a peasant revolt, evict blue-bloods from their\nmanors or ransack a shopkeeper's premises for a rival guild;",
+  "attribute_bonus_advances": [
+    "CombatBonus",
+    "Strength",
+    "Constitution",
+    "Willpower",
+    "Charisma",
+    "Intelligence"
+  ],
+  "skill_advances": [
+    "Athletics",
+    "Intimidate",
+    "Resolve",
+    "Warfare",
+    "Rumor",
+    "Melee",
+    "Range",
+    "Throwing"
+  ],
+  "talents": [
+    {
+      "name": "Indifferent",
+      "description": "",
+      "effect": ""
+    },
+    {
+      "name": "ToughAsNails",
+      "description": "",
+      "effect": ""
+    },
+    {
+      "name": "SecondSkin",
+      "description": "",
+      "effect": ""
+    }
+  ],
+  "trait": {
+    "name": "DOGS OF WAR",
+    "description": "Every scar a Sellsword bears has a story behind it. Every\ndisfigurement speaks to their history of violence. But war... war\nnever changes. And every mercenary must debase themselves for\nsurvival, doling out barbarity with reckless abandon.",
+    "effect": "Reroll an injury die"
+  }
+}
