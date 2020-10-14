@@ -786,7 +786,7 @@ func NewCharacter() Character {
 			}
 		}
 	}
-	fmt.Println(pj)
+	log.Println(pj)
 
 	rp := Roll(100)
 	if rp == 1 {

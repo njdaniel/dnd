@@ -1,9 +1,5 @@
 package main
 
-//var Professions map[string]Profession{
-//	"Sellsword":
-//}
-
 //Profession is the object for the professions with advance description
 type Profession struct {
 	Name string
@@ -22,4 +18,12 @@ type Talent struct {
 	Name string
 	Description string
 	Effect string
+}
+
+type Equipment interface {
+	GetValue() map[string]int
+}
+
+type Weapon struct {
+	Name string
 }
