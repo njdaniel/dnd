@@ -1,0 +1,92 @@
+[
+  {
+    "name":"Dual Wielding",
+    "description": "Proficient with two weapons",
+    "effect": "reroll attacks"
+  },
+  {
+  "name": "Ambidexterity",
+  "description": "Ability to use either hand with equal finesse.",
+  "effect": "Do not suffer penalties when using either hand."
+  },
+  {
+  "name": "Loveable Drunk",
+  "description": "An experienced drinker and accustomed with socializing when flooded with intoxicating substances",
+  "effect": "Advantage to Charm when drinking"
+  },
+  {
+    "name": "Tough SoB",
+    "description": "Resilient to injuries",
+    "effect": "Reroll an injury die"
+  },
+  {
+    "name": "Eyes of a Hawk",
+    "description": "Great eyesight at a distance. Able to focus and target over great distances.",
+    "effect": "Treat medium distance the same as optimal distance"
+  },
+  {
+    "name": "Hard to Kill",
+    "description": "Harder to kill.",
+    "effect": "Add 2nd Grievously wounded stage."
+  },
+  {
+    "name": "Fearless",
+    "description": "Immune to fear",
+    "effect": "Automatically succeeds fear tests"
+  },
+  {
+    "name": "Whirlwind Defense",
+    "description": "Even when surrounded you're able to defend against flanking and attacks from behind",
+    "effect": "Opponent doesnt gain advantage over you if flanking or from behind if you're aware."
+  },
+  {
+    "name": "Instinct Strikes",
+    "description": "Able to accurately attack opponents that can't be clearly seen.",
+    "effect": "Able to attack without penalty against opponents that arent clearly seen or from behind or sides"
+  },
+  {
+    "name": "Lightning Reflexes",
+    "description": "Supernatual reflexes",
+    "effect": "Add another die in combat (normally 6 for full combat go to 7)"
+  },
+  {
+    "name": "Light Sleeper",
+    "description": "Sleeping with one eye open. Slightest disturbance to danger will awaken to full alertness",
+    "effect": "Much harder to catch unaware when asleep"
+  },
+  {
+    "name": "Second skin",
+    "description": "Lives, eats, and sleeps in armor and accustomed to the weight of armor. ",
+    "effect": "Able to sleep in armor without penalty. Reduce penalty for dodging with armor."
+  },
+  {
+    "name": "",
+    "description": "",
+    "effect": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "effect": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "effect": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "effect": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "effect": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "effect": ""
+  }
+]
