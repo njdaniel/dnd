@@ -109,16 +109,16 @@ func (e ElvenHeritage) Len() int {
 type HumanHeritage int
 
 const (
-	Taldan = iota + 1
-	Ulfen
-	Varisan
-	Vudrani
-	Nidalese
-	Keleshite
+	Empirial = iota + 1
+	Nord
+	Vardisan
+	Lumdrani
+	Nimalese
+	Minskite
 )
 
 func (h HumanHeritage) String() string {
-	return [...]string{"Taldan", "Ulfen", "Varisan", "Vudrani", "Nidalese", "Keleshite"}[h]
+	return [...]string{"Empirial", "Nord", "Vardisan", "Lumdrani", "Nimalese", "Minskite"}[h]
 }
 
 func (h HumanHeritage) Len() int {

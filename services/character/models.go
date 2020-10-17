@@ -8,8 +8,8 @@ type Profession struct {
 	AttributeBonusAdvances []string
 	SkillAdvances []string
 	Talents []Trait
-	StartingMoney string
-	StartingEquip []string
+	StartingMoney map[string]string
+	StartingEquip [][]string
 	UniqueTrait Trait
 }
 
@@ -26,4 +26,8 @@ type Equipment interface {
 
 type Weapon struct {
 	Name string
+}
+
+type Money struct {
+
 }

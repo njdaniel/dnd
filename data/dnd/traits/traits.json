@@ -15,7 +15,7 @@
   "effect": "Advantage to Charm when drinking"
   },
   {
-    "name": "Tough SoB",
+    "name": "Tough As Nails",
     "description": "Resilient to injuries",
     "effect": "Reroll an injury die"
   },
@@ -60,9 +60,9 @@
     "effect": "Able to sleep in armor without penalty. Reduce penalty for dodging with armor."
   },
   {
-    "name": "",
-    "description": "",
-    "effect": ""
+    "name": "Indifferent",
+    "description": "Use to blood and warfare not much fazes you.",
+    "effect": "Advantage on resolve, stress, fear tests"
   },
   {
     "name": "",
