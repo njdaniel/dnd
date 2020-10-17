@@ -36,9 +36,13 @@
       "effect": ""
     }
   ],
-  "trait": {
+  "unique_trait": {
     "name": "DOGS OF WAR",
     "description": "Every scar a Sellsword bears has a story behind it. Every\ndisfigurement speaks to their history of violence. But war... war\nnever changes. And every mercenary must debase themselves for\nsurvival, doling out barbarity with reckless abandon.",
     "effect": "Reroll an injury die"
-  }
+  },
+    "starting_money": {
+      "cp": "8d6"
+    }
+
 }

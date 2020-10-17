@@ -7,21 +7,21 @@ type Profession struct {
 	BonusAdvances []string
 	AttributeBonusAdvances []string
 	SkillAdvances []string
-	Talents []Talent
-	StartingMoney []string
+	Talents []Trait
+	StartingMoney string
 	StartingEquip []string
-	Trait Talent
+	UniqueTrait Trait
 }
 
 //Talent is a modifier to a character with a special ability
-type Talent struct {
+type Trait struct {
 	Name string
 	Description string
 	Effect string
 }
 
 type Equipment interface {
-	GetValue() map[string]int
+	GetValue() string
 }
 
 type Weapon struct {
