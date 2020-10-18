@@ -127,6 +127,7 @@ func TestRollString(t *testing.T) {
 	}{
 		{name: "d6", args:args{"d6"}, wantNumberOfDice: 1, wantTypeOfDice: 6},
 		{name: "2d6", args:args{"2d6"}, wantNumberOfDice: 2, wantTypeOfDice: 6},
+		{name: "10d6", args:args{"10d6"}, wantNumberOfDice: 10, wantTypeOfDice: 6},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
