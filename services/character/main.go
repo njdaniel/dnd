@@ -3,10 +3,12 @@ package main
 import (
 	"bytes"
 	"encoding/csv"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"math/rand"
+	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -272,7 +274,7 @@ const (
 
 func (p ProfessionType) String() string {
 	return [...]string{"agriculture", "arts", "business-trade", "communications", "construction", "craftman", "crime", "governament",
-		"health", "labor", "magic", "military", "outcast", "religion", "scholars", "transportation"}[p]
+		"health", "labor", "magic", "military", "outcast", "religion", "scholars", "transportation"}[p-1]
 }
 func (p ProfessionType) Len() int {
 	return 16
@@ -306,6 +308,7 @@ type Character struct {
 	Professions []string
 	Skills []Skill
 	ProfessionSelection string
+	Money
 }
 
 type Skill struct {
@@ -774,19 +777,19 @@ func NewCharacter() Character {
 		{"Warfare", "WB", []Focus{}, 0},
 	}
 
-	//ProfessionSelection: normal, advance
+	//ProfessionSelection: normal, advance, detailed, special
 	// Find all profession jsons
 	boxlst := BoxData.List()
-	pj := make([]string,0)
+	advanceProfessions := make([]string,0)
 	for _, v := range boxlst {
 		if strings.Contains(v, "professions/archtype") {
 			ss := strings.Split(s, "/")
 			if strings.Contains(ss[len(ss)-1], ".json") {
-				pj = append(pj, v)
+				advanceProfessions = append(advanceProfessions, v)
 			}
 		}
 	}
-	log.Println(pj)
+	log.Println(advanceProfessions)
 
 	rp := Roll(100)
 	if rp == 1 {
@@ -795,6 +798,30 @@ func NewCharacter() Character {
 		//import professions from json file
 		//ref to map[string]Profession
 		//roll to add profession
+		newProfession := advanceProfessions[Roll(len(advanceProfessions))]
+		nc.Professions = append(nc.Professions, newProfession)
+		//read in profession
+		bs, err := BoxData.Find(newProfession)
+		if err != nil {
+			log.Fatal(err)
+		}
+		p := Profession{}
+		json.Unmarshal(bs, &p)
+		//add money from profession
+		func(nm map[string]string, m Money) {
+			//for each preciousMetal(GoldCrowns, SilverShillings, CopperPennies)
+			coinTypes := []string{"gc", "ss", "cp"}
+			//TODO: enum coinTypes
+			for _, ct := range coinTypes {
+				if _, ok := nm[ct]; ok {
+					//numberOfDice := ""
+					fmt.Println("debug")
+				}
+			}
+			//find number of dice
+			//find die type eg d6, d20
+			//add to preciousMetal.count
+		}(p.StartingMoney, nc.Money)
 	} else {
 		nc.ProfessionSelection = "normal"
 		//Professions
@@ -818,6 +845,53 @@ func NewCharacter() Character {
 
 
 	return nc
+}
+
+func RollString(s string) (numberOfDice, typeOfDice int) {
+	//result := 0
+	numberOfDice = 1
+	typeOfDice = 0
+
+	rm := regexp.MustCompile(`\dd`)
+
+
+	switch  {
+	case rm.MatchString(s):
+		fmt.Println("has more than one dice")
+		if _, err := fmt.Sscanf(s, "%dd%d", &numberOfDice, &typeOfDice); err != nil {
+			log.Fatal(err)
+		}
+	default:
+		log.Println("just one dice")
+		//ex d6
+		if _, err := fmt.Sscanf(s, "d%d", &typeOfDice); err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	return
+
+	//ex 2d6
+	//roll 2d6 return [2]int
+
+	//ex 4kh3d6
+	//roll 4d6 keep highest 3
+
+	//ex 4kl3d6
+	//roll 4d6 keep lowest 3
+
+	//explode means to add to total and reroll and add to total, keep rolling until not hitting an explode number
+
+	//ex d6! or d6!6
+	//explode on 6
+
+	//ex d6!1,6
+	//explode on 6 and 1
+
+	//ex d6!1
+	//explode on 1
+
+	//return result
 }
 
 //ReadCSV reads in csv file to be used

@@ -113,3 +113,30 @@ func TestReadCSV(t *testing.T) {
 		})
 	}
 }
+
+
+func TestRollString(t *testing.T) {
+	type args struct {
+		s string
+	}
+	tests := []struct {
+		name             string
+		args             args
+		wantNumberOfDice int
+		wantTypeOfDice   int
+	}{
+		{name: "d6", args:args{"d6"}, wantNumberOfDice: 1, wantTypeOfDice: 6},
+		{name: "2d6", args:args{"2d6"}, wantNumberOfDice: 2, wantTypeOfDice: 6},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotNumberOfDice, gotTypeOfDice := RollString(tt.args.s)
+			if gotNumberOfDice != tt.wantNumberOfDice {
+				t.Errorf("RollString() gotNumberOfDice = %v, want %v", gotNumberOfDice, tt.wantNumberOfDice)
+			}
+			if gotTypeOfDice != tt.wantTypeOfDice {
+				t.Errorf("RollString() gotTypeOfDice = %v, want %v", gotTypeOfDice, tt.wantTypeOfDice)
+			}
+		})
+	}
+}

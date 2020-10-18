@@ -19,25 +19,9 @@
     "Range",
     "Throwing"
   ],
-  "talents": [
-    {
-      "name": "Indifferent",
-      "description": "",
-      "effect": ""
-    },
-    {
-      "name": "Tough As Nails",
-      "description": "",
-      "effect": ""
-    },
-    {
-      "name": "SecondSkin",
-      "description": "",
-      "effect": ""
-    }
-  ],
+  "talents": [ "Indifferent","Tough As Nails","SecondSkin"],
   "unique_trait": {
-    "name": "DOGS OF WAR",
+    "name": "DOG OF WAR",
     "description": "Every scar a Sellsword bears has a story behind it. Every\ndisfigurement speaks to their history of violence. But war... war\nnever changes. And every mercenary must debase themselves for\nsurvival, doling out barbarity with reckless abandon.",
     "effect": "Reroll an injury die"
   },

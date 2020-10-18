@@ -6,7 +6,7 @@ require (
 	github.com/antchfx/xmlquery v0.0.0-20190202044811-63f0f14e6f57 // indirect
 	github.com/antchfx/xpath v0.0.0-20190129040759-c8489ed3251e // indirect
 	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
-	github.com/gobuffalo/packr/v2 v2.8.0 // indirect
+	github.com/gobuffalo/packr/v2 v2.8.0
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gocolly/colly v1.1.0
 	github.com/golang/protobuf v1.3.1
