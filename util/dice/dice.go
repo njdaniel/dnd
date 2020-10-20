@@ -34,6 +34,7 @@ func newDiceInfo() DiceInfo {
 
 //Roll base on the information of DiceInfo
 func (d *DiceInfo) RollDice() int {
+	log.Println("rolling dice...")
 	switch  {
 	case d.HighRoll:
 		fmt.Println("use high roll")
@@ -74,36 +75,36 @@ func ParseRollString(s string) DiceInfo {
 	switch  {
 	case rh.MatchString(s):
 		fmt.Println("keep the highest dice")
-		if _, err := fmt.Sscanf(s, "%kh%dd%d", di.NumberOfDice, di.KeepDice, di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "%kh%dd%d", &di.NumberOfDice, &di.KeepDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 		di.HighRoll=true
 	case rl.MatchString(s):
 		fmt.Println("keep the lowest dice")
-		if _, err := fmt.Sscanf(s, "%dkl%dd%d", di.NumberOfDice, di.KeepDice, di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "%dkl%dd%d", &di.NumberOfDice, &di.KeepDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 		di.LowRoll=true
 	case rme.MatchString(s):
 		fmt.Println("multiple explodes")
-		if _, err := fmt.Sscanf(s, "%dd%d!", di.NumberOfDice, di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "%dd%d!", &di.NumberOfDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 	case re.MatchString(s):
 		fmt.Println("explodes")
-		if _, err := fmt.Sscanf(s, "d%d!", di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "d%d!", &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 		di.Explodes=true
 	case rm.MatchString(s):
 		fmt.Println("has more than one dice")
-		if _, err := fmt.Sscanf(s, "%dd%d", di.NumberOfDice, di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "%dd%d", &di.NumberOfDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 	default:
 		log.Println("just one dice")
 		//ex d6
-		if _, err := fmt.Sscanf(s, "d%d", di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "d%d", &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 	}
