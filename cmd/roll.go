@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/njdaniel/dnd/util/dice"
 
 	"github.com/spf13/cobra"
 )
@@ -33,6 +34,8 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("roll called")
+		d := dice.ParseRollString(args[0])
+		fmt.Println(d.RollDice())
 	},
 }
 

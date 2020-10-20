@@ -3,9 +3,12 @@ package dice
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"regexp"
+	"time"
 )
 
+//DiceInfo contains the information about a roll
 type DiceInfo struct {
 	NumberOfDice int
 	TypeOfDice int
@@ -27,6 +30,32 @@ func newDiceInfo() DiceInfo {
 		ExplodesOn:[]int{6,},
 	}
 	return di
+}
+
+//Roll base on the information of DiceInfo
+func (d *DiceInfo) RollDice() int {
+	switch  {
+	case d.HighRoll:
+		fmt.Println("use high roll")
+	case d.LowRoll:
+		fmt.Println("use low roll")
+	case d.Explodes:
+		fmt.Println("explodes")
+	default:
+		fmt.Println("default roll")
+		return Roll(d.TypeOfDice)
+	}
+	return 0
+}
+
+func Roll(d int) int {
+	if d <= 0 {
+		return -1
+	}
+	rand.Seed(time.Now().UnixNano())
+	min := 1
+	max := d
+	return rand.Intn(max-min+1) + min
 }
 
 //ParseRollString parses a string of roll info into a DiceInfo's fields
