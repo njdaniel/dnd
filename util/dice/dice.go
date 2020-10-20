@@ -39,14 +39,10 @@ func ParseRollString(s string) DiceInfo {
 	rm := regexp.MustCompile(`\dd`)
 	rh := regexp.MustCompile(`\dkh\dd\d`)
 	rl := regexp.MustCompile(`\dkl\dd\d`)
-
+	rme := regexp.MustCompile(`\dd\d!`)
+	re := regexp.MustCompile(`d\d!`)
 
 	switch  {
-	case rm.MatchString(s):
-		fmt.Println("has more than one dice")
-		if _, err := fmt.Sscanf(s, "%dd%d", di.NumberOfDice, di.TypeOfDice); err != nil {
-			log.Fatal(err)
-		}
 	case rh.MatchString(s):
 		fmt.Println("keep the highest dice")
 		if _, err := fmt.Sscanf(s, "%kh%dd%d", di.NumberOfDice, di.KeepDice, di.TypeOfDice); err != nil {
@@ -59,6 +55,22 @@ func ParseRollString(s string) DiceInfo {
 			log.Fatal(err)
 		}
 		di.LowRoll=true
+	case rme.MatchString(s):
+		fmt.Println("multiple explodes")
+		if _, err := fmt.Sscanf(s, "%dd%d!", di.NumberOfDice, di.TypeOfDice); err != nil {
+			log.Fatal(err)
+		}
+	case re.MatchString(s):
+		fmt.Println("explodes")
+		if _, err := fmt.Sscanf(s, "d%d!", di.TypeOfDice); err != nil {
+			log.Fatal(err)
+		}
+		di.Explodes=true
+	case rm.MatchString(s):
+		fmt.Println("has more than one dice")
+		if _, err := fmt.Sscanf(s, "%dd%d", di.NumberOfDice, di.TypeOfDice); err != nil {
+			log.Fatal(err)
+		}
 	default:
 		log.Println("just one dice")
 		//ex d6
