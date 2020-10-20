@@ -25,13 +25,30 @@ import (
 // rollCmd represents the roll command
 var rollCmd = &cobra.Command{
 	Use:   "roll",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Rolls dice",
+	Long: `Dice Calculator. Can do basic rolls and more complex calculations.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Examples:
+	ex1.
+	$ dnd roll d20
+	$ 13
+
+	ex2.
+	$ dnd roll 2d6
+	$ [4,1]
+
+	ex3.
+	$ 4kh3d6
+	$ [6,5,3]
+
+	ex4.
+	$ 4kl3d6
+	$ [1,1,4]
+
+	ex5.
+	$ 6!
+	$ 13
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("roll called")
 		d := dice.ParseRollString(args[0])
