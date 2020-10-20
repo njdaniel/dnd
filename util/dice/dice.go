@@ -37,6 +37,8 @@ func ParseRollString(s string) DiceInfo {
 	di := newDiceInfo()
 
 	rm := regexp.MustCompile(`\dd`)
+	rh := regexp.MustCompile(`\dkh\dd\d`)
+	rl := regexp.MustCompile(`\dkl\dd\d`)
 
 
 	switch  {
@@ -45,6 +47,18 @@ func ParseRollString(s string) DiceInfo {
 		if _, err := fmt.Sscanf(s, "%dd%d", di.NumberOfDice, di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
+	case rh.MatchString(s):
+		fmt.Println("keep the highest dice")
+		if _, err := fmt.Sscanf(s, "%kh%dd%d", di.NumberOfDice, di.KeepDice, di.TypeOfDice); err != nil {
+			log.Fatal(err)
+		}
+		di.HighRoll=true
+	case rl.MatchString(s):
+		fmt.Println("keep the lowest dice")
+		if _, err := fmt.Sscanf(s, "%dkl%dd%d", di.NumberOfDice, di.KeepDice, di.TypeOfDice); err != nil {
+			log.Fatal(err)
+		}
+		di.LowRoll=true
 	default:
 		log.Println("just one dice")
 		//ex d6
