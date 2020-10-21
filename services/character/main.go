@@ -5,6 +5,7 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
+	"github.com/njdaniel/dnd/util/dice"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -808,14 +809,23 @@ func NewCharacter() Character {
 		p := Profession{}
 		json.Unmarshal(bs, &p)
 		//add money from profession
+		nc.Money = NewMoney()
 		func(nm map[string]string, m Money) {
 			//for each preciousMetal(GoldCrowns, SilverShillings, CopperPennies)
 			coinTypes := []string{"gc", "ss", "cp"}
-			//TODO: enum coinTypes
-			for _, ct := range coinTypes {
+			for i, ct := range coinTypes {
 				if _, ok := nm[ct]; ok {
 					//numberOfDice := ""
 					fmt.Println("debug")
+					di := dice.ParseRollString(nm[ct])
+					if coinTypes[i] == m.GoldCrowns.ShortHand {
+						m.GoldCrowns.Count += dice.SumRolls(di.RollDice())
+					} else if coinTypes[i] == m.SilverShillings.ShortHand {
+						m.SilverShillings.Count += dice.SumRolls(di.RollDice())
+					} else if coinTypes[i] == m.CopperPennies.ShortHand {
+						m.CopperPennies.Count += dice.SumRolls(di.RollDice())
+					}
+
 				}
 			}
 			//find number of dice
