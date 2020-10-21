@@ -22,6 +22,39 @@ overall skills. The DM version has the math and and details for help running the
 * Generate stores, towns
 * Save the generated files to shared database
 
+
+#### Quick Use CLI
+
+```console
+$ git clone https://github.com/njdaniel/dnd.git
+$ cd dnd
+$ go build
+$ ./dnd 
+$ #prints out help of available cmds
+```
+
+##### Rolling Dice
+
+```console 
+$ ./dnd roll 3d6
+$ [5,4,1]
+$ 
+$ ./dnd roll d20
+$ 14
+$ 
+$ Explodes on default 6
+$ ./dnd roll d6!
+$ [6,3] 
+$
+$ Keep highest 2 of 4d6
+$ ./dnd roll 4kh2d6
+$ [5,4] 
+$ 
+$ Keep lowest 2 of 4d6
+$ ./dnd roll 4kl2d6
+$[1,3]
+```
+
 #### Develop from source
 
 ```console

@@ -1,10 +1,11 @@
-package main
+package character
 
 import (
 	"bytes"
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
+	"github.com/gobuffalo/packr/v2"
 	"github.com/njdaniel/dnd/util/dice"
 	"io/ioutil"
 	"log"
@@ -13,9 +14,9 @@ import (
 	"sort"
 	"strings"
 	"time"
-
-	"github.com/gobuffalo/packr/v2"
 )
+
+
 
 var BoxData *packr.Box
 
@@ -24,15 +25,6 @@ func init() {
 
 }
 
-func main() {
-	fmt.Println("starting...")
-	//fmt.Println("Opening box")
-	//fmt.Println(BoxData.List())
-	//fmt.Println(ReadCSV("./background/eyecolor.csv"))
-	//fmt.Println("Calculating..", CalcAttrBonus(20))
-	fmt.Println(NewCharacter())
-	fmt.Println("done.")
-}
 
 
 type Languages int

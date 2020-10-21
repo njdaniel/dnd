@@ -1,4 +1,4 @@
-package main
+package character
 
 //Profession is the object for the professions with advance description
 type Profession struct {
