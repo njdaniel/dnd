@@ -34,22 +34,27 @@ func newDiceInfo() DiceInfo {
 }
 
 //Roll base on the information of DiceInfo
-func (d *DiceInfo) RollDice() int {
+func (d *DiceInfo) RollDice() []int {
 	log.Println("rolling dice...")
+	dice := make([]int, 0)
 	switch  {
 	case d.HighRoll:
 		fmt.Println("use high roll")
-		KeepHighestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
+		return KeepHighestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
 	case d.LowRoll:
 		fmt.Println("use low roll")
-		KeepLowestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
+		return KeepLowestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
 	case d.Explodes:
 		fmt.Println("explodes")
+		return RollExplodes(d.TypeOfDice, d.ExplodesOn)
+	case d.NumberOfDice > 1:
+		fmt.Println("multiple rolls")
+		return MultiRolls(d.NumberOfDice, d.TypeOfDice)
 	default:
 		fmt.Println("default roll")
-		return Roll(d.TypeOfDice)
+		dice = append(dice, Roll(d.TypeOfDice))
 	}
-	return 0
+	return dice
 }
 
 //RollExplodes keeps rerolling until not hitting an explode die number
@@ -140,7 +145,7 @@ func ParseRollString(s string) DiceInfo {
 	switch  {
 	case rh.MatchString(s):
 		fmt.Println("keep the highest dice")
-		if _, err := fmt.Sscanf(s, "%kh%dd%d", &di.NumberOfDice, &di.KeepDice, &di.TypeOfDice); err != nil {
+		if _, err := fmt.Sscanf(s, "%dkh%dd%d", &di.NumberOfDice, &di.KeepDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
 		di.HighRoll=true
