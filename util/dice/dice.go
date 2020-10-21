@@ -5,6 +5,7 @@ import (
 	"log"
 	"math/rand"
 	"regexp"
+	"sort"
 	"time"
 )
 
@@ -38,8 +39,10 @@ func (d *DiceInfo) RollDice() int {
 	switch  {
 	case d.HighRoll:
 		fmt.Println("use high roll")
+		KeepHighestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
 	case d.LowRoll:
 		fmt.Println("use low roll")
+		KeepLowestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
 	case d.Explodes:
 		fmt.Println("explodes")
 	default:
@@ -49,6 +52,43 @@ func (d *DiceInfo) RollDice() int {
 	return 0
 }
 
+//RollExplodes keeps rerolling until not hitting an explode die number
+func RollExplodes(d int, e []int) []int {
+	rolls := make([]int, 0)
+	r := Roll(d)
+	rolls = append(rolls, r)
+	me := make(map[int]struct{}, 0)
+	for _, v := range e {
+		if _, ok := me[v]; !ok {
+			me[v] = struct{}{}
+		}
+	}
+	//explodes := func(){
+	//
+	//}
+	exploded := false
+	if _, ok := me[r]; ok {
+		exploded = true
+	}
+	for exploded {
+		r := Roll(d)
+		rolls = append(rolls, r)
+		if _, ok := me[r]; !ok {
+			exploded = false
+		}
+	}
+	return rolls
+}
+//func explodes(d int, m map[int]struct{}) []int {
+//
+//	r := Roll(d)
+//	rolls := make([]int, 0)
+//	rolls = append(rolls, r)
+//	if _, ok := m[r]; ok {
+//
+//	}
+//	return rolls
+//}
 func Roll(d int) int {
 	if d <= 0 {
 		return -1
@@ -57,6 +97,31 @@ func Roll(d int) int {
 	min := 1
 	max := d
 	return rand.Intn(max-min+1) + min
+}
+func MultiRolls(n, d int) []int {
+	rs := []int{}
+	for i := 0; i < n; i++ {
+		rs = append(rs, Roll(d))
+	}
+	return rs
+}
+func KeepHighestRolls(h int, rs []int) []int {
+	sort.Sort(sort.Reverse(sort.IntSlice(rs)))
+	rs = rs[:h]
+	return rs
+}
+
+func KeepLowestRolls(l int, rs []int) []int {
+	sort.Ints(rs)
+	rs = rs[:l]
+	return rs
+}
+func SumRolls(r []int) int {
+	sum := 0
+	for _, v := range r {
+		sum += v
+	}
+	return sum
 }
 
 //ParseRollString parses a string of roll info into a DiceInfo's fields
