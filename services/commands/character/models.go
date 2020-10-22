@@ -1,25 +1,25 @@
 package character
 
-//go:generate easytags $GOFILE
+//go:generate easytags $GOFILE json
 
 //Profession is the object for the professions with advance description
 type Profession struct {
-	Name                   string `yaml:"name"`
-	Description            string
-	BonusAdvances          []string
-	AttributeBonusAdvances []string
-	SkillAdvances          []string
-	Talents                []string
-	StartingMoney          map[string]string
-	StartingEquip          [][]string
-	UniqueTrait            Trait
+	Name                   string            `json:"name"`
+	Description            string            `json:"description"`
+	BonusAdvances          []string          `json:"bonus_advances"`
+	AttributeBonusAdvances []string          `json:"attribute_bonus_advances"`
+	SkillAdvances          []string          `json:"skill_advances"`
+	Talents                []string          `json:"talents"`
+	StartingMoney          map[string]string `json:"starting_money"`
+	StartingEquip          [][]string        `json:"starting_equip"`
+	UniqueTrait            Trait             `json:"unique_trait"`
 }
 
 //Talent is a modifier to a character with a special ability
 type Trait struct {
-	Name        string
-	Description string
-	Effect      string
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Effect      string `json:"effect"`
 }
 
 type Equipment interface {
@@ -27,7 +27,7 @@ type Equipment interface {
 }
 
 type Weapon struct {
-	Name string
+	Name string `json:"name"`
 }
 
 type Money struct {
@@ -36,19 +36,19 @@ type Money struct {
 	CopperPennies
 }
 type GoldCrowns struct {
-	Name      string
-	ShortHand string
-	Count     int
+	Name      string `json:"name"`
+	ShortHand string `json:"short_hand"`
+	Count     int    `json:"count"`
 }
 type SilverShillings struct {
-	Name      string
-	ShortHand string
-	Count     int
+	Name      string `json:"name"`
+	ShortHand string `json:"short_hand"`
+	Count     int    `json:"count"`
 }
 type CopperPennies struct {
-	Name      string
-	ShortHand string
-	Count     int
+	Name      string `json:"name"`
+	ShortHand string `json:"short_hand"`
+	Count     int    `json:"count"`
 }
 
 func NewMoney() Money {
