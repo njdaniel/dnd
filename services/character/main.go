@@ -34,11 +34,10 @@ func main() {
 	fmt.Println("done.")
 }
 
-
 type Languages int
 
 const (
-	Common Languages = iota +1
+	Common Languages = iota + 1
 	Undercommon
 	Elvish
 	Dwarvish
@@ -52,7 +51,6 @@ func (l Languages) String() string {
 func (l Languages) Len() int {
 	return 5
 }
-
 
 type Gender int
 
@@ -140,10 +138,10 @@ type HumanHeritageRange struct {
 }
 
 type WeightedRow struct {
-	Enum int
+	Enum   int
 	Weight int
-	Min  int
-	Max  int
+	Min    int
+	Max    int
 }
 
 type WeightedTable []WeightedRow
@@ -159,7 +157,7 @@ func NewWeightedTable(enum Enum, w []int) WeightedTable {
 	ptr := 0
 	for i := 1; i <= enum.Len(); i++ {
 		totalWeight += w[i-1]
-		tmp := WeightedRow{i, w[i-1], ptr+1, totalWeight}
+		tmp := WeightedRow{i, w[i-1], ptr + 1, totalWeight}
 		wt = append(wt, tmp)
 		ptr += w[i-1]
 	}
@@ -181,14 +179,16 @@ func (wt *WeightedTable) Roll() int {
 }
 
 type AgeGroup int
+
 const (
-	Young AgeGroup = iota +1
+	Young AgeGroup = iota + 1
 	Adult
 	MiddleAge
 	Elderly
 )
+
 func (a AgeGroup) String() string {
-	return [...]string{"Young", "Adult", "MiddleAge", "Elderly" }[a-1]
+	return [...]string{"Young", "Adult", "MiddleAge", "Elderly"}[a-1]
 }
 func (a AgeGroup) Len() int {
 	return 4
@@ -206,19 +206,20 @@ type Attributes struct {
 }
 
 type Bonuses struct {
-	SB int
-	DB int
-	CB int
-	PB int
-	IB int
-	WB int
-	ChB int
-	CombatBonus int
-	Initiative int
+	SB           int
+	DB           int
+	CB           int
+	PB           int
+	IB           int
+	WB           int
+	ChB          int
+	CombatBonus  int
+	Initiative   int
 	Encumburance int
 }
 
 type DamageConditionState int
+
 const (
 	Unharmed DamageConditionState = iota
 	LightlyWounded
@@ -227,6 +228,7 @@ const (
 	GreivouslyWounded
 	Slain
 )
+
 func (d DamageConditionState) String() string {
 	return [...]string{"Unharmed", "LightlyWounded", "ModeratelyWounded", "SeriouslyWounded", "GreivouslyWounded", "Slain"}[d]
 }
@@ -235,6 +237,7 @@ func (d DamageConditionState) Len() int {
 }
 
 type PerilsConditonState int
+
 const (
 	Unhindered PerilsConditonState = iota
 	Imperiled
@@ -255,7 +258,7 @@ func (p PerilsConditonState) Len() int {
 type ProfessionType int
 
 const (
-	Agriculture ProfessionType = iota +1
+	Agriculture ProfessionType = iota + 1
 	Arts
 	BusinessTrade
 	Communications
@@ -281,46 +284,45 @@ func (p ProfessionType) Len() int {
 	return 16
 }
 
-
 type Character struct {
-	Name     string
-	Gender   string
-	Race     string
-	Ancestry string
-	Age      string
-	DamageThreshold int
+	Name                 string
+	Gender               string
+	Race                 string
+	Ancestry             string
+	Age                  string
+	DamageThreshold      int
 	DamageConditionState string
-	Injuries []string
-	PerilsThreshold int
+	Injuries             []string
+	PerilsThreshold      int
 	PerilsConditionState string
 	Bonuses
 	Attributes
 	DistinguishingMarks []string
-	BodyType string
-	Complexion string
-	Season string
-	Upbringing string
-	SocialClass string
-	EyeColor string
-	HairColor string
-	Languages []string
-	Height string
-	Weight int
-	Professions []string
-	Skills []Skill
+	BodyType            string
+	Complexion          string
+	Season              string
+	Upbringing          string
+	SocialClass         string
+	EyeColor            string
+	HairColor           string
+	Languages           []string
+	Height              string
+	Weight              int
+	Professions         []string
+	Skills              []Skill
 	ProfessionSelection string
 	Money
 }
 
 type Skill struct {
-	Name string
+	Name      string
 	BonusUsed string
-	Focuses []Focus
-	Level int
+	Focuses   []Focus
+	Level     int
 }
 
 type Focus struct {
-	Name string
+	Name  string
 	Level int
 }
 
@@ -380,7 +382,7 @@ func NewCharacter() Character {
 		}
 	case "Elf":
 		weights := []int{45, 45, 10}
-		wt := NewWeightedTable(High, weights )
+		wt := NewWeightedTable(High, weights)
 		nc.Ancestry = ElvenHeritage(wt.Roll()).String()
 	case "Dwarf":
 		nc.Ancestry = "Mountain"
@@ -389,7 +391,7 @@ func NewCharacter() Character {
 	}
 
 	// 4) Determine Age
-	nc.Age=func() string {
+	nc.Age = func() string {
 		weights := []int{25, 35, 25, 10}
 		wt := NewWeightedTable(Young, weights)
 		return AgeGroup(wt.Roll()).String()
@@ -495,19 +497,14 @@ func NewCharacter() Character {
 	nc.PerilsThreshold = nc.WB + 3
 	nc.PerilsConditionState = PerilsConditonState(0).String()
 
-
-
-
-
 	// 11) Determine Encumberance limit = SB + 5
-	nc.Encumburance = nc.SB +5
+	nc.Encumburance = nc.SB + 5
 
 	// 12) Calc Base Combat Bonus = (DB + PB + WP)/3
-	nc.CombatBonus = (nc.DB + nc.PB + nc.WB)/3
+	nc.CombatBonus = (nc.DB + nc.PB + nc.WB) / 3
 
 	// 13) Calc Initiative/Reflex = (DB + PB)
 	nc.Initiative = nc.DB + nc.PB
-
 
 	// 15) Distinguishing Marks
 
@@ -522,23 +519,23 @@ func NewCharacter() Character {
 	case "Young":
 		log.Println("young and unblemished")
 	case "Adult":
-		n := Roll(2)-1
+		n := Roll(2) - 1
 		fmt.Println(n)
-		for i := 0; i < n; i ++ {
+		for i := 0; i < n; i++ {
 			result := Roll(len(ss))
 			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
 		}
 	case "MiddleAge":
-		n := Roll(3)-1
+		n := Roll(3) - 1
 		fmt.Println(n)
-		for i := 0; i < n; i ++ {
+		for i := 0; i < n; i++ {
 			result := Roll(len(ss))
 			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
 		}
 	case "Elderly":
 		n := Roll(4)
 		fmt.Println(n)
-		for i := 0; i < n; i ++ {
+		for i := 0; i < n; i++ {
 			result := Roll(len(ss))
 			nc.DistinguishingMarks = append(nc.DistinguishingMarks, ss[result-1])
 		}
@@ -644,21 +641,21 @@ func NewCharacter() Character {
 		if err != nil {
 			log.Println(err)
 		}
-		r := Roll(len(sshc))-1
+		r := Roll(len(sshc)) - 1
 		nc.EyeColor = sshc[r][2]
 	case "Elf":
 		sshc, err := ReadCSV("./background/eyecolor.csv")
 		if err != nil {
 			log.Println(err)
 		}
-		r := Roll(len(sshc))-1
+		r := Roll(len(sshc)) - 1
 		nc.EyeColor = sshc[r][1]
 	case "Dwarf":
 		sshc, err := ReadCSV("./background/eyecolor.csv")
 		if err != nil {
 			log.Println(err)
 		}
-		r := Roll(len(sshc))-1
+		r := Roll(len(sshc)) - 1
 		nc.EyeColor = sshc[r][0]
 	default:
 		log.Println("no race determined")
@@ -671,21 +668,21 @@ func NewCharacter() Character {
 		if err != nil {
 			log.Println(err)
 		}
-		r := Roll(len(sshc))-1
+		r := Roll(len(sshc)) - 1
 		nc.HairColor = sshc[r][2]
 	case "Elf":
 		sshc, err := ReadCSV("./background/haircolor.csv")
 		if err != nil {
 			log.Println(err)
 		}
-		r := Roll(len(sshc))-1
+		r := Roll(len(sshc)) - 1
 		nc.HairColor = sshc[r][1]
 	case "Dwarf":
 		sshc, err := ReadCSV("./background/haircolor.csv")
 		if err != nil {
 			log.Println(err)
 		}
-		r := Roll(len(sshc))-1
+		r := Roll(len(sshc)) - 1
 		nc.HairColor = sshc[r][0]
 	default:
 		log.Println("no race determined")
@@ -701,7 +698,6 @@ func NewCharacter() Character {
 	//	return ss[result-1]
 	//}()
 
-
 	// 20) Social Class add cash
 
 	// Languages
@@ -710,7 +706,7 @@ func NewCharacter() Character {
 	case "Human":
 		mapLanguages := map[string]bool{"Common": true, "Undercommon": false, "Elvish": false, "Dwarvish": false, "Orcish": false}
 		numLangs := Roll(nc.IB)
-		for i := 0; i < numLangs; i ++ {
+		for i := 0; i < numLangs; i++ {
 			//wanted Languages.Len() but got error...
 			newL := Languages(Roll(5))
 			//check if lang is already know
@@ -723,7 +719,7 @@ func NewCharacter() Character {
 		nc.Languages = append(nc.Languages, "Elvish")
 		mapLanguages := map[string]bool{"Common": true, "Undercommon": false, "Elvish": true, "Dwarvish": false, "Orcish": false}
 		numLangs := Roll(nc.IB)
-		for i := 0; i < numLangs; i ++ {
+		for i := 0; i < numLangs; i++ {
 			//wanted Languages.Len() but got error...
 			newL := Languages(Roll(5))
 			//check if lang is already know
@@ -736,7 +732,7 @@ func NewCharacter() Character {
 		nc.Languages = append(nc.Languages, "Dwarvish")
 		mapLanguages := map[string]bool{"Common": true, "Undercommon": false, "Elvish": false, "Dwarvish": true, "Orcish": false}
 		numLangs := Roll(nc.IB)
-		for i := 0; i < numLangs; i ++ {
+		for i := 0; i < numLangs; i++ {
 			//wanted Languages.Len() but got error...
 			newL := Languages(Roll(5))
 			//check if lang is already know
@@ -754,34 +750,34 @@ func NewCharacter() Character {
 	// 21) Drawbacks
 
 	// skills
-	nc.Skills = []Skill{{"Alchemy", "IB", []Focus{}, 0},{"Athletics", "SB", []Focus{}, 0},
-		{"Awareness", "PB", []Focus{}, 0},{"Bargain", "ChB", []Focus{}, 0},
-		{"Charm", "ChB", []Focus{}, 0},{"Coordination", "DB", []Focus{}, 0},
-		{"Counterfeit", "IB", []Focus{}, 0},{"Disguise", "ChB", []Focus{}, 0},
-		{"Drive", "SB", []Focus{}, 0},{"Eavesdrop", "PB", []Focus{}, 0},
+	nc.Skills = []Skill{{"Alchemy", "IB", []Focus{}, 0}, {"Athletics", "SB", []Focus{}, 0},
+		{"Awareness", "PB", []Focus{}, 0}, {"Bargain", "ChB", []Focus{}, 0},
+		{"Charm", "ChB", []Focus{}, 0}, {"Coordination", "DB", []Focus{}, 0},
+		{"Counterfeit", "IB", []Focus{}, 0}, {"Disguise", "ChB", []Focus{}, 0},
+		{"Drive", "SB", []Focus{}, 0}, {"Eavesdrop", "PB", []Focus{}, 0},
 
-		{"Education", "IB", []Focus{}, 0},{"Folklore", "IB", []Focus{}, 0},
-		{"Gamble", "IB", []Focus{}, 0},{"Guile", "DB", []Focus{}, 0},
-		{"HandleAnimal", "PB", []Focus{}, 0},{"Heal", "IB", []Focus{}, 0},
+		{"Education", "IB", []Focus{}, 0}, {"Folklore", "IB", []Focus{}, 0},
+		{"Gamble", "IB", []Focus{}, 0}, {"Guile", "DB", []Focus{}, 0},
+		{"HandleAnimal", "PB", []Focus{}, 0}, {"Heal", "IB", []Focus{}, 0},
 
-		{"Magic", "WB", []Focus{}, 0},{"Interrogation", "WB", []Focus{}, 0},
-		{"Intimidate", "SB", []Focus{}, 0},{"Leadership", "ChB", []Focus{}, 0},
-		{"Melee", "CombatBonus", []Focus{}, 0},{"Range", "PB", []Focus{}, 0},
+		{"Magic", "WB", []Focus{}, 0}, {"Interrogation", "WB", []Focus{}, 0},
+		{"Intimidate", "SB", []Focus{}, 0}, {"Leadership", "ChB", []Focus{}, 0},
+		{"Melee", "CombatBonus", []Focus{}, 0}, {"Range", "PB", []Focus{}, 0},
 
-		{"Throwing", "DB", []Focus{}, 0},{"Dodge", "DB", []Focus{}, 0},
-		{"Navigation", "IB", []Focus{}, 0},{"Sailing", "DB", []Focus{}, 0},
-		{"Resolve", "WB", []Focus{}, 0},{"Ride", "DB", []Focus{}, 0},
+		{"Throwing", "DB", []Focus{}, 0}, {"Dodge", "DB", []Focus{}, 0},
+		{"Navigation", "IB", []Focus{}, 0}, {"Sailing", "DB", []Focus{}, 0},
+		{"Resolve", "WB", []Focus{}, 0}, {"Ride", "DB", []Focus{}, 0},
 
-		{"Scruntinize", "PB", []Focus{}, 0},{"Pickpocketing", "DB", []Focus{}, 0},
-		{"Lockpicking", "DB", []Focus{}, 0},{"Stealth", "DB", []Focus{}, 0},
-		{"Survival", "WB", []Focus{}, 0},{"Tradecraft", "WB", []Focus{}, 0},
+		{"Scruntinize", "PB", []Focus{}, 0}, {"Pickpocketing", "DB", []Focus{}, 0},
+		{"Lockpicking", "DB", []Focus{}, 0}, {"Stealth", "DB", []Focus{}, 0},
+		{"Survival", "WB", []Focus{}, 0}, {"Tradecraft", "WB", []Focus{}, 0},
 		{"Warfare", "WB", []Focus{}, 0},
 	}
 
 	//ProfessionSelection: normal, advance, detailed, special
 	// Find all profession jsons
 	boxlst := BoxData.List()
-	advanceProfessions := make([]string,0)
+	advanceProfessions := make([]string, 0)
 	for _, v := range boxlst {
 		if strings.Contains(v, "professions/archtype") {
 			ss := strings.Split(s, "/")
@@ -844,15 +840,12 @@ func NewCharacter() Character {
 				log.Println(err)
 			}
 			s := string(bs)
-			ss := strings.Split(s,"\n")
+			ss := strings.Split(s, "\n")
 			result := Roll(len(ss))
 			ps = append(ps, ss[result-1])
 			return ps
 		}()
 	}
-
-
-
 
 	return nc
 }
@@ -864,8 +857,7 @@ func RollString(s string) (numberOfDice, typeOfDice int) {
 
 	rm := regexp.MustCompile(`\dd`)
 
-
-	switch  {
+	switch {
 	case rm.MatchString(s):
 		fmt.Println("has more than one dice")
 		if _, err := fmt.Sscanf(s, "%dd%d", &numberOfDice, &typeOfDice); err != nil {
@@ -917,7 +909,7 @@ func ReadCSV(filename string) ([][]string, error) {
 	if err != nil {
 		log.Println()
 	}
-	return result,nil
+	return result, nil
 }
 
 func Roll(d int) int {
@@ -968,11 +960,11 @@ func KeepLowestRolls(l int, rs []int) []int {
 
 // Calculates Attribute Bonus
 func CalcAttrBonus(a int) int {
-	tmp := a -10
+	tmp := a - 10
 	if a > 10 {
 		return tmp / 2
 	} else if a < 10 {
-		return ((11-a)/2)*(-1)
+		return ((11 - a) / 2) * (-1)
 	}
 	return 0
 }

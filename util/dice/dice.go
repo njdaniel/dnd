@@ -12,23 +12,23 @@ import (
 //DiceInfo contains the information about a roll
 type DiceInfo struct {
 	NumberOfDice int
-	TypeOfDice int
-	HighRoll bool
-	LowRoll bool
-	KeepDice int
-	Explodes bool
-	ExplodesOn []int
+	TypeOfDice   int
+	HighRoll     bool
+	LowRoll      bool
+	KeepDice     int
+	Explodes     bool
+	ExplodesOn   []int
 }
 
 func newDiceInfo() DiceInfo {
 	di := DiceInfo{
 		NumberOfDice: 1,
-		TypeOfDice: 0,
-		HighRoll:false,
-		LowRoll:false,
-		KeepDice:0,
-		Explodes:false,
-		ExplodesOn:[]int{6,},
+		TypeOfDice:   0,
+		HighRoll:     false,
+		LowRoll:      false,
+		KeepDice:     0,
+		Explodes:     false,
+		ExplodesOn:   []int{6},
 	}
 	return di
 }
@@ -37,13 +37,13 @@ func newDiceInfo() DiceInfo {
 func (d *DiceInfo) RollDice() []int {
 	log.Println("rolling dice...")
 	dice := make([]int, 0)
-	switch  {
+	switch {
 	case d.HighRoll:
 		fmt.Println("use high roll")
-		return KeepHighestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
+		return KeepHighestRolls(d.KeepDice, MultiRolls(d.NumberOfDice, d.TypeOfDice))
 	case d.LowRoll:
 		fmt.Println("use low roll")
-		return KeepLowestRolls(d.KeepDice,MultiRolls(d.NumberOfDice, d.TypeOfDice))
+		return KeepLowestRolls(d.KeepDice, MultiRolls(d.NumberOfDice, d.TypeOfDice))
 	case d.Explodes:
 		fmt.Println("explodes")
 		return RollExplodes(d.TypeOfDice, d.ExplodesOn)
@@ -84,6 +84,7 @@ func RollExplodes(d int, e []int) []int {
 	}
 	return rolls
 }
+
 //func explodes(d int, m map[int]struct{}) []int {
 //
 //	r := Roll(d)
@@ -142,19 +143,19 @@ func ParseRollString(s string) DiceInfo {
 	rme := regexp.MustCompile(`\dd\d!`)
 	re := regexp.MustCompile(`d\d!`)
 
-	switch  {
+	switch {
 	case rh.MatchString(s):
 		fmt.Println("keep the highest dice")
 		if _, err := fmt.Sscanf(s, "%dkh%dd%d", &di.NumberOfDice, &di.KeepDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
-		di.HighRoll=true
+		di.HighRoll = true
 	case rl.MatchString(s):
 		fmt.Println("keep the lowest dice")
 		if _, err := fmt.Sscanf(s, "%dkl%dd%d", &di.NumberOfDice, &di.KeepDice, &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
-		di.LowRoll=true
+		di.LowRoll = true
 	case rme.MatchString(s):
 		fmt.Println("multiple explodes")
 		if _, err := fmt.Sscanf(s, "%dd%d!", &di.NumberOfDice, &di.TypeOfDice); err != nil {
@@ -165,7 +166,7 @@ func ParseRollString(s string) DiceInfo {
 		if _, err := fmt.Sscanf(s, "d%d!", &di.TypeOfDice); err != nil {
 			log.Fatal(err)
 		}
-		di.Explodes=true
+		di.Explodes = true
 	case rm.MatchString(s):
 		fmt.Println("has more than one dice")
 		if _, err := fmt.Sscanf(s, "%dd%d", &di.NumberOfDice, &di.TypeOfDice); err != nil {

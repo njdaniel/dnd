@@ -53,27 +53,29 @@ func NewMoney() Money {
 
 	return Money{
 		GoldCrowns{
-			Name: "GoldCrowns",
+			Name:      "GoldCrowns",
 			ShortHand: "gc",
-			Count: 0,
+			Count:     0,
 		}, SilverShillings{
-			Name: "SilverShillings",
+			Name:      "SilverShillings",
 			ShortHand: "ss",
-			Count: 0,
+			Count:     0,
 		}, CopperPennies{
-			Name: "CopperPennies",
+			Name:      "CopperPennies",
 			ShortHand: "cp",
-			Count: 0,
+			Count:     0,
 		},
 	}
 }
 
 type CoinTypes int
+
 const (
 	GoldCrown CoinTypes = iota
 	SilverShilling
 	CopperPenny
 )
+
 func (c CoinTypes) String() string {
 	return [...]string{"GoldCrowns", "SilverShillings", "CopperPennies"}[c]
 }
