@@ -11,9 +11,9 @@ overall skills. The DM version has the math and and details for help running the
 
 #### Features:
 * Create random character
+* Roll dice
 
 #### Upcoming:
-* CLI dice roller
 * CLI character random generator
 * CLI create character
 * save character to file
@@ -31,6 +31,12 @@ $ cd dnd
 $ go build
 $ ./dnd 
 $ #prints out help of available cmds
+```
+
+##### Create New Character
+
+```console
+$ ./dnd character create
 ```
 
 ##### Rolling Dice
@@ -55,13 +61,6 @@ $ ./dnd roll 4kl2d6
 $[1,3]
 ```
 
-#### Develop from source
-
-```console
-$ cd services/character
-$ go run main.go
-$ # output
-```
 
 
 #### Homebrew Rules
