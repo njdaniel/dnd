@@ -58,7 +58,7 @@ $ [5,4]
 $ 
 $ Keep lowest 2 of 4d6
 $ ./dnd roll 4kl2d6
-$[1,3]
+$ [1,3]
 ```
 
 
