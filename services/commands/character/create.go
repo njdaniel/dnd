@@ -274,6 +274,8 @@ func (p ProfessionType) Len() int {
 }
 
 //go:generate easytags $GOFILE json
+
+//Character is the fields of information
 type Character struct {
 	Name                 string   `json:"name"`
 	Gender               string   `json:"gender"`
