@@ -24,13 +24,14 @@ import (
 // characterCmd represents the character command
 var characterCmd = &cobra.Command{
 	Use:   "character",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "List of commands for character",
+	Long: `List of commands for character:
+	
+	$ dnd character
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Available Commands:
+	create 		Create a new character
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("character called")
 	},

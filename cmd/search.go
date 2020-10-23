@@ -47,7 +47,7 @@ Data includes:
 }
 
 func init() {
-	rootCmd.AddCommand(searchCmd)
+	//rootCmd.AddCommand(searchCmd)
 
 	// Here you will define your flags and configuration settings.
 

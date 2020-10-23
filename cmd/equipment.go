@@ -39,7 +39,7 @@ var equipmentCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(equipmentCmd)
+	//rootCmd.AddCommand(equipmentCmd)
 
 	// Here you will define your flags and configuration settings.
 
