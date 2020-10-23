@@ -117,20 +117,20 @@ func (h HumanHeritage) Len() int {
 
 type HumanHeritageWeighted struct {
 	HumanHeritage
-	Weight int
+	Weight int `json:"weight"`
 }
 
 type HumanHeritageRange struct {
 	HumanHeritage
-	Min int
-	Max int
+	Min int `json:"min"`
+	Max int `json:"max"`
 }
 
 type WeightedRow struct {
-	Enum   int
-	Weight int
-	Min    int
-	Max    int
+	Enum   int `json:"enum"`
+	Weight int `json:"weight"`
+	Min    int `json:"min"`
+	Max    int `json:"max"`
 }
 
 type WeightedTable []WeightedRow
@@ -184,27 +184,27 @@ func (a AgeGroup) Len() int {
 }
 
 type Attributes struct {
-	Strength     int
-	Dexterity    int
-	Constitution int
-	Perception   int
-	Intelligence int
-	Willpower    int
-	Charisma     int
-	Movement     int
+	Strength     int `json:"strength"`
+	Dexterity    int `json:"dexterity"`
+	Constitution int `json:"constitution"`
+	Perception   int `json:"perception"`
+	Intelligence int `json:"intelligence"`
+	Willpower    int `json:"willpower"`
+	Charisma     int `json:"charisma"`
+	Movement     int `json:"movement"`
 }
 
 type Bonuses struct {
-	SB           int
-	DB           int
-	CB           int
-	PB           int
-	IB           int
-	WB           int
-	ChB          int
-	CombatBonus  int
-	Initiative   int
-	Encumburance int
+	SB           int `json:"sb"`
+	DB           int `json:"db"`
+	CB           int `json:"cb"`
+	PB           int `json:"pb"`
+	IB           int `json:"ib"`
+	WB           int `json:"wb"`
+	ChB          int `json:"ch_b"`
+	CombatBonus  int `json:"combat_bonus"`
+	Initiative   int `json:"initiative"`
+	Encumburance int `json:"encumburance"`
 }
 
 type DamageConditionState int
@@ -273,46 +273,48 @@ func (p ProfessionType) Len() int {
 	return 16
 }
 
+//go:generate easytags $GOFILE json
 type Character struct {
-	Name                 string
-	Gender               string
-	Race                 string
-	Ancestry             string
-	Age                  string
-	DamageThreshold      int
-	DamageConditionState string
-	Injuries             []string
-	PerilsThreshold      int
-	PerilsConditionState string
+	Name                 string   `json:"name"`
+	Gender               string   `json:"gender"`
+	Race                 string   `json:"race"`
+	Ancestry             string   `json:"ancestry"`
+	Age                  string   `json:"age"`
+	DamageThreshold      int      `json:"damage_threshold"`
+	DamageConditionState string   `json:"damage_condition_state"`
+	Injuries             []string `json:"injuries"`
+	PerilsThreshold      int      `json:"perils_threshold"`
+	PerilsConditionState string   `json:"perils_condition_state"`
 	Bonuses
 	Attributes
-	DistinguishingMarks []string
-	BodyType            string
-	Complexion          string
-	Season              string
-	Upbringing          string
-	SocialClass         string
-	EyeColor            string
-	HairColor           string
-	Languages           []string
-	Height              string
-	Weight              int
-	Professions         []string
-	Skills              []Skill
-	ProfessionSelection string
+	DistinguishingMarks []string `json:"distinguishing_marks"`
+	BodyType            string   `json:"body_type"`
+	Complexion          string   `json:"complexion"`
+	Season              string   `json:"season"`
+	Upbringing          string   `json:"upbringing"`
+	SocialClass         string   `json:"social_class"`
+	EyeColor            string   `json:"eye_color"`
+	HairColor           string   `json:"hair_color"`
+	Languages           []string `json:"languages"`
+	Height              string   `json:"height"`
+	Weight              int      `json:"weight"`
+	Professions         []string `json:"professions"`
+	Skills              []Skill  `json:"skills"`
+	ProfessionSelection string   `json:"profession_selection"`
 	Money
+	Items []InventoryItem `json:"items"`
 }
 
 type Skill struct {
-	Name      string
-	BonusUsed string
-	Focuses   []Focus
-	Level     int
+	Name      string  `json:"name"`
+	BonusUsed string  `json:"bonus_used"`
+	Focuses   []Focus `json:"focuses"`
+	Level     int     `json:"level"`
 }
 
 type Focus struct {
-	Name  string
-	Level int
+	Name  string `json:"name"`
+	Level int    `json:"level"`
 }
 
 func NewAttributes() Attributes {

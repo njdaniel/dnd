@@ -34,6 +34,19 @@ type Item struct {
 	WeightLbs   int    `json:"weight_lbs"`
 }
 
+func (i *Item) GetValue() string {
+	return i.Value
+}
+
+type ItemWithCount struct {
+	Item
+	Count int `json:"count"`
+}
+
+func (i *ItemWithCount) GetCount() int {
+	return i.Count
+}
+
 type MeleeWeapon struct {
 	Item
 	ReachInch     int           `json:"reach_inch"`
@@ -43,15 +56,53 @@ type MeleeWeapon struct {
 	MeleeType     string        `json:"melee_type"`
 	WeaponTraits  []WeaponTrait `json:"weapon_traits"`
 }
+type MeleeWeaponWithCount struct {
+	MeleeWeapon
+	Count int `json:"count"`
+}
+
+func (i *MeleeWeaponWithCount) GetCount() int {
+	return i.Count
+}
 
 type RangeWeapon struct {
 	Item
-	OptimalRangeYds int    `json:"optimal_range_yds"`
-	FallOffYds      int    `json:"fall_off_yds"`
-	MaxRangeYds     int    `json:"max_range_yds"`
-	AmmunitionType  string `json:"ammunition_type"`
-	ReloadTimeMS    int    `json:"reload_time_ms"`
-	DrawTimeMS      int    `json:"draw_time_ms"`
+	OptimalRangeYds int           `json:"optimal_range_yds"`
+	FallOffYds      int           `json:"fall_off_yds"`
+	MaxRangeYds     int           `json:"max_range_yds"`
+	AmmunitionType  string        `json:"ammunition_type"`
+	ReloadTimeMS    int           `json:"reload_time_ms"`
+	DrawTimeMS      int           `json:"draw_time_ms"`
+	WeaponTraits    []WeaponTrait `json:"weapon_traits"`
+}
+type RangeWeaponWithCount struct {
+	RangeWeapon
+	Count int `json:"count"`
+}
+
+func (i *RangeWeaponWithCount) GetCount() int {
+	return i.Count
+}
+
+type ThrownWeapon struct {
+	Item
+	ReachInch       int           `json:"reach_inch"`
+	InitBonusNear   int           `json:"init_bonus_near"`
+	InitBonusFar    int           `json:"init_bonus_far"`
+	HandsUsed       []int         `json:"hands_used"`
+	MeleeType       string        `json:"melee_type"`
+	WeaponTraits    []WeaponTrait `json:"weapon_traits"`
+	OptimalRangeYds int           `json:"optimal_range_yds"`
+	FallOffYds      int           `json:"fall_off_yds"`
+	MaxRangeYds     int           `json:"max_range_yds"`
+}
+type ThrownWeaponWithCount struct {
+	ThrownWeapon
+	Count int `json:"count"`
+}
+
+func (i *ThrownWeaponWithCount) GetCount() int {
+	return i.Count
 }
 
 type WeaponTrait struct {
