@@ -32,7 +32,8 @@ var rootCmd = &cobra.Command{
 	Long: `dnd is a CLI tool to help running a dungeons and dragons, pathfinder, etc session quicker and smoother. 
 
 	Examples:
-		dnd items ls 	Lists all items`,
+		dnd character create 	Create new character
+		dnd roll 2d6			roll two 6-sided die`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
