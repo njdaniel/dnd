@@ -22,12 +22,41 @@ type Trait struct {
 	Effect      string `json:"effect"`
 }
 
-type Equipment interface {
+type InventoryItem interface {
 	GetValue() string
+	GetCount() int
 }
 
-type Weapon struct {
-	Name string `json:"name"`
+type Item struct {
+	Name        string `json:"name"`
+	Value       string `json:"value"`
+	Description string `json:"description"`
+	WeightLbs   int    `json:"weight_lbs"`
+}
+
+type MeleeWeapon struct {
+	Item
+	ReachInch     int           `json:"reach_inch"`
+	InitBonusNear int           `json:"init_bonus_near"`
+	InitBonusFar  int           `json:"init_bonus_far"`
+	HandsUsed     []int         `json:"hands_used"`
+	MeleeType     string        `json:"melee_type"`
+	WeaponTraits  []WeaponTrait `json:"weapon_traits"`
+}
+
+type RangeWeapon struct {
+	Item
+	OptimalRangeYds int    `json:"optimal_range_yds"`
+	FallOffYds      int    `json:"fall_off_yds"`
+	MaxRangeYds     int    `json:"max_range_yds"`
+	AmmunitionType  string `json:"ammunition_type"`
+	ReloadTimeMS    int    `json:"reload_time_ms"`
+	DrawTimeMS      int    `json:"draw_time_ms"`
+}
+
+type WeaponTrait struct {
+	Name   string `json:"name"`
+	Effect string `json:"effect"`
 }
 
 type Money struct {
