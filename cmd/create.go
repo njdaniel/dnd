@@ -16,8 +16,10 @@ limitations under the License.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/njdaniel/dnd/services/commands/character"
+	"log"
 
 	"github.com/spf13/cobra"
 )
@@ -31,8 +33,11 @@ var createCmd = &cobra.Command{
 	Pass in arguments, weight to random choices. Save to file, push to server.
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("create called")
-		fmt.Println(character.NewCharacter())
+		data, err := json.Marshal(character.NewCharacter())
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(string(data))
 	},
 }
 
