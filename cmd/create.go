@@ -18,9 +18,11 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/njdaniel/dnd/services/commands/character"
 	"log"
+	"os"
+	"strings"
 
+	"github.com/njdaniel/dnd/services/commands/character"
 	"github.com/spf13/cobra"
 )
 
@@ -33,11 +35,17 @@ var createCmd = &cobra.Command{
 	Pass in arguments, weight to random choices. Save to file, push to server.
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		data, err := json.Marshal(character.NewCharacter())
+		nc := character.NewCharacter()
+		data, err := json.MarshalIndent(nc, "", "  ")
 		if err != nil {
 			log.Fatal(err)
 		}
 		fmt.Println(string(data))
+		if GetFlagBool(cmd, "save") {
+			if err := createCharacterFile(nc, data); err != nil {
+				log.Println(err)
+			}
+		}
 	},
 }
 
@@ -52,5 +60,47 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	//createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	createCmd.Flags().Bool("save", false, "save to default location $HOME/.dnd/characters/{{name-profession}}.json")
+}
+
+//GetFlagBool returns the value of bool flag
+func GetFlagBool(cmd *cobra.Command, flag string) bool {
+	b, err := cmd.Flags().GetBool(flag)
+	if err != nil {
+		log.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
+	}
+	return b
+}
+
+func createCharacterFile(nc character.Character, b []byte) error {
+	fmt.Println("\n save flag is passed")
+	home := os.Getenv("HOME")
+	baseDir := fmt.Sprintf(home + "/.dnd/character/")
+	//strip whitespace
+	fullName := strings.Replace(nc.Name, " ", "", -1)
+	firstProfession := strings.Replace(nc.Professions[0], " ", "", -1)
+	filename := fmt.Sprintf("%s-%s.json", fullName, firstProfession)
+	fmt.Printf("creating character file %s\n", filename)
+	filepath := fmt.Sprintf(baseDir + filename)
+	fmt.Println(filepath)
+	//make dir
+	//$HOME/.dnd/character/filename
+	if err := os.MkdirAll(baseDir, os.ModePerm); err != nil {
+		return fmt.Errorf("error creating directories %s: %v", baseDir, err)
+	}
+	//check if file already exists
+	if _, err := os.Stat(filepath); os.IsExist(err) {
+		return fmt.Errorf("error file %s already exists: %v \n", filepath, err)
+	} else if os.IsNotExist(err) {
+		fmt.Printf("file %s does not exist \n", filepath)
+		f, err := os.OpenFile(filepath, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
+		if err != nil {
+			return fmt.Errorf("error creating new file %s: %v", filepath, err)
+		}
+		f.Write(b)
+	} else {
+		return fmt.Errorf("error could not determine if file %s exists or not: %v", filepath, err)
+	}
+	return nil
 }
