@@ -65,9 +65,9 @@
     "effect": "Advantage on resolve, stress, fear tests"
   },
   {
-    "name": "",
-    "description": "",
-    "effect": ""
+    "name": "Take it down",
+    "description": "Instinct picked up when hunting, when given enough time can place a shot exactly where you want",
+    "effect": "No disadvantage when picking the location on a body"
   },
   {
     "name": "",
