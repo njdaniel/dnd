@@ -1,0 +1,45 @@
+{
+  "name": "trapper",
+  "description": "In a grim & perilous world's colder climes, a good fur-lined\ncoat could be all that separates you from life and death.\nThe Trapper is a fur and pelt hunter, but instead of using\nguns or blades that could potentially ruin a good fur, they\nuse traps and then dispatch their quarry with a cut across\nthe jugular. Most Trappers make their living off of killing\n'necessary game; wolf or bear pelts for the cold, seal pelts\nfor waterproofing and so on. Some trade in the luxury\nfurs, such as mink or fox normally reserved for the elite.\nThe most fearless trappers have their eyes on dangerous or\nillegal game, like the lions of the south or great basilisks\nand their diamond-hard scales. Despite being a necessity to\nmany, some Trappers are subject to the ire of other rangers\nand nature types, accused of exploiting, rather than serving,\nthe natural world.\nTrappers travel far and wide for their quarry, following\nmigration patterns or delving into lost ruins or caves to find\nrarer game. Others are run off of lands, either by territorial\nanimals who have sensed a threat or a Gamekeeper who\nhas had too many animals killed. Trapper are adept at not\nonly making and laying traps, but spotting and disarming\nthem too, from simple snares to complex arrow traps. They\nalso possess great survival instincts and are excellent guides,\nbut the stress of adventuring is entirely different from\nthat gained from hiding in a tree waiting for your mark to\napproach. When a Trapper sees humans flayed or eaten alive\nby fodderlings, or see their allies succumb to injury from\ntraps, they may slowly realize that they are no different from\nthe monsters they fight.",
+  "attribute_bonus_advances": [
+    "Strength",
+    "Constitution",
+    "Willpower",
+    "Intelligence"
+  ],
+  "skill_advances": [
+    "Awareness",
+    "Coordination",
+    "Navigation",
+    "Folklore",
+    "Trapping",
+    "AnimalHandling",
+    "Range",
+    "Stealth",
+    "Survival"
+  ],
+  "talents": [ "Take it down", "Eyes of a Hawk"],
+  "unique_trait": {
+    "name": "natural trapper",
+    "description": "Trapping its what you do and you have a natural knack for it, you make and setup enough traps to recognize them in your sleep",
+    "effect": "Advantage when spotting/setting/making/hiding traps"
+  },
+  "starting_money": {
+    "cp": "8d6"
+  },
+  "starting_equipment": [
+    "heavy boots",
+    "rucksack",
+    "knife",
+    "bandages(4)",
+    "tincture(3)",
+    "wilderness cloak",
+    ["flint", "matches(10)"],
+    ["chess-set", "playing-cards", "dice"],
+    ["torches(2)", "lantern"],
+    ["full quilted armor", "full fur armor", "full leather armor", "full mail", "full banded armor"],
+    ["crossbow, quiver, bolts(9)",  "longbow, quiver, arrows(9)", "shortbow, quiver, arrows(9)" ],
+    ["axe", "sword", "short sword"]
+  ]
+
+}
