@@ -1,31 +1,29 @@
 {
-  "name": "engineer",
+  "name": "docter",
   "description": "Soaring towers, Hying buttresses, quaint storefronts and\ndeep mines; all of them had to be built and the Engineer\nhas a hand in their construction. Engineers are the builders\nof the modern age, experienced in all types of construction\nand materials. While some stick to the classic materials of\nstone and wood, others push the boundaries of technology,\nusing steel and even strange steam-run machines. Besides\nbuilding structures, Engineers also serve in most standing\narmies. Whether constructing siege towers, repairing\ncannons or packing gunpowder into enemy fortihcations,\nEngineers are terrors on the modern battlefield. Dedicated\nand intelligent, able to calculate trajectories and angles with\na mere glance, Engineers are also secretive. They know the\nstrengths of their structures and inventions as well as their\nweakneses; knowledge of both might be catastrophic- or\nlucrative - if revealed.",
   "attribute_bonus_advances": [
     "Willpower",
     "Intelligence",
     "Intelligence",
-    "Intelligence",
-    "Intelligence"
+    "Constitution"
   ],
   "skill_advances": [
     "Awareness",
     "Warfare",
     "Navigation",
     "Folklore",
-    "Trapping",
+    "Scrutinize",
     "Education",
-    "Range",
-    "Tradecraft"
+    "Healing"
   ],
-  "talents": ["SiegeCraft", "Human Calculator"],
+  "talents": ["Knifework", "Indifference"],
   "unique_trait": {
-    "name": "natural engineer",
-    "description": "Engineering its what you do and you have a natural knack for it, you make and setup enough traps to recognize them in your sleep",
-    "effect": "Advantage when building anything"
+    "name": "natural docter",
+    "description": "Healing its what you do and you have a natural knack for it, you make and setup enough traps to recognize them in your sleep",
+    "effect": "Advantage when healing"
   },
   "starting_money": {
-    "gc": "8d6"
+    "ss": "8d6"
   },
   "starting_equipment": [
     "heavy boots",
@@ -36,7 +34,6 @@
     ["flint", "matches(10)"],
     ["chess-set", "playing-cards", "dice"],
     ["torches(2)", "lantern"],
-    ["full quilted armor", "full fur armor", "full leather armor", "full mail", "full banded armor"],
     ["crossbow, quiver, bolts(9)",  "longbow, quiver, arrows(9)", "shortbow, quiver, arrows(9)" ],
     ["axe", "sword", "short sword"]
   ]
