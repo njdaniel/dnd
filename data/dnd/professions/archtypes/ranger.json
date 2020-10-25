@@ -18,7 +18,7 @@
     "Stealth",
     "Survival"
   ],
-  "talents": [ "Take it down", "Eyes of a Hawk"],
+  "talents": [ "Take it down", "Eyes of a Hawk", "Light Sleeper"],
   "unique_trait": {
     "name": "natural trapper",
     "description": "Trapping its what you do and you have a natural knack for it, you make and setup enough traps to recognize them in your sleep",
