@@ -36,16 +36,17 @@ func createHeritage(nc Character) string {
 		result := Roll(totalWeight)
 		for _, v := range rhhs {
 			if result >= v.Min && result <= v.Max {
-				nc.Ancestry = v.HumanHeritage.String()
+				return v.HumanHeritage.String()
 			}
 		}
 	case "Elf":
 		weights := []int{45, 45, 10}
 		wt := NewWeightedTable(High, weights)
-		nc.Ancestry = ElvenHeritage(wt.Roll()).String()
+		return ElvenHeritage(wt.Roll()).String()
 	case "Dwarf":
-		nc.Ancestry = "Mountain"
+		return "Mountain"
 	default:
 		log.Fatal("error: race not picked")
 	}
+	return ""
 }
