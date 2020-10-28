@@ -99,7 +99,7 @@ func (e ElvenHeritage) Len() int {
 type HumanHeritage int
 
 const (
-	Imperial = iota + 1
+	Imperial HumanHeritage = iota + 1
 	Nord
 	Vardisan
 	Lumdrani
@@ -108,7 +108,7 @@ const (
 )
 
 func (h HumanHeritage) String() string {
-	return [...]string{"Imperial", "Nord", "Vardisan", "Lumdrani", "Nimalese", "Minskite"}[h]
+	return [...]string{"Imperial", "Nord", "Vardisan", "Lumdrani", "Nimalese", "Minskite"}[h-1]
 }
 
 func (h HumanHeritage) Len() int {
@@ -336,52 +336,55 @@ func NewCharacter() Character {
 	nc := Character{}
 	// 1) Add attributes
 	//roll 4d6 take sum of highest 3
-	fmt.Println("creating character")
-	fmt.Println(Roll(6))
-	fmt.Println("done.")
+	//fmt.Println("creating character")
+	//fmt.Println(Roll(6))
+	//fmt.Println("done.")
 
 	nc.Attributes = NewAttributes()
 
 	// 2) determine gender
-	nc.Gender = Gender(Roll(2)).String()
+	//nc.Gender = Gender(Roll(2)).String()
+	nc.Gender = createGender()
 
 	// 3) Determine Race/Ancestry
-	nc.Race = Race(Roll(3)).String()
+	//nc.Race = Race(Roll(3)).String()
+	nc.Race = createRace()
 
-	switch nc.Race {
-	case "Human":
-		whhs := []HumanHeritageWeighted{
-			{0, 50},
-			{1, 10},
-			{2, 10},
-			{3, 10},
-			{4, 10},
-			{5, 10},
-		}
-		rhhs := make([]HumanHeritageRange, 0)
-		totalWeight := 0
-		ptr := 0
-		for i, v := range whhs {
-			totalWeight += v.Weight
-			tmp := HumanHeritageRange{HumanHeritage(i), ptr + 1, totalWeight}
-			rhhs = append(rhhs, tmp)
-			ptr += v.Weight
-		}
-		result := Roll(totalWeight)
-		for _, v := range rhhs {
-			if result >= v.Min && result <= v.Max {
-				nc.Ancestry = v.HumanHeritage.String()
-			}
-		}
-	case "Elf":
-		weights := []int{45, 45, 10}
-		wt := NewWeightedTable(High, weights)
-		nc.Ancestry = ElvenHeritage(wt.Roll()).String()
-	case "Dwarf":
-		nc.Ancestry = "Mountain"
-	default:
-		log.Fatal("error: race not picked")
-	}
+	nc.Ancestry = createHeritage(nc)
+	//switch nc.Race {
+	//case "Human":
+	//	whhs := []HumanHeritageWeighted{
+	//		{0, 50},
+	//		{1, 10},
+	//		{2, 10},
+	//		{3, 10},
+	//		{4, 10},
+	//		{5, 10},
+	//	}
+	//	rhhs := make([]HumanHeritageRange, 0)
+	//	totalWeight := 0
+	//	ptr := 0
+	//	for i, v := range whhs {
+	//		totalWeight += v.Weight
+	//		tmp := HumanHeritageRange{HumanHeritage(i), ptr + 1, totalWeight}
+	//		rhhs = append(rhhs, tmp)
+	//		ptr += v.Weight
+	//	}
+	//	result := Roll(totalWeight)
+	//	for _, v := range rhhs {
+	//		if result >= v.Min && result <= v.Max {
+	//			nc.Ancestry = v.HumanHeritage.String()
+	//		}
+	//	}
+	//case "Elf":
+	//	weights := []int{45, 45, 10}
+	//	wt := NewWeightedTable(High, weights)
+	//	nc.Ancestry = ElvenHeritage(wt.Roll()).String()
+	//case "Dwarf":
+	//	nc.Ancestry = "Mountain"
+	//default:
+	//	log.Fatal("error: race not picked")
+	//}
 
 	// 4) Determine Age
 	nc.Age = func() string {
