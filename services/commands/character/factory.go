@@ -13,8 +13,8 @@ func createRace() string {
 	return Race(dice.Roll(3)).String()
 }
 
-func createHeritage(nc Character) string {
-	switch nc.Race {
+func createHeritage(race string) string {
+	switch race {
 	case "Human":
 		weights := []int{50, 10, 10, 10, 10, 10}
 		wt := NewWeightedTable(Imperial, weights)

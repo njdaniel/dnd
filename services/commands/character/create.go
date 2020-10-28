@@ -350,7 +350,7 @@ func NewCharacter() Character {
 	//nc.Race = Race(Roll(3)).String()
 	nc.Race = createRace()
 
-	nc.Ancestry = createHeritage(nc)
+	nc.Ancestry = createHeritage(nc.Race)
 	//switch nc.Race {
 	//case "Human":
 	//	whhs := []HumanHeritageWeighted{
