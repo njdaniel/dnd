@@ -3,6 +3,7 @@ package character
 import (
 	"github.com/njdaniel/dnd/util/dice"
 	"log"
+	"strings"
 )
 
 func createGender() string {
@@ -29,6 +30,42 @@ func createHeritage(race string) string {
 		return DwarvenHeritage(wt.Roll()).String()
 	default:
 		log.Fatal("error: race not picked")
+	}
+	return ""
+}
+
+func createName(race, gender string) string {
+	switch race {
+	case "Human":
+		if gender == "male" {
+			log.Println("found human male")
+			log.Println(BoxData.List())
+			buf, err := BoxData.Find("names/human-male.txt")
+			//open data/dnd/names/human-male.txt
+			//slurp in memory, change to read by byte chunks if it gets to big
+			//buf, err := ioutil.ReadFile("data/dnd/names/human-male.txt")
+			if err != nil {
+				log.Fatal(err)
+			}
+			s := string(buf)
+			ss := strings.Split(s, "\n")
+			result := Roll(len(ss))
+			return ss[result-1]
+		} else if gender == "female" {
+			buf, err := BoxData.Find("names/human-female.txt")
+			//slurp in memory, change to read by byte chunks if it gets to big
+			//buf, err := ioutil.ReadFile("data/dnd/names/human-female.txt")
+			if err != nil {
+				log.Fatal(err)
+			}
+			s := string(buf)
+			ss := strings.Split(s, "\n")
+			result := Roll(len(ss))
+			return ss[result-1]
+		} else {
+			return "Pierce the Dickish"
+			log.Println("no gender assigned")
+		}
 	}
 	return ""
 }

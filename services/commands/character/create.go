@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"log"
 	"math/rand"
+	"os"
 	"regexp"
 	"sort"
 	"strings"
@@ -18,8 +19,15 @@ import (
 
 var BoxData *packr.Box
 
+
 func init() {
-	BoxData = packr.Folder("data/dnd")
+	log.Println("character init() called")
+	dir, _ := os.Getwd()
+	log.Println("Current dir: " + dir)
+	BoxData = packr.New("boxdata", "../../../data/dnd")
+	//BoxData = packr.Folder("data/dnd")
+	log.Println(BoxData.List())
+	log.Println("character init() done")
 
 }
 
@@ -44,7 +52,7 @@ func (l Languages) Len() int {
 type Gender int
 
 const (
-	male = iota + 1
+	male Gender = iota + 1
 	female
 )
 
@@ -336,7 +344,7 @@ func NewCharacter() Character {
 	nc := Character{}
 	// 1) Add attributes
 	//roll 4d6 take sum of highest 3
-	//fmt.Println("creating character")
+	fmt.Println("creating character")
 	//fmt.Println(Roll(6))
 	//fmt.Println("done.")
 
@@ -392,6 +400,7 @@ func NewCharacter() Character {
 		wt := NewWeightedTable(Young, weights)
 		return AgeGroup(wt.Roll()).String()
 	}()
+	log.Printf("Age Created %s\n", nc.Age)
 
 	// 4.1) Determine Profession(s)
 
@@ -550,16 +559,18 @@ func NewCharacter() Character {
 		result := Roll(len(ss))
 		return ss[result-1]
 	}()
+	log.Println("added build type")
 
 	//height and weight
 	//based on race bring in height and weight chart
 	//assign num for body type (frail, slender, normal, husky, corpulent)= iota
 	nc.Height = func() string {
 		racelc := strings.ToLower(nc.Race)
-		filename := fmt.Sprintf("./background/%s-%s-height.txt", racelc, nc.Gender)
+		filename := fmt.Sprintf("background/%s-%s-height.txt", racelc, nc.Gender)
+		log.Println(filename)
 		bs, err := BoxData.Find(filename)
 		if err != nil {
-			log.Println(err)
+			log.Fatalf("error finding file %s: %v", filename,err)
 		}
 		s := string(bs)
 		ss := strings.Split(s, "\n")
@@ -567,18 +578,20 @@ func NewCharacter() Character {
 		height := ss[result-1]
 		return height
 	}()
+	log.Println("add height")
 
 	nc.Weight = func() int {
 		racelc := strings.ToLower(nc.Race)
 		filename := fmt.Sprintf("./background/%s-%s-weight.csv", racelc, nc.Gender)
 		ssw, err := ReadCSV(filename)
 		if err != nil {
-			log.Println(err)
+			log.Fatalf("error reading csv: %v", err)
 		}
 		fmt.Println(ssw)
 		weight := 0
 		return weight
 	}()
+	log.Println("add weight")
 
 	// Complexion
 	nc.Complexion = func() string {
@@ -591,6 +604,7 @@ func NewCharacter() Character {
 		result := Roll(len(ss))
 		return ss[result-1]
 	}()
+	log.Println("weight")
 
 	//Season of Birth
 	nc.Season = func() string {
@@ -603,6 +617,7 @@ func NewCharacter() Character {
 		result := Roll(len(ss))
 		return ss[result-1]
 	}()
+	log.Println("add season of birth")
 
 	// 19) Upbringing
 
@@ -617,6 +632,7 @@ func NewCharacter() Character {
 		result := Roll(len(ss))
 		return ss[result-1]
 	}()
+	log.Println("add upbringing")
 
 	// Social Class
 	nc.SocialClass = func() string {
@@ -629,6 +645,7 @@ func NewCharacter() Character {
 		result := Roll(len(ss))
 		return ss[result-1]
 	}()
+	log.Println("add social class")
 	// 17) Height and Weight
 	// 18) Eye and hair color
 	switch nc.Race {
@@ -656,6 +673,7 @@ func NewCharacter() Character {
 	default:
 		log.Println("no race determined")
 	}
+	log.Println("add eye color")
 
 	//Hair
 	switch nc.Race {
@@ -683,6 +701,7 @@ func NewCharacter() Character {
 	default:
 		log.Println("no race determined")
 	}
+	log.Println("add hair color")
 	//nc.HairColor = func() string {
 	//	buf, err := ioutil.ReadFile("data/dnd/background/.txt")
 	//	if err != nil {
@@ -738,6 +757,7 @@ func NewCharacter() Character {
 			}
 		}
 	}
+	log.Println("add languages")
 
 	//Religion
 
@@ -769,7 +789,7 @@ func NewCharacter() Character {
 		{"Survival", "WB", []Focus{}, 0}, {"Tradecraft", "WB", []Focus{}, 0},
 		{"Warfare", "WB", []Focus{}, 0},
 	}
-
+	log.Println("add skills")
 	//ProfessionSelection: normal, advance, detailed, special
 	// Find all profession jsons
 	boxlst := BoxData.List()
