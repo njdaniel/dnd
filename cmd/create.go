@@ -24,6 +24,7 @@ import (
 
 	"github.com/njdaniel/dnd/services/commands/character"
 	"github.com/spf13/cobra"
+	"gopkg.in/yaml.v2"
 )
 
 // createCmd represents the create command
@@ -36,11 +37,23 @@ var createCmd = &cobra.Command{
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		nc := character.NewCharacter()
-		data, err := json.MarshalIndent(nc, "", "  ")
-		if err != nil {
-			log.Fatal(err)
+		var data []byte
+		if GetFlagString(cmd, "output") == "yaml" {
+			//fmt.Println(nc)
+			d, err := yaml.Marshal(nc)
+			if err != nil {
+				log.Fatal(err)
+			}
+			data = d
+			fmt.Println(string(data))
+		} else {
+			d, err := json.MarshalIndent(nc, "", "  ")
+			if err != nil {
+				log.Fatal(err)
+			}
+			data = d
+			fmt.Println(string(data))
 		}
-		fmt.Println(string(data))
 		if GetFlagBool(cmd, "save") {
 			if err := createCharacterFile(nc, data); err != nil {
 				log.Println(err)
@@ -62,6 +75,7 @@ func init() {
 	// is called directly, e.g.:
 	//createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	createCmd.Flags().Bool("save", false, "save to default location $HOME/.dnd/characters/{{name-profession}}.json")
+	createCmd.Flags().StringP("output", "o", "json", "Output in json|simple|yaml")
 }
 
 //GetFlagBool returns the value of bool flag
@@ -71,6 +85,15 @@ func GetFlagBool(cmd *cobra.Command, flag string) bool {
 		log.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
 	}
 	return b
+}
+
+//GetFlagString return value of string flag
+func GetFlagString(cmd *cobra.Command, flag string) string {
+	s, err := cmd.Flags().GetString(flag)
+	if err != nil {
+		log.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
+	}
+	return s
 }
 
 func createCharacterFile(nc character.Character, b []byte) error {

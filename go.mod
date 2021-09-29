@@ -27,6 +27,7 @@ require (
 	golang.org/x/sys v0.0.0-20201027140754-0fcbb8f4928c // indirect
 	golang.org/x/tools v0.0.0-20201028025901-8cd080b735b3 // indirect
 	google.golang.org/grpc v1.21.1
+	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
 
 go 1.13
