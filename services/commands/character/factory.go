@@ -1,13 +1,14 @@
 package character
 
 import (
-	"github.com/njdaniel/dnd/util/dice"
 	"log"
 	"strings"
+
+	"github.com/njdaniel/dnd/util/dice"
 )
 
 func createGender() string {
-	return Gender(dice.Roll(3)).String()
+	return Gender(dice.Roll(2)).String()
 }
 
 func createRace() string {
