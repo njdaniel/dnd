@@ -8,7 +8,6 @@ import (
 	"io/ioutil"
 	"log"
 	"math/rand"
-	"os"
 	"regexp"
 	"sort"
 	"strings"
@@ -22,7 +21,7 @@ var BoxData *packr.Box
 
 func init() {
 	//log.Println("character init() called")
-	dir, _ := os.Getwd()
+	//dir, _ := os.Getwd()
 	//log.Println("Current dir: " + dir)
 	BoxData = packr.New("boxdata", "../../../data/dnd")
 	//BoxData = packr.Folder("data/dnd")
