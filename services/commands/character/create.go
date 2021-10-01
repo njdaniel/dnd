@@ -339,7 +339,7 @@ func NewAttributes() Attributes {
 	}
 }
 
-func NewCharacter() Character {
+func NewCharacter(name string) Character {
 	nc := Character{}
 	// 1) Add attributes
 	//roll 4d6 take sum of highest 3

@@ -36,7 +36,9 @@ var createCmd = &cobra.Command{
 	Pass in arguments, weight to random choices. Save to file, push to server.
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		nc := character.NewCharacter()
+		name := ""
+		name = GetFlagString(cmd, "name")
+		nc := character.NewCharacter(name)
 		var data []byte
 		if GetFlagString(cmd, "output") == "yaml" {
 			//fmt.Println(nc)
@@ -76,6 +78,7 @@ func init() {
 	//createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	createCmd.Flags().Bool("save", false, "save to default location $HOME/.dnd/characters/{{name-profession}}.json")
 	createCmd.Flags().StringP("output", "o", "json", "Output in json|simple|yaml")
+	createCmd.Flags().String("name", "", "give custom name")
 }
 
 //GetFlagBool returns the value of bool flag
