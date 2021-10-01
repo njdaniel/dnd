@@ -5,8 +5,6 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"github.com/gobuffalo/packr/v2"
-	"github.com/njdaniel/dnd/util/dice"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -15,19 +13,21 @@ import (
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/gobuffalo/packr/v2"
+	"github.com/njdaniel/dnd/util/dice"
 )
 
 var BoxData *packr.Box
 
-
 func init() {
-	log.Println("character init() called")
+	//log.Println("character init() called")
 	dir, _ := os.Getwd()
-	log.Println("Current dir: " + dir)
+	//log.Println("Current dir: " + dir)
 	BoxData = packr.New("boxdata", "../../../data/dnd")
 	//BoxData = packr.Folder("data/dnd")
-	log.Println(BoxData.List())
-	log.Println("character init() done")
+	//log.Println(BoxData.List())
+	//log.Println("character init() done")
 
 }
 
@@ -570,7 +570,7 @@ func NewCharacter() Character {
 		log.Println(filename)
 		bs, err := BoxData.Find(filename)
 		if err != nil {
-			log.Fatalf("error finding file %s: %v", filename,err)
+			log.Fatalf("error finding file %s: %v", filename, err)
 		}
 		s := string(bs)
 		ss := strings.Split(s, "\n")
