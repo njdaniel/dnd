@@ -404,7 +404,7 @@ func NewCharacter(name string) Character {
 	// 4.1) Determine Profession(s)
 
 	// 4.5) name
-	if name != "" {
+	if name == "" {
 		switch nc.Race {
 		case "Human":
 			if nc.Gender == "male" {
