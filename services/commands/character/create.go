@@ -482,6 +482,8 @@ func NewCharacter(name string) Character {
 				nc.Name = "Brutalitops"
 			}
 		}
+	} else {
+		nc.Name = name
 	}
 
 	// 5) add to inventory based on profession(s)
