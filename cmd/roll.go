@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/njdaniel/dnd/util/dice"
 
 	"github.com/spf13/cobra"
@@ -50,7 +51,6 @@ var rollCmd = &cobra.Command{
 	$ 13
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("roll called")
 		d := dice.ParseRollString(args[0])
 		fmt.Println(d.RollDice())
 	},
