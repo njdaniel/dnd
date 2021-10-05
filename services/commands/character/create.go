@@ -5,29 +5,28 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"github.com/gobuffalo/packr/v2"
-	"github.com/njdaniel/dnd/util/dice"
 	"io/ioutil"
 	"log"
 	"math/rand"
-	"os"
 	"regexp"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/gobuffalo/packr/v2"
+	"github.com/njdaniel/dnd/util/dice"
 )
 
 var BoxData *packr.Box
 
-
 func init() {
-	log.Println("character init() called")
-	dir, _ := os.Getwd()
-	log.Println("Current dir: " + dir)
+	//log.Println("character init() called")
+	//dir, _ := os.Getwd()
+	//log.Println("Current dir: " + dir)
 	BoxData = packr.New("boxdata", "../../../data/dnd")
 	//BoxData = packr.Folder("data/dnd")
-	log.Println(BoxData.List())
-	log.Println("character init() done")
+	//log.Println(BoxData.List())
+	//log.Println("character init() done")
 
 }
 
@@ -340,11 +339,11 @@ func NewAttributes() Attributes {
 	}
 }
 
-func NewCharacter() Character {
+func NewCharacter(name, gender, race string) Character {
 	nc := Character{}
 	// 1) Add attributes
 	//roll 4d6 take sum of highest 3
-	fmt.Println("creating character")
+	fmt.Println("creating character..")
 	//fmt.Println(Roll(6))
 	//fmt.Println("done.")
 
@@ -352,11 +351,21 @@ func NewCharacter() Character {
 
 	// 2) determine gender
 	//nc.Gender = Gender(Roll(2)).String()
-	nc.Gender = createGender()
+	if gender == "" {
+		nc.Gender = createGender()
+	} else {
+		nc.Gender = gender
+	}
 
 	// 3) Determine Race/Ancestry
 	//nc.Race = Race(Roll(3)).String()
-	nc.Race = createRace()
+	if race == "" {
+		nc.Race = createRace()
+	} else {
+		//capitalize first char of name
+		race = strings.Title(race)
+		nc.Race = race
+	}
 
 	nc.Ancestry = createHeritage(nc.Race)
 	//switch nc.Race {
@@ -405,82 +414,86 @@ func NewCharacter() Character {
 	// 4.1) Determine Profession(s)
 
 	// 4.5) name
-	switch nc.Race {
-	case "Human":
-		if nc.Gender == "male" {
-			//open data/dnd/names/human-male.txt
-			//slurp in memory, change to read by byte chunks if it gets to big
-			buf, err := ioutil.ReadFile("data/dnd/names/human-male.txt")
-			if err != nil {
-				log.Fatal(err)
+	if name == "" {
+		switch nc.Race {
+		case "Human":
+			if nc.Gender == "male" {
+				//open data/dnd/names/human-male.txt
+				//slurp in memory, change to read by byte chunks if it gets to big
+				buf, err := ioutil.ReadFile("data/dnd/names/human-male.txt")
+				if err != nil {
+					log.Fatal(err)
+				}
+				s := string(buf)
+				ss := strings.Split(s, "\n")
+				result := Roll(len(ss))
+				nc.Name = ss[result-1]
+			} else if nc.Gender == "female" {
+				//slurp in memory, change to read by byte chunks if it gets to big
+				buf, err := ioutil.ReadFile("data/dnd/names/human-female.txt")
+				if err != nil {
+					log.Fatal(err)
+				}
+				s := string(buf)
+				ss := strings.Split(s, "\n")
+				result := Roll(len(ss))
+				nc.Name = ss[result-1]
+			} else {
+				nc.Name = "Pierce the Dickish"
+				log.Println("no gender assigned")
 			}
-			s := string(buf)
-			ss := strings.Split(s, "\n")
-			result := Roll(len(ss))
-			nc.Name = ss[result-1]
-		} else if nc.Gender == "female" {
-			//slurp in memory, change to read by byte chunks if it gets to big
-			buf, err := ioutil.ReadFile("data/dnd/names/human-female.txt")
-			if err != nil {
-				log.Fatal(err)
+		case "Dwarf":
+			if nc.Gender == "male" {
+				//open data/dnd/names/human-male.txt
+				//slurp in memory, change to read by byte chunks if it gets to big
+				buf, err := ioutil.ReadFile("data/dnd/names/dwarf-male.txt")
+				if err != nil {
+					log.Fatal(err)
+				}
+				s := string(buf)
+				ss := strings.Split(s, "\n")
+				result := Roll(len(ss))
+				nc.Name = ss[result-1]
+			} else if nc.Gender == "female" {
+				//slurp in memory, change to read by byte chunks if it gets to big
+				buf, err := ioutil.ReadFile("data/dnd/names/dwarf-female.txt")
+				if err != nil {
+					log.Fatal(err)
+				}
+				s := string(buf)
+				ss := strings.Split(s, "\n")
+				result := Roll(len(ss))
+				nc.Name = ss[result-1]
+			} else {
+				nc.Name = "Carlos"
 			}
-			s := string(buf)
-			ss := strings.Split(s, "\n")
-			result := Roll(len(ss))
-			nc.Name = ss[result-1]
-		} else {
-			nc.Name = "Pierce the Dickish"
-			log.Println("no gender assigned")
+		case "Elf":
+			if nc.Gender == "male" {
+				//slurp in memory, change to read by byte chunks if it gets to big
+				buf, err := ioutil.ReadFile("data/dnd/names/elf-male.txt")
+				if err != nil {
+					log.Fatal(err)
+				}
+				s := string(buf)
+				ss := strings.Split(s, "\n")
+				result := Roll(len(ss))
+				nc.Name = ss[result-1]
+			} else if nc.Gender == "female" {
+				//slurp in memory, change to read by byte chunks if it gets to big
+				buf, err := ioutil.ReadFile("data/dnd/names/elf-female.txt")
+				if err != nil {
+					log.Fatal(err)
+				}
+				s := string(buf)
+				ss := strings.Split(s, "\n")
+				result := Roll(len(ss))
+				nc.Name = ss[result-1]
+			} else {
+				nc.Name = "Brutalitops"
+			}
 		}
-	case "Dwarf":
-		if nc.Gender == "male" {
-			//open data/dnd/names/human-male.txt
-			//slurp in memory, change to read by byte chunks if it gets to big
-			buf, err := ioutil.ReadFile("data/dnd/names/dwarf-male.txt")
-			if err != nil {
-				log.Fatal(err)
-			}
-			s := string(buf)
-			ss := strings.Split(s, "\n")
-			result := Roll(len(ss))
-			nc.Name = ss[result-1]
-		} else if nc.Gender == "female" {
-			//slurp in memory, change to read by byte chunks if it gets to big
-			buf, err := ioutil.ReadFile("data/dnd/names/dwarf-female.txt")
-			if err != nil {
-				log.Fatal(err)
-			}
-			s := string(buf)
-			ss := strings.Split(s, "\n")
-			result := Roll(len(ss))
-			nc.Name = ss[result-1]
-		} else {
-			nc.Name = "Carlos"
-		}
-	case "Elf":
-		if nc.Gender == "male" {
-			//slurp in memory, change to read by byte chunks if it gets to big
-			buf, err := ioutil.ReadFile("data/dnd/names/elf-male.txt")
-			if err != nil {
-				log.Fatal(err)
-			}
-			s := string(buf)
-			ss := strings.Split(s, "\n")
-			result := Roll(len(ss))
-			nc.Name = ss[result-1]
-		} else if nc.Gender == "female" {
-			//slurp in memory, change to read by byte chunks if it gets to big
-			buf, err := ioutil.ReadFile("data/dnd/names/elf-female.txt")
-			if err != nil {
-				log.Fatal(err)
-			}
-			s := string(buf)
-			ss := strings.Split(s, "\n")
-			result := Roll(len(ss))
-			nc.Name = ss[result-1]
-		} else {
-			nc.Name = "Brutalitops"
-		}
+	} else {
+		nc.Name = name
 	}
 
 	// 5) add to inventory based on profession(s)
@@ -570,7 +583,7 @@ func NewCharacter() Character {
 		log.Println(filename)
 		bs, err := BoxData.Find(filename)
 		if err != nil {
-			log.Fatalf("error finding file %s: %v", filename,err)
+			log.Fatalf("error finding file %s: %v", filename, err)
 		}
 		s := string(bs)
 		ss := strings.Split(s, "\n")

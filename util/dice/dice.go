@@ -35,7 +35,8 @@ func newDiceInfo() DiceInfo {
 
 //Roll base on the information of DiceInfo
 func (d *DiceInfo) RollDice() []int {
-	log.Println("rolling dice...")
+	//log.Println("rolling dice...")
+	fmt.Println("rolling dice...")
 	dice := make([]int, 0)
 	switch {
 	case d.HighRoll:
