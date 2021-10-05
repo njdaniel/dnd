@@ -491,6 +491,8 @@ func NewCharacter(name, gender, race string) Character {
 			}
 		}
 	} else {
+		//capitalize first char of name
+		name = strings.Title(name)
 		nc.Name = name
 	}
 
