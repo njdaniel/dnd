@@ -362,6 +362,8 @@ func NewCharacter(name, gender, race string) Character {
 	if race == "" {
 		nc.Race = createRace()
 	} else {
+		//capitalize first char of name
+		race = strings.Title(race)
 		nc.Race = race
 	}
 
@@ -491,8 +493,6 @@ func NewCharacter(name, gender, race string) Character {
 			}
 		}
 	} else {
-		//capitalize first char of name
-		name = strings.Title(name)
 		nc.Name = name
 	}
 
