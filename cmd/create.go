@@ -37,8 +37,12 @@ var createCmd = &cobra.Command{
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		name := ""
+		gender := ""
+		race := ""
 		name = GetFlagString(cmd, "name")
-		nc := character.NewCharacter(name)
+		gender = GetFlagString(cmd, "gender")
+		race = GetFlagString(cmd, "race")
+		nc := character.NewCharacter(name, gender, race)
 		var data []byte
 		if GetFlagString(cmd, "output") == "yaml" {
 			//fmt.Println(nc)
@@ -79,6 +83,9 @@ func init() {
 	createCmd.Flags().Bool("save", false, "save to default location $HOME/.dnd/characters/{{name-profession}}.json")
 	createCmd.Flags().StringP("output", "o", "json", "Output in json|simple|yaml")
 	createCmd.Flags().String("name", "", "give custom name")
+	createCmd.Flags().String("gender", "", "Pick gender of character")
+	createCmd.Flags().String("race", "", "Pick Race of Character: (human | elf | dwarf)")
+
 }
 
 //GetFlagBool returns the value of bool flag

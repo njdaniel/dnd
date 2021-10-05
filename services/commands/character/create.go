@@ -339,7 +339,7 @@ func NewAttributes() Attributes {
 	}
 }
 
-func NewCharacter(name string) Character {
+func NewCharacter(name, gender, race string) Character {
 	nc := Character{}
 	// 1) Add attributes
 	//roll 4d6 take sum of highest 3
@@ -351,11 +351,19 @@ func NewCharacter(name string) Character {
 
 	// 2) determine gender
 	//nc.Gender = Gender(Roll(2)).String()
-	nc.Gender = createGender()
+	if gender == "" {
+		nc.Gender = createGender()
+	} else {
+		nc.Gender = gender
+	}
 
 	// 3) Determine Race/Ancestry
 	//nc.Race = Race(Roll(3)).String()
-	nc.Race = createRace()
+	if race == "" {
+		nc.Race = createRace()
+	} else {
+		nc.Race = race
+	}
 
 	nc.Ancestry = createHeritage(nc.Race)
 	//switch nc.Race {
