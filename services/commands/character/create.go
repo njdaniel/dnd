@@ -71,6 +71,11 @@ func (r Race) String() string {
 	return [...]string{"Human", "Elf", "Dwarf"}[r-1]
 }
 
+//List return slice of strings that contain all the elements of Race
+func (r Race) List() []string {
+	return []string{"Human", "Elf", "Dwarf"}
+}
+
 type DwarvenHeritage int
 
 const (
