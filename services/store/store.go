@@ -1,6 +1,5 @@
 package store
 
-
 type StoreType int
 
 const (
@@ -8,7 +7,7 @@ const (
 	Blacksmith
 	Alchemy
 	Clothing
-	General Goods
+	GeneralGoods
 	Bowyer
 )
 
