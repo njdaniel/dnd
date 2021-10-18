@@ -13,6 +13,7 @@ const (
 
 ////////Item Quality ////////////
 
+// Quality states the condition of physical objects
 type Quality int
 
 const (
@@ -24,16 +25,19 @@ const (
 
 ///////////////////////////////
 
-type Item struct {
-	Name        string  `json:"name"`
-	Description string  `json:"description"`
-	Quality     Quality `json:"quality"`
+// Item is the generic physical object
+type Item interface {
+	Name() string
+	Description() string
+	Price() string
 }
 
+// Inventory contains a list of items of multiude of different types
 type Inventory struct {
 	Items []Item `json:"items"`
 }
 
+// Store represents the physical entity of a business
 type Store struct {
 	Name      string    `json:"name"`
 	Owner     string    `json:"owner"`
@@ -41,8 +45,16 @@ type Store struct {
 	Inventory Inventory `json:"inventory"`
 }
 
-func NewStore() Store {
+// NewStore simple factory of creating the object Store
+func NewStore(name, owner string, items []Item) Store {
 	ns := Store{}
+	ns.Name = name
+	ns.Owner = owner
+
+	inventory := Inventory{
+		Items: items,
+	}
+	ns.Inventory = inventory
 
 	return ns
 }
