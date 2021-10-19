@@ -37,32 +37,45 @@ type Store struct {
 	Name      string `json:"name"`
 	Owner     string `json:"owner"`
 	Location  string `json:"location"`
+	StoreType string `json:"store_type"`
 	Inventory []Item `json:"inventory"`
 	Money     Money  `json:"money"`
 }
 
 // Item contains  of items of multiude of different types
 type Item struct {
-	Name   string `json:"name"`
-	Price  string `json:"price"`
-	Weight string `json:"weight"`
+	Name     string `json:"name"`
+	Price    string `json:"price"`
+	Weight   string `json:"weight,omitempty"`
+	Quantity string `json:"quantity,omitempty"`
 }
 
 // Money has the types of money
 type Money struct {
-	BrassPennies    int `json:"Brass Pennies"`
-	SilverShillings int `json:"Silver Shillings"`
-	GoldCrowns      int `json:"Gold Crowns"`
+	CopperPennies   int `json:"Copper_Pennies"`
+	SilverShillings int `json:"Silver_Shillings"`
+	GoldCrowns      int `json:"Gold_Crowns"`
 }
 
 // NewStore simple factory of creating the object Store
-func NewStore(name, owner string, items ...Item) Store {
+func NewStore(name, owner, location, storeType string, money Money, items ...Item) Store {
 	ns := Store{}
 	ns.Name = name
 	ns.Owner = owner
-
-	inventory := items
-	ns.Inventory = inventory
+	ns.Location = location
+	ns.StoreType = storeType
+	ns.Inventory = items
+	ns.Money = money
 
 	return ns
+}
+
+// NewMoney creates object of amount of money for each type
+func NewMoney(cp, ss, gc int) Money {
+	m := Money{
+		CopperPennies:   cp,
+		SilverShillings: ss,
+		GoldCrowns:      gc,
+	}
+	return m
 }
