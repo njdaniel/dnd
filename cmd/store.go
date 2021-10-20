@@ -24,13 +24,24 @@ import (
 // storeCmd represents the store command
 var storeCmd = &cobra.Command{
 	Use:   "store",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Store is a business establishment",
+	Long: `Store is a resource of a business establishment. Allowing for generating a new store, updating the and viewing inventory, searching and closing. For example:
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+    $ dnd store create
+	Store Created!
+	Name: Prancy Pony
+	StoreType: Tavern
+	Owner: Overhill
+	Inventory:
+	  - name: "pint of ale"
+	    price: "5cp"
+	  - name: "rabbit stew"
+	    price: "8cp"
+	Money:
+	  CP: 200
+	  SS: 50
+	  GC: 8
+`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("store called")
 	},
