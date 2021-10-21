@@ -16,9 +16,13 @@ limitations under the License.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 
+	"github.com/njdaniel/dnd/services/store"
 	"github.com/spf13/cobra"
+	"gopkg.in/yaml.v2"
 )
 
 // storeCmd represents the store command
@@ -44,6 +48,34 @@ var storeCmd = &cobra.Command{
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("store called")
+		name := ""
+		owner := ""
+		location := ""
+		storeType := ""
+		cp := 0
+		ss := 0
+		gc := 0
+		money := store.NewMoney(cp, ss, gc)
+		items := []store.Item{}
+		ns := store.NewStore(name, owner, location, storeType, money, items...)
+		var data []byte
+		if GetFlagString(cmd, "output") == "yaml" {
+			//fmt.Println(nc)
+			d, err := yaml.Marshal(ns)
+			if err != nil {
+				log.Fatal(err)
+			}
+			data = d
+			fmt.Println(string(data))
+		} else {
+			d, err := json.MarshalIndent(ns, "", "  ")
+			if err != nil {
+				log.Fatal(err)
+			}
+			data = d
+			fmt.Println(string(data))
+		}
+
 	},
 }
 
@@ -59,4 +91,12 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// storeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	createCmd.Flags().StringP("output", "o", "json", "Output in json|simple|yaml")
+	createCmd.Flags().String("name", "", "give custom name")
+	createCmd.Flags().String("owner", "", "give name of owner")
+	createCmd.Flags().String("storeType", "", "give store type")
+	createCmd.Flags().String("location", "", "give location of store")
+	createCmd.Flags().Int("cp", 0, "Amount of Copper Pieces")
+	createCmd.Flags().Int("ss", 0, "Amount of Silver Shillings")
+	createCmd.Flags().Int("gc", 0, "Amount of Gold Crowns")
 }
