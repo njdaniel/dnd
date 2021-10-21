@@ -61,6 +61,9 @@ var storeCmd = &cobra.Command{
 		owner = GetFlagString(cmd, "owner")
 		location = GetFlagString(cmd, "location")
 		storeType = GetFlagString(cmd, "storeType")
+		cp = GetFlagInt(cmd, "cp")
+		ss = GetFlagInt(cmd, "ss")
+		gc = GetFlagInt(cmd, "gc")
 		ns := store.NewStore(name, owner, location, storeType, money, items...)
 		var data []byte
 		if GetFlagString(cmd, "output") == "yaml" {

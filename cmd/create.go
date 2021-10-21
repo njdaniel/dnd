@@ -106,7 +106,7 @@ func GetFlagString(cmd *cobra.Command, flag string) string {
 	return s
 }
 
-//GetFlagString return value of string flag
+//GetFlagInt return value of string flag
 func GetFlagInt(cmd *cobra.Command, flag string) int {
 	s, err := cmd.Flags().GetInt(flag)
 	if err != nil {
