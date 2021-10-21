@@ -106,6 +106,15 @@ func GetFlagString(cmd *cobra.Command, flag string) string {
 	return s
 }
 
+//GetFlagString return value of string flag
+func GetFlagInt(cmd *cobra.Command, flag string) int {
+	s, err := cmd.Flags().GetInt(flag)
+	if err != nil {
+		log.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
+	}
+	return s
+}
+
 func createCharacterFile(nc character.Character, b []byte) error {
 	fmt.Println("\n save flag is passed")
 	home := os.Getenv("HOME")
