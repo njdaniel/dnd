@@ -47,23 +47,23 @@ var storeCmd = &cobra.Command{
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("store called")
-		name := ""
-		owner := ""
-		location := ""
-		storeType := ""
-		cp := 0
-		ss := 0
-		gc := 0
-		money := store.NewMoney(cp, ss, gc)
-		items := []store.Item{}
-		name = GetFlagString(cmd, "name")
-		owner = GetFlagString(cmd, "owner")
-		location = GetFlagString(cmd, "location")
-		storeType = GetFlagString(cmd, "storeType")
-		cp = GetFlagInt(cmd, "cp")
-		ss = GetFlagInt(cmd, "ss")
-		gc = GetFlagInt(cmd, "gc")
-		ns := store.NewStore(name, owner, location, storeType, money, items...)
+		//name := ""
+		//owner := ""
+		//location := ""
+		//storeType := ""
+		//cp := 0
+		//ss := 0
+		//gc := 0
+		//money := store.NewMoney(cp, ss, gc)
+		//items := []store.Item{}
+		//name = GetFlagString(cmd, "name")
+		//owner = GetFlagString(cmd, "owner")
+		//location = GetFlagString(cmd, "location")
+		//storeType = GetFlagString(cmd, "storeType")
+		//cp = GetFlagInt(cmd, "cp")
+		//ss = GetFlagInt(cmd, "ss")
+		//gc = GetFlagInt(cmd, "gc")
+		ns := store.NewStore()
 		//var data []byte
 		data, err := json.MarshalIndent(ns, "", "  ")
 		if err != nil {

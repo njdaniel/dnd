@@ -1,29 +1,6 @@
 package store
 
-type StoreType int
-
-const (
-	Tavern StoreType = iota + 1
-	Blacksmith
-	Apothecary
-	Clothing
-	GeneralGoods
-	Bowyer
-)
-
-////////Item Quality ////////////
-
-// Quality states the condition of physical objects
-type Quality int
-
-const (
-	Poor Quality = iota + 1
-	Average
-	Good
-	Great
-)
-
-///////////////////////////////
+import "github.com/njdaniel/dnd/services/commands/character"
 
 // Item is the generic physical object
 //type Item interface {
@@ -42,33 +19,33 @@ type Store struct {
 	Money     Money  `json:"money"`
 }
 
-// Item contains  of items of multiude of different types
-type Item struct {
-	Name     string `json:"name"`
-	Price    string `json:"price"`
-	Weight   string `json:"weight,omitempty"`
-	Quantity string `json:"quantity,omitempty"`
-}
-
-// Money has the types of money
-type Money struct {
-	CopperPennies   int `json:"Copper_Pennies"`
-	SilverShillings int `json:"Silver_Shillings"`
-	GoldCrowns      int `json:"Gold_Crowns"`
-}
-
 // NewStore simple factory of creating the object Store
-func NewStore(name, owner, location, storeType string, money Money, items ...Item) Store {
+func NewStore(name, storeType string) Store {
 	ns := Store{}
 	ns.Name = name
-	ns.Owner = owner
-	ns.Location = location
+	owner := character.NewCharacter("", "", "")
+	ns.Owner = owner.Name
+	ns.Location = "Heldheim"
 	ns.StoreType = storeType
-	ns.Inventory = items
-	ns.Money = money
+	ns.Inventory = generateInventoryForStore()
+	cp := 0
+	ss := 0
+	gc := 0
+	ns.Money = NewMoney(cp, ss, gc)
 
 	return ns
 }
+
+//func generateStoreName() string {
+//	buf, err := ioutil.ReadFile("data/dnd/names/stores.txt")
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	s := string(buf)
+//	ss := strings.Split(s, "\n")
+//	result := Roll(len(ss))
+//	return ss[result-1]
+//}
 
 // NewMoney creates object of amount of money for each type
 func NewMoney(cp, ss, gc int) Money {
