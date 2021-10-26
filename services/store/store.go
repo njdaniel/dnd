@@ -1,6 +1,10 @@
 package store
 
-import "github.com/njdaniel/dnd/services/commands/character"
+import (
+	"fmt"
+
+	"github.com/njdaniel/dnd/services/commands/character"
+)
 
 // Item is the generic physical object
 //type Item interface {
@@ -8,6 +12,88 @@ import "github.com/njdaniel/dnd/services/commands/character"
 //	Description() string
 //	Price() string
 //}
+
+type StoreType int
+
+const (
+	Tavern StoreType = iota + 1
+	Fletcher
+	Blacksmith
+	Apothecary
+	Clothing
+	Generalgoods
+	Bowyer
+	Woodworker
+	Armorer
+	Weaponsmith
+	Grocer
+	Leatherworker
+	Stablemaster
+)
+
+func (s StoreType) String() string {
+	return [...]string{"Tavern", "Fletcher"}[s-1]
+}
+
+func (s StoreType) Len() int {
+	return 0
+}
+
+// VerifyEnum verify that string is one of the enum values
+func VerifyEnum(s string, enum character.Enum) bool {
+	for i := 0; i < enum.Len(); i++ {
+		if enum.String() == s {
+			return true
+		}
+	}
+	return false
+}
+
+///////////////////////
+//Builder Pattern
+
+type iStoreBuilder interface {
+	setStoreType()
+	setName()
+	setOwner()
+	setLocation()
+	setInventory()
+}
+
+func getStoreBuilder(storeBuilderType string) iStoreBuilder {
+	fmt.Println(storeBuilderType)
+	isb := fletcherBuilder{}
+	return isb
+}
+
+type fletcherBuilder struct {
+	Name string
+	StoreType
+	Owner    string
+	Location string
+}
+
+func (f fletcherBuilder) setStoreType() {
+
+}
+
+func (f fletcherBuilder) setName() {
+
+}
+
+func (f fletcherBuilder) setOwner() {
+
+}
+
+func (f fletcherBuilder) setLocation() {
+
+}
+
+func (f fletcherBuilder) setInventory() {
+
+}
+
+////////////////////
 
 // Store represents the physical entity of a business
 type Store struct {
@@ -20,9 +106,9 @@ type Store struct {
 }
 
 // NewStore simple factory of creating the object Store
-func NewStore(name, storeType string) Store {
+func NewStore(storeType string) Store {
 	ns := Store{}
-	ns.Name = name
+	ns.Name = "Shop with no Sign"
 	owner := character.NewCharacter("", "", "")
 	ns.Owner = owner.Name
 	ns.Location = "Heldheim"

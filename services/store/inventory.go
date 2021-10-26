@@ -1,24 +1,7 @@
 package store
 
-type Inventory interface {
+type InventoryInterface interface {
 }
-
-type StoreType int
-
-const (
-	Tavern StoreType = iota + 1
-	Blacksmith
-	Apothecary
-	Clothing
-	GeneralGoods
-	Bowyer
-	Woodworker
-	Armorer
-	Weaponsmith
-	Grocer
-	Leatherworker
-	Stablemaster
-)
 
 func generateInventoryForStore() []Item {
 	si := make([]Item, 0)
@@ -28,6 +11,16 @@ func generateInventoryForStore() []Item {
 	//Apothecary
 	//Clothing
 	return si
+}
+
+type Inventory struct {
+	Items []ItemsInterface
+}
+
+type ItemsInterface interface {
+	ItemInterface
+	GetQuantity() int
+	SetQuantity(int)
 }
 
 // ItemInterface is the abstract object of all physical objects

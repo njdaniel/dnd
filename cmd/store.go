@@ -63,7 +63,7 @@ var storeCmd = &cobra.Command{
 		//cp = GetFlagInt(cmd, "cp")
 		//ss = GetFlagInt(cmd, "ss")
 		//gc = GetFlagInt(cmd, "gc")
-		ns := store.NewStore()
+		ns := store.NewStore("fletcher")
 		//var data []byte
 		data, err := json.MarshalIndent(ns, "", "  ")
 		if err != nil {
@@ -87,11 +87,11 @@ func init() {
 	// is called directly, e.g.:
 	// storeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	//createCmd.Flags().StringP("output", "o", "json", "Output in json|simple|yaml")
-	createCmd.Flags().String("name", "", "give custom name")
-	createCmd.Flags().String("owner", "", "give name of owner")
-	createCmd.Flags().String("storeType", "", "give store type")
-	createCmd.Flags().String("location", "", "give location of store")
-	createCmd.Flags().Int("cp", 0, "Amount of Copper Pieces")
-	createCmd.Flags().Int("ss", 0, "Amount of Silver Shillings")
-	createCmd.Flags().Int("gc", 0, "Amount of Gold Crowns")
+	//createCmd.Flags().String("name", "", "give custom name")
+	//createCmd.Flags().String("owner", "", "give name of owner")
+	//createCmd.Flags().String("storeType", "", "give store type")
+	//createCmd.Flags().String("location", "", "give location of store")
+	//createCmd.Flags().Int("cp", 0, "Amount of Copper Pieces")
+	//createCmd.Flags().Int("ss", 0, "Amount of Silver Shillings")
+	//createCmd.Flags().Int("gc", 0, "Amount of Gold Crowns")
 }
