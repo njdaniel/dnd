@@ -16,9 +16,15 @@ import (
 
 type StoreType int
 
+//type StoreType string
+//
+//const (
+//	Fletcher StoreType = "Fletcher"
+//)
+
 const (
-	Tavern StoreType = iota + 1
-	Fletcher
+	Fletcher StoreType = iota + 1
+	Tavern
 	Blacksmith
 	Apothecary
 	Clothing
@@ -32,23 +38,45 @@ const (
 	Stablemaster
 )
 
+var StoreTypeName = []string{
+	Fletcher: "Fletcher",
+}
+
 func (s StoreType) String() string {
-	return [...]string{"Tavern", "Fletcher"}[s-1]
+	return [...]string{"Fletcher"}[s-1]
 }
 
 func (s StoreType) Len() int {
-	return 0
+	return 1
 }
 
-// VerifyEnum verify that string is one of the enum values
-func VerifyEnum(s string, enum character.Enum) bool {
-	for i := 0; i < enum.Len(); i++ {
-		if enum.String() == s {
-			return true
-		}
+func (s StoreType) IsValid() bool {
+	switch s {
+	case Fletcher:
+		return true
 	}
 	return false
 }
+
+func String2StoreType(s string) (StoreType, error) {
+	for i := 1; i <= StoreType(i).Len(); i++ {
+		if StoreType(i).String() == s {
+			return StoreType(i), nil
+		}
+	}
+	return 0, fmt.Errorf("error: Invalid StoreType")
+}
+
+// VerifyEnum verify that string is one of the enum values
+//TODO: needs to be tested guessing this wont work
+//func VerifyEnum(s string, enum character.Enum) bool {
+//	for i := 0; i < enum.Len(); i++ {
+//		if enum.String() == s {
+//			return true
+//		}
+//	}
+//	return false
+//}
 
 ///////////////////////
 //Builder Pattern
@@ -59,6 +87,7 @@ type IStoreBuilder interface {
 	setOwner()
 	setLocation()
 	setInventory()
+	getStore() Store
 }
 
 func GetStoreBuilder(storeBuilderType string) IStoreBuilder {
@@ -93,6 +122,14 @@ func (f FletcherBuilder) setLocation() {
 
 func (f FletcherBuilder) setInventory() {
 
+}
+
+func (f FletcherBuilder) getStore() Store {
+	return Store{
+		Name:     f.Name,
+		Owner:    f.Owner,
+		Location: f.Location,
+	}
 }
 
 type Metal int
@@ -139,12 +176,66 @@ func (a ArrowHeadType) IsValid() error {
 	return errors.New("Invalid ArrowHeadType")
 }
 
+type ShaftMaterial int
+
+const (
+	Ash ShaftMaterial = iota + 1
+	Cedar
+	DouglusFir
+	Spruce
+	Pine
+)
+
+var ShaftMaterialName = []string{
+	Ash:        "Ash",
+	Cedar:      "Cedar",
+	DouglusFir: "Douglus Fir",
+	Spruce:     "Spruce",
+	Pine:       "Pine",
+}
+
+func (s ShaftMaterial) String() string {
+	return ShaftMaterialName[s]
+}
+
+func (s ShaftMaterial) Len() int {
+	return len(ShaftMaterialName)
+}
+
+func (s ShaftMaterial) IsValid() bool {
+	switch s {
+	case Ash, Cedar, DouglusFir, Spruce, Pine:
+		return true
+	}
+	return false
+}
+
+func String2ShaftMaterial(s string) (ShaftMaterial, error) {
+	for i := 1; i <= ShaftMaterial(i).Len(); i++ {
+		if StoreType(i).String() == s {
+			return ShaftMaterial(i), nil
+		}
+	}
+	return 0, fmt.Errorf("error: Invalid ShaftMaterial")
+}
+
+type FletchMaterial int
+
+const (
+	GooseFeathers FletchMaterial = iota + 1
+	TurkeyFeathers
+	ChickenFeathers
+	PidgeonFeathers
+)
+
 type Arrow struct {
 	Weight
 	Price Money
 	Quality
 	HeadMaterial Metal
-	HeadType     ArrowHeadTypes
+	HeadType     ArrowHeadType
+	ShaftMaterial
+	FletchMaterial
 }
 
 ////////////////////
