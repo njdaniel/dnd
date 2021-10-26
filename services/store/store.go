@@ -115,7 +115,7 @@ func (m Metal) Len() int {
 type ArrowHeadType int
 
 const (
-	Pointed ArrowHeadTypes = iota + 1
+	Pointed ArrowHeadType = iota + 1
 	Leaf
 	Broadhead
 	Barbed
