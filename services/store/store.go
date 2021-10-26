@@ -238,21 +238,16 @@ type Arrow struct {
 	FletchMaterial
 }
 
-type ArrowItem struct {
-	Item
-}
-
-func Arrow2ArrowItem(a Arrow) ArrowItem {
+func Arrow2Item(a Arrow) Item {
 	name := ""
 	name = a.HeadMaterial.String() + a.HeadType.String()
-	ai := ArrowItem{
-		Item: Item{
-			Price:   a.Price,
-			Weight:  a.Weight,
-			Quality: a.Quality,
-			Name:    name,
-		},
+	ai := Item{
+		Price:   a.Price,
+		Weight:  a.Weight,
+		Quality: a.Quality,
+		Name:    name,
 	}
+
 	return ai
 }
 
@@ -264,8 +259,8 @@ type Store struct {
 	Owner     string `json:"owner"`
 	Location  string `json:"location"`
 	StoreType string `json:"store_type"`
-	Inventory []Item `json:"inventory"`
-	Money     Money  `json:"money"`
+	Inventory `json:"inventory"`
+	Money     `json:"money"`
 }
 
 // NewStore simple factory of creating the object Store

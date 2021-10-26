@@ -1,8 +1,5 @@
 package store
 
-type InventoryInterface interface {
-}
-
 func generateInventoryForStore() []Item {
 	si := make([]Item, 0)
 	//Tavern
@@ -14,7 +11,7 @@ func generateInventoryForStore() []Item {
 }
 
 type Inventory struct {
-	Items []ItemsInterface
+	Items []Items
 }
 
 type ItemsInterface interface {
