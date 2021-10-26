@@ -42,7 +42,7 @@ type Item struct {
 	Name   string `json:"name"`
 	Price  Money  `json:"price"`
 	Weight `json:"weight,omitempty"`
-	//Quantity string `json:"quantity,omitempty"`
+	Quality
 }
 
 // Weight contains the value and the units for measuring the weight

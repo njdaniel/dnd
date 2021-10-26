@@ -238,6 +238,24 @@ type Arrow struct {
 	FletchMaterial
 }
 
+type ArrowItem struct {
+	Item
+}
+
+func Arrow2ArrowItem(a Arrow) ArrowItem {
+	name := ""
+	name = a.HeadMaterial.String() + a.HeadType.String()
+	ai := ArrowItem{
+		Item: Item{
+			Price:   a.Price,
+			Weight:  a.Weight,
+			Quality: a.Quality,
+			Name:    name,
+		},
+	}
+	return ai
+}
+
 ////////////////////
 
 // Store represents the physical entity of a business
