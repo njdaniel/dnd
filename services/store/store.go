@@ -271,7 +271,7 @@ func NewStore(storeType string) Store {
 	ns.Owner = owner.Name
 	ns.Location = "Heldheim"
 	ns.StoreType = storeType
-	ns.Inventory = generateInventoryForStore()
+	//ns.Inventory = generateInventoryForStore()
 	cp := 0
 	ss := 0
 	gc := 0

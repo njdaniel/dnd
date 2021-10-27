@@ -11,7 +11,7 @@ func generateInventoryForStore() []Item {
 }
 
 type Inventory struct {
-	Items []Items
+	Inventory []Items `json:"inventory"`
 }
 
 type ItemsInterface interface {
