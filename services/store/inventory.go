@@ -30,8 +30,8 @@ type ItemInterface interface {
 	GetQuality() Quality
 	SetName(string)
 	SetPrice(cp, ss, gc int)
-	SetWeight()
-	SetQuality()
+	SetWeight(float64)
+	SetQuality(string) error
 }
 
 // Item contains  of items of multiude of different types
@@ -42,10 +42,56 @@ type Item struct {
 	Quality
 }
 
+//GetName returns the Name of Item
+func (i Item) GetName() string {
+	return i.Name
+}
+
+//GetPrice returns the Money of Item
+func (i Item) GetPrice() Money {
+	return i.Price
+}
+
+//GetWeight returns the Weight of Item
+func (i Item) GetWeight() Weight {
+	return i.Weight
+}
+
+//GetQuality returns the Quality of Item
+func (i Item) GetQuality() Quality {
+	return i.Quality
+}
+
+//SetName sets the Name of Item
+func (i Item) SetName(name string) {
+	i.Name = name
+}
+
+func (i Item) SetPrice(cp, ss, gc int) {
+	i.Price = NewMoney(cp, ss, gc)
+}
+
+func (i Item) SetWeight(value int) {
+	i.Weight = newWeight(value)
+}
+
+func (i Item) SetQuality(q string) error {
+	i.Quality = 1
+
+	return nil
+}
+
 // Weight contains the value and the units for measuring the weight
 type Weight struct {
 	Value float64 `json:"value"`
 	Unit  string  `json:"unit"`
+}
+
+func newWeight(value int) Weight {
+	return Weight{
+		Value: value,
+		Unit:  "lbs",
+	}
 }
 
 // Money has the types of money

@@ -228,27 +228,28 @@ const (
 	PidgeonFeathers
 )
 
+func (f FletchMaterial) Len() int {
+	return 4
+}
+
 type Arrow struct {
-	Weight
-	Price Money
-	Quality
+	Item
 	HeadMaterial Metal
 	HeadType     ArrowHeadType
 	ShaftMaterial
 	FletchMaterial
 }
 
-func Arrow2Item(a Arrow) Item {
-	name := ""
-	name = a.HeadMaterial.String() + a.HeadType.String()
-	ai := Item{
-		Price:   a.Price,
-		Weight:  a.Weight,
-		Quality: a.Quality,
-		Name:    name,
+func NewArrow() ItemInterface {
+	hm := Metal(character.Roll(Metal(1).Len()))
+	ht := ArrowHeadType(character.Roll(ArrowHeadType(1).Len()))
+	sm := ShaftMaterial(character.Roll(ShaftMaterial(1).Len()))
+	fm := FletchMaterial(character.Roll(FletchMaterial(1).Len()))
+	na := Arrow{
+		Item: Item{},
 	}
 
-	return ai
+	return na
 }
 
 ////////////////////
