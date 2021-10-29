@@ -88,7 +88,7 @@ type IStoreBuilder interface {
 	setOwner()
 	setLocation()
 	setInventory()
-	getStore() Store
+	GetStore() Store
 }
 
 func GetStoreBuilder(storeBuilderType string) IStoreBuilder {
@@ -126,7 +126,7 @@ func (f FletcherBuilder) setInventory() {
 	f.Inventory, _ = generateInventoryForFletcher()
 }
 
-func (f FletcherBuilder) getStore() Store {
+func (f FletcherBuilder) GetStore() Store {
 	return Store{
 		Name:     f.Name,
 		Owner:    f.Owner,
