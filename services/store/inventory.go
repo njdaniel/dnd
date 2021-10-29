@@ -14,6 +14,19 @@ type Inventory struct {
 	Inventory []Items `json:"inventory"`
 }
 
+type Items struct {
+	Item     `json:"item"`
+	Quantity int `json:"quantity"`
+}
+
+func (i Items) GetQuantity() int {
+	return i.Quantity
+}
+
+func (i Items) SetQuantity(value int) {
+	i.Quantity = value
+}
+
 type ItemsInterface interface {
 	ItemInterface
 	GetQuantity() int
@@ -133,11 +146,6 @@ func (q Quality) Len() int {
 }
 
 ///////////////////////////////
-
-type Items struct {
-	Item
-	Quantity int
-}
 
 // Coins /////////////////////////////
 
