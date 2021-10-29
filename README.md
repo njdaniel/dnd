@@ -12,11 +12,12 @@ overall skills. The DM version has the math and and details for help running the
 #### Features:
 * Create random character
 * Roll dice
-
-#### Upcoming:
+* save character to file
 * CLI character random generator
 * CLI create character
-* save character to file
+
+#### Upcoming:
+* CLI create store
 
 #### Goals
 * Generate stores, towns
