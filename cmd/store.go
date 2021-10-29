@@ -63,7 +63,8 @@ var storeCmd = &cobra.Command{
 		//cp = GetFlagInt(cmd, "cp")
 		//ss = GetFlagInt(cmd, "ss")
 		//gc = GetFlagInt(cmd, "gc")
-		ns := store.NewStore("fletcher")
+		//ns := store.NewStore("fletcher")
+		ns := store.GetStoreBuilder
 		//var data []byte
 		data, err := json.MarshalIndent(ns, "", "  ")
 		if err != nil {

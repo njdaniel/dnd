@@ -1,13 +1,46 @@
 package store
 
-func generateInventoryForStore() []Item {
-	si := make([]Item, 0)
+import (
+	"fmt"
+
+	"github.com/njdaniel/dnd/util/dice"
+)
+
+func generateInventoryForStore(storeTypeString string) (Inventory, error) {
+	switch storeTypeString {
+	case "Fletcher":
+		return generateInventoryForFletcher()
+	}
+
 	//Tavern
 	//Blacksmith
 	//Bowyer
 	//Apothecary
 	//Clothing
-	return si
+	return Inventory{}, fmt.Errorf("error: Wrong store type passed")
+}
+
+func generateInventoryForFletcher() (Inventory, error) {
+	inv := new(Inventory)
+	items := make([]Items, 0)
+	//how many times will be added to inventory
+	//whats going to be in the inventory?
+	//Add arrows
+	for dice.Roll(20) > 0 {
+		a := NewArrow()
+		as := Items{
+			Item: Item{
+				Name:    a.GetName(),
+				Price:   a.GetPrice(),
+				Weight:  a.GetWeight(),
+				Quality: a.GetQuality(),
+			},
+			Quantity: dice.Roll(100),
+		}
+		items = append(items, as)
+	}
+	inv.Inventory = items
+	return *inv, nil
 }
 
 type Inventory struct {

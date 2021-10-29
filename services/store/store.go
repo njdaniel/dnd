@@ -102,6 +102,7 @@ type FletcherBuilder struct {
 	StoreType
 	Owner    string
 	Location string
+	Inventory
 }
 
 func (f FletcherBuilder) setStoreType() {
@@ -122,7 +123,7 @@ func (f FletcherBuilder) setLocation() {
 }
 
 func (f FletcherBuilder) setInventory() {
-
+	f.Inventory, _ = generateInventoryForFletcher()
 }
 
 func (f FletcherBuilder) getStore() Store {
