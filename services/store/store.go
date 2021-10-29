@@ -3,6 +3,7 @@ package store
 import (
 	"errors"
 	"fmt"
+	"strconv"
 
 	"github.com/njdaniel/dnd/services/commands/character"
 )
@@ -238,6 +239,7 @@ type Arrow struct {
 	HeadType     ArrowHeadType
 	ShaftMaterial
 	FletchMaterial
+	Length int
 }
 
 func NewArrow() ItemInterface {
@@ -245,10 +247,23 @@ func NewArrow() ItemInterface {
 	ht := ArrowHeadType(character.Roll(ArrowHeadType(1).Len()))
 	sm := ShaftMaterial(character.Roll(ShaftMaterial(1).Len()))
 	fm := FletchMaterial(character.Roll(FletchMaterial(1).Len()))
+	arrowlengths := [2]int{24, 32}
+	arrowweights := [2]float64{0.06, 0.08}
+	r := character.Roll(2) - 1
+	length := arrowlengths[r]
 	na := Arrow{
-		Item: Item{},
+		Item: Item{
+			Name:    hm.String() + " " + ht.String() + " " + strconv.Itoa(length) + "\" arrow",
+			Price:   NewMoney(0, 0, 0),
+			Weight:  newWeight(arrowweights[r]),
+			Quality: Quality(character.Roll(Quality(1).Len() - 1)).String(),
+		},
+		Length:         length,
+		HeadMaterial:   hm,
+		HeadType:       ht,
+		ShaftMaterial:  sm,
+		FletchMaterial: fm,
 	}
-
 	return na
 }
 

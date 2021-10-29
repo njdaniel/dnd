@@ -27,7 +27,7 @@ type ItemInterface interface {
 	GetName() string
 	GetPrice() Money
 	GetWeight() Weight
-	GetQuality() Quality
+	GetQuality() string
 	SetName(string)
 	SetPrice(cp, ss, gc int)
 	SetWeight(float64)
@@ -36,10 +36,10 @@ type ItemInterface interface {
 
 // Item contains  of items of multiude of different types
 type Item struct {
-	Name   string `json:"name"`
-	Price  Money  `json:"price"`
-	Weight `json:"weight,omitempty"`
-	Quality
+	Name    string `json:"name"`
+	Price   Money  `json:"price"`
+	Weight  `json:"weight,omitempty"`
+	Quality string `json:"quality"`
 }
 
 //GetName returns the Name of Item
@@ -58,7 +58,7 @@ func (i Item) GetWeight() Weight {
 }
 
 //GetQuality returns the Quality of Item
-func (i Item) GetQuality() Quality {
+func (i Item) GetQuality() string {
 	return i.Quality
 }
 
@@ -71,12 +71,12 @@ func (i Item) SetPrice(cp, ss, gc int) {
 	i.Price = NewMoney(cp, ss, gc)
 }
 
-func (i Item) SetWeight(value int) {
+func (i Item) SetWeight(value float64) {
 	i.Weight = newWeight(value)
 }
 
 func (i Item) SetQuality(q string) error {
-	i.Quality = 1
+	i.Quality = Quality(1).String()
 
 	return nil
 }
@@ -87,7 +87,7 @@ type Weight struct {
 	Unit  string  `json:"unit"`
 }
 
-func newWeight(value int) Weight {
+func newWeight(value float64) Weight {
 	return Weight{
 		Value: value,
 		Unit:  "lbs",
@@ -114,6 +114,23 @@ const (
 	Great
 	Perfect
 )
+
+var QualityName = []string{
+	Broken:  "Broken",
+	Poor:    "Poor",
+	Average: "Average",
+	Good:    "Good",
+	Great:   "Great",
+	Perfect: "Perfect",
+}
+
+func (q Quality) String() string {
+	return QualityName[q]
+}
+
+func (q Quality) Len() int {
+	return len(QualityName)
+}
 
 ///////////////////////////////
 
