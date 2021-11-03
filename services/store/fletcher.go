@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/njdaniel/dnd/services/commands/character"
 	"github.com/njdaniel/dnd/util/dice"
 )
 
@@ -53,17 +52,17 @@ func (a ArrowHeadType) IsValid() error {
 	return errors.New("Invalid ArrowHeadType")
 }
 
-type ShaftMaterial int
+type WoodType int
 
 const (
-	Ash ShaftMaterial = iota + 1
+	Ash WoodType = iota + 1
 	Cedar
 	DouglusFir
 	Spruce
 	Pine
 )
 
-var ShaftMaterialName = []string{
+var WoodTypeName = [...]string{
 	Ash:        "Ash",
 	Cedar:      "Cedar",
 	DouglusFir: "Douglus Fir",
@@ -71,15 +70,15 @@ var ShaftMaterialName = []string{
 	Pine:       "Pine",
 }
 
-func (s ShaftMaterial) String() string {
-	return ShaftMaterialName[s]
+func (s WoodType) String() string {
+	return WoodTypeName[s]
 }
 
-func (s ShaftMaterial) Len() int {
-	return len(ShaftMaterialName)
+func (s WoodType) Len() int {
+	return len(WoodTypeName)
 }
 
-func (s ShaftMaterial) IsValid() bool {
+func (s WoodType) IsValid() bool {
 	switch s {
 	case Ash, Cedar, DouglusFir, Spruce, Pine:
 		return true
@@ -87,70 +86,79 @@ func (s ShaftMaterial) IsValid() bool {
 	return false
 }
 
-func String2ShaftMaterial(s string) (ShaftMaterial, error) {
-	for i := 1; i <= ShaftMaterial(i).Len(); i++ {
+func String2WoodType(s string) (WoodType, error) {
+	for i := 1; i <= WoodType(i).Len(); i++ {
 		if StoreType(i).String() == s {
-			return ShaftMaterial(i), nil
+			return WoodType(i), nil
 		}
 	}
-	return 0, fmt.Errorf("error: Invalid ShaftMaterial")
+	return 0, fmt.Errorf("error: Invalid WoodType")
 }
 
-type FletchMaterial int
+type FletchMaterial string
 
 const (
-	GooseFeathers FletchMaterial = iota + 1
-	TurkeyFeathers
-	ChickenFeathers
-	PidgeonFeathers
+	GooseFeathers   FletchMaterial = "GooseFeathers"
+	TurkeyFeathers                 = "TurkeyFeathers"
+	ChickenFeathers                = "ChickenFeathers"
+	PidgeonFeathers                = "PidgeonFeathers"
 )
 
+var Feathers = [...]string{
+	"GooseFeathers",
+	"TurkeyFeathers",
+	"ChickenFeathers",
+	"PidgeonFeathers",
+}
+
 func (f FletchMaterial) Len() int {
-	return 4
+	return len(Feathers)
 }
 
 type Arrow struct {
 	Item
 	HeadMaterial Metal
 	HeadType     ArrowHeadType
-	ShaftMaterial
-	FletchMaterial
-	Length int
+	WoodType
+	FletchMaterial string
+	Length         int
 }
 
-func NewArrow() ItemInterface {
-	hm := Metal(character.Roll(Metal(1).Len()))
-	ht := ArrowHeadType(character.Roll(ArrowHeadType(1).Len()))
-	sm := ShaftMaterial(character.Roll(ShaftMaterial(1).Len()))
-	fm := FletchMaterial(character.Roll(FletchMaterial(1).Len()))
+func NewArrow(hm Metal) Arrow {
+	ht := ArrowHeadType(dice.Roll(ArrowHeadType(1).Len()))
+	sm := WoodType(dice.Roll(WoodType(1).Len()))
+	fm := Feathers[(dice.Roll(len(Feathers)) - 1)]
 	arrowlengths := [2]int{24, 32}
 	arrowweights := [2]float64{0.06, 0.08}
-	r := character.Roll(2) - 1
+	r := dice.Roll(2) - 1
 	length := arrowlengths[r]
 	na := Arrow{
 		Item: Item{
 			Name:    hm.String() + " " + ht.String() + " " + strconv.Itoa(length) + "\" arrow",
 			Price:   NewMoney(0, 0, 0),
 			Weight:  newWeight(arrowweights[r]),
-			Quality: Quality(character.Roll(Quality(1).Len() - 1)).String(),
+			Quality: Quality(dice.Roll(Quality(1).Len() - 1)).String(),
 		},
 		Length:         length,
 		HeadMaterial:   hm,
 		HeadType:       ht,
-		ShaftMaterial:  sm,
+		WoodType:       sm,
 		FletchMaterial: fm,
 	}
 	return na
 }
 
 func generateInventoryForFletcher() (Inventory, error) {
-	inv := new(Inventory)
+	fmt.Println("inside generateInventoryForFletcher")
+	inv := Inventory{}
 	items := make([]Items, 0)
 	//how many times will be added to inventory
 	//whats going to be in the inventory?
 	//Add arrows
-	for dice.Roll(20) > 0 {
-		a := NewArrow()
+	for dice.Roll(20) > 1 {
+		hm := Metal(dice.Roll(Metal(1).Len()))
+		a := NewArrow(hm)
+		fmt.Println(a)
 		as := Items{
 			Item: Item{
 				Name:    a.GetName(),
@@ -163,5 +171,5 @@ func generateInventoryForFletcher() (Inventory, error) {
 		items = append(items, as)
 	}
 	inv.Inventory = items
-	return *inv, nil
+	return inv, nil
 }

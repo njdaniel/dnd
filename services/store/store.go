@@ -93,10 +93,15 @@ func GetStoreBuilder(storeBuilderType string) IStoreBuilder {
 	fmt.Println(storeBuilderType)
 	isb := FletcherBuilder{}
 	isb.setStoreType()
+	fmt.Println("store set")
 	isb.setName()
+	fmt.Println("name set")
 	isb.setLocation()
+	fmt.Println("location set")
 	isb.setOwner()
+	fmt.Println("set owner")
 	isb.setInventory()
+	fmt.Println("set inventory")
 	return isb
 }
 
@@ -126,7 +131,11 @@ func (f FletcherBuilder) setLocation() {
 }
 
 func (f FletcherBuilder) setInventory() {
-	f.Inventory, _ = generateInventoryForFletcher()
+	inv, err := generateInventoryForFletcher()
+	if err != nil {
+		fmt.Println("err: ", err)
+	}
+	f.Inventory = inv
 }
 
 func (f FletcherBuilder) GetStore() Store {
