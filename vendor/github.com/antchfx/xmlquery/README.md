@@ -8,43 +8,99 @@ xmlquery
 Overview
 ===
 
-xmlquery is an XPath query package for XML document, lets you extract data or evaluate from XML documents by an XPath expression.
+`xmlquery` is an XPath query package for XML document, lets you extract data or evaluate from XML documents by an XPath expression.
+
+`xmlquery` built-in the query object caching feature will caching the recently used XPATH query string. Enable caching can avoid re-compile XPath expression each query. 
 
 Change Logs
 ===
 
-**2018-12-23**
-* added XML output will including comment node. [#9](https://github.com/antchfx/xmlquery/issues/9)
+2020-08-??
+- Add XML stream loading and parsing support.
 
-**2018-12-03**
- * added support attribute name with namespace prefix and XML output. [#6](https://github.com/antchfx/xmlquery/issues/6)
+2019-11-11 
+- Add XPath query caching.
+
+2019-10-05 
+- Add new methods that compatible with invalid XPath expression error: `QueryAll` and `Query`.
+- Add `QuerySelector` and `QuerySelectorAll` methods, supported reused your query object.
+- PR [#12](https://github.com/antchfx/xmlquery/pull/12) (Thanks @FrancescoIlario)
+- PR [#11](https://github.com/antchfx/xmlquery/pull/11) (Thanks @gjvnq)
+
+2018-12-23
+- added XML output will including comment node. [#9](https://github.com/antchfx/xmlquery/issues/9)
+
+2018-12-03
+- added support attribute name with namespace prefix and XML output. [#6](https://github.com/antchfx/xmlquery/issues/6)
 
 Installation
 ====
-
-> $ go get github.com/antchfx/xmlquery
+```
+ $ go get github.com/antchfx/xmlquery
+```
 
 Getting Started
 ===
 
-#### Parse a XML from URL.
+### Find specified XPath query.
+
+```go
+list, err := xmlquery.QueryAll(doc, "a")
+if err != nil {
+	panic(err)
+}
+```
+
+#### Parse an XML from URL.
 
 ```go
 doc, err := xmlquery.LoadURL("http://www.example.com/sitemap.xml")
 ```
 
-#### Parse a XML from string.
+#### Parse an XML from string.
 
 ```go
 s := `<?xml version="1.0" encoding="utf-8"?><rss version="2.0"></rss>`
 doc, err := xmlquery.Parse(strings.NewReader(s))
 ```
 
-#### Parse a XML from io.Reader.
+#### Parse an XML from io.Reader.
 
 ```go
 f, err := os.Open("../books.xml")
 doc, err := xmlquery.Parse(f)
+```
+
+#### Parse an XML in a stream fashion (simple case without element filtering).
+
+```go
+f, err := os.Open("../books.xml")
+p, err := xmlquery.CreateStreamParser(f, "/bookstore/book")
+for {
+	n, err := p.Read()
+	if err == io.EOF {
+		break
+	}
+	if err != nil {
+		...
+	}
+}
+```
+
+#### Parse an XML in a stream fashion (simple case advanced element filtering).
+
+```go
+f, err := os.Open("../books.xml")
+p, err := xmlquery.CreateStreamParser(f, "/bookstore/book", "/bookstore/book[price>=10]")
+for {
+	n, err := p.Read()
+	if err == io.EOF {
+		break
+	}
+	if err != nil {
+		...
+	}
+}
 ```
 
 #### Find authors of all books in the bookstore.
@@ -93,6 +149,20 @@ fmt.Printf("total price: %f\n", price)
 expr, err := xpath.Compile("count(//book)")
 price := expr.Evaluate(xmlquery.CreateXPathNavigator(doc)).(float64)
 ```
+
+FAQ
+====
+
+#### `Find()` vs `QueryAll()`, which is better?
+
+`Find` and `QueryAll` both do the same things, searches all of matched html nodes.
+The `Find` will panics if you give an error XPath query, but `QueryAll` will return an error for you.
+
+#### Can I save my query expression object for the next query?
+
+Yes, you can. We offer the `QuerySelector` and `QuerySelectorAll` methods, It will accept your query expression object.
+
+Cache a query expression object(or reused) will avoid re-compile XPath query expression, improve your query performance.
 
 #### Create XML document.
 
@@ -175,11 +245,11 @@ func main(){
 
 List of supported XPath query packages
 ===
-|Name |Description |
-|--------------------------|----------------|
-|[htmlquery](https://github.com/antchfx/htmlquery) | XPath query package for the HTML document|
-|[xmlquery](https://github.com/antchfx/xmlquery) | XPath query package for the XML document|
-|[jsonquery](https://github.com/antchfx/jsonquery) | XPath query package for the JSON document|
+| Name                                              | Description                               |
+| ------------------------------------------------- | ----------------------------------------- |
+| [htmlquery](https://github.com/antchfx/htmlquery) | XPath query package for the HTML document |
+| [xmlquery](https://github.com/antchfx/xmlquery)   | XPath query package for the XML document  |
+| [jsonquery](https://github.com/antchfx/jsonquery) | XPath query package for the JSON document |
 
  Questions
 ===
